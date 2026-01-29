@@ -578498,6 +578498,26 @@
           -1
         ]
       ]
+    },
+    {
+      "version": [
+        1,
+        0
+      ],
+      "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+      "name": "Ore Tracking",
+      "reference": false,
+      "description": null,
+      "managers": [
+        {
+          "type": "Eco.Gameplay.Players.User",
+          "name": "White Tiger",
+          "reference": true
+        }
+      ],
+      "users": [],
+      "properties": {},
+      "holdings": []
     }
   ]
 }
