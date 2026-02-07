@@ -1,0 +1,2088 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Laws.Law",
+  "name": "Laser Progress Stats",
+  "reference": false,
+  "description": null,
+  "properties": {
+    "Sections": [
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Balanced Meals",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ItemCraftedAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Crafting Table",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Crafting Table",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item crafted",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "<link=\"Item:BalancedMealItem\"><style=\"Item\"><icon name=\"BalancedMealItem\" type=\"\">Balanced Meal</icon></style></link>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BalancedMealItem"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "Byproduct",
+                    "propDisplayName": "Byproduct",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "BalancedMeal",
+                      "Person": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Players.User",
+                          "name": "White Tiger",
+                          "reference": true
+                        }
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "DisplayResultToCitizen": false,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Precision Tool",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ItemCraftedAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Crafting Table",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Crafting Table",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item crafted",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "<link=\"Item:PrecisionToolsItem\"><style=\"Item\"><icon name=\"PrecisionToolsItem\" type=\"\">Precision Tools</icon></style></link>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.PrecisionToolsItem"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "Byproduct",
+                    "propDisplayName": "Byproduct",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "PrecisionTool",
+                      "Person": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Players.User",
+                          "name": "White Tiger",
+                          "reference": true
+                        }
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "DisplayResultToCitizen": false,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Special Alloy",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ItemCraftedAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Crafting Table",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Crafting Table",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item crafted",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "<link=\"Item:SpecialAlloyItem\"><style=\"Item\"><icon name=\"SpecialAlloyItem\" type=\"\">Special Alloy</icon></style></link>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SpecialAlloyItem"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "Byproduct",
+                    "propDisplayName": "Byproduct",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "SpecialAlloy",
+                      "Person": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Players.User",
+                          "name": "White Tiger",
+                          "reference": true
+                        }
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "DisplayResultToCitizen": false,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Enhanced Meal",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ItemCraftedAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Crafting Table",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Crafting Table",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item crafted",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "<link=\"Item:EnhancedMealItem\"><style=\"Item\"><icon name=\"EnhancedMealItem\" type=\"\">Enhanced Meal</icon></style></link>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.EnhancedMealItem"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "Byproduct",
+                    "propDisplayName": "Byproduct",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "EnhancedMeal",
+                      "Person": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Players.User",
+                          "name": "White Tiger",
+                          "reference": true
+                        }
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "DisplayResultToCitizen": false,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Laser Blueprint",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ItemCraftedAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Crafting Table",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Crafting Table",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item crafted",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "<link=\"Item:LaserBlueprintItem\"><style=\"Item\"><icon name=\"LaserBlueprintItem\" type=\"\">Laser Blueprint</icon></style></link>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LaserBlueprintItem"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "Byproduct",
+                    "propDisplayName": "Byproduct",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "LaserBlueprint",
+                      "Person": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Players.User",
+                          "name": "White Tiger",
+                          "reference": true
+                        }
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "DisplayResultToCitizen": false,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Premium Meal",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ItemCraftedAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Crafting Table",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Crafting Table",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item crafted",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "<link=\"Item:PremiumMealItem\"><style=\"Item\"><icon name=\"PremiumMealItem\" type=\"\">Premium Meal</icon></style></link>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.PremiumMealItem"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "Byproduct",
+                    "propDisplayName": "Byproduct",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "PremiumMeal",
+                      "Person": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Players.User",
+                          "name": "White Tiger",
+                          "reference": true
+                        }
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "DisplayResultToCitizen": false,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Laser Body",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ItemCraftedAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Crafting Table",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Crafting Table",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item crafted",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "<link=\"Item:LaserBodyItem\"><style=\"Item\"><icon name=\"LaserBodyItem\" type=\"\">Laser Body</icon></style></link>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LaserBodyItem"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "Byproduct",
+                    "propDisplayName": "Byproduct",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "LaserBody",
+                      "Person": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Players.User",
+                          "name": "White Tiger",
+                          "reference": true
+                        }
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "DisplayResultToCitizen": false,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Enhanced Precision Tools",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ItemCraftedAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Crafting Table",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Crafting Table",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item crafted",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "<link=\"Item:EnhancedPrecisionToolsItem\"><style=\"Item\"><icon name=\"EnhancedPrecisionToolsItem\" type=\"\">Enhanced Precision Tools</icon></style></link>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.EnhancedPrecisionToolsItem"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "Byproduct",
+                    "propDisplayName": "Byproduct",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "EnhancedPrecisionTools",
+                      "Person": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Players.User",
+                          "name": "White Tiger",
+                          "reference": true
+                        }
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "DisplayResultToCitizen": false,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Exquisite Meal",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ItemCraftedAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Crafting Table",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Crafting Table",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item crafted",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "<link=\"Item:ExquisiteMealItem\"><style=\"Item\"><icon name=\"ExquisiteMealItem\" type=\"\">Exquisite Meal</icon></style></link>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.ExquisiteMealItem"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "Byproduct",
+                    "propDisplayName": "Byproduct",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "ExquisiteMeal",
+                      "Person": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Players.User",
+                          "name": "White Tiger",
+                          "reference": true
+                        }
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "DisplayResultToCitizen": false,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Laser Internals",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ItemCraftedAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Crafting Table",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Crafting Table",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item crafted",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "<link=\"Item:LaserInternalsItem\"><style=\"Item\"><icon name=\"LaserInternalsItem\" type=\"\">Laser Internals</icon></style></link>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LaserInternalsItem"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "Byproduct",
+                    "propDisplayName": "Byproduct",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "LaserInternals",
+                      "Person": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Players.User",
+                          "name": "White Tiger",
+                          "reference": true
+                        }
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "DisplayResultToCitizen": false,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Final Assembly Instruction",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ItemCraftedAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Crafting Table",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Crafting Table",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item crafted",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "<link=\"Item:FinalAssemblyInstructionsItem\"><style=\"Item\"><icon name=\"FinalAssemblyInstructionsItem\" type=\"\">Final Assembly Instructions</icon></style></link>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.FinalAssemblyInstructionsItem"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "Byproduct",
+                    "propDisplayName": "Byproduct",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "FinalAssemblyInstructions",
+                      "Person": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Players.User",
+                          "name": "White Tiger",
+                          "reference": true
+                        }
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "DisplayResultToCitizen": false,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Laser Upgrade",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ItemCraftedAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Crafting Table",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Crafting Table",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item crafted",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "<link=\"Item:LaserUpgradeItem\"><style=\"Item\"><icon name=\"LaserUpgradeItem\" type=\"\">Laser Upgrade</icon></style></link>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LaserUpgradeItem"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "Byproduct",
+                    "propDisplayName": "Byproduct",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "LaserUpgrade",
+                      "Person": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Players.User",
+                          "name": "White Tiger",
+                          "reference": true
+                        }
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "DisplayResultToCitizen": false,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Laser Progress Check",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ChatSent"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Tag",
+                    "propDisplayName": "Tag",
+                    "properties": {
+                      "String": null
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Message",
+                    "propDisplayName": "Message",
+                    "properties": {
+                      "String": "!LaserProgress"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Balanced Meals needed: 80",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "BalancedMeal",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "White Tiger",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Precision Tools needed: 60",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "PrecisionTool",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "White Tiger",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Special Alloy needed: 20 crafts (200 yield)",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "SpecialAlloy",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "White Tiger",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Laser Blueprint needed: 40",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "LaserBlueprint",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "White Tiger",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Enhanced Meals needed: 60",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "EnhancedMeal",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "White Tiger",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Laser Body needed: 20",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "LaserBody",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "White Tiger",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Premium Meal Needed: 40",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "PremiumMeal",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "White Tiger",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Enhanced Precision Tools needed: 20",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "EnhancedPrecisionTools",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "White Tiger",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Exquisite Meal needed: 20",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "ExquisiteMeal",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "White Tiger",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Laser Internals Needed: 20",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "LaserInternals",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "White Tiger",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Final Assembly Instructions needed: 20",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "FinalAssemblyInstructions",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "White Tiger",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Laser Upgrade needed: 20",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "LaserUpgrade",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "White Tiger",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "State": "Active"
+  }
+}

@@ -1,0 +1,1599 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Laws.Law",
+  "name": "Skill Request Law (Part 2) (Testing)",
+  "reference": false,
+  "description": "This allow works with the Skill Request Law (Part 1). What this law does is display the request for all requests on skill scrolls in the last 24 hours if they were given via the Part 1 law. The MoE and Research Assistant has access to these commands.All skills were broken into 4 skills to cut down on the number of calls to the DB done at once.\n\nCommands;\n!request review1 - Shows Carpentry, Shipwright, Composities, PaperMilling, Advanced Baking, and Advanced Cooking\n!request review2 - Shows Baking, Cooking, Basic Engineering, Electronics, Industry, and Mechanics\n!request review3 - Shows Farming, Fertilizer, Milling, Butchery, Masonry, and Pottery\n!request review4 - Shows Advanced Masonry, Glassworking, Oil Drilling, Blacksmith, Smelting, Advanced Smelting, Tailoring, and Painting\n\nAuthor: Kyokes",
+  "properties": {
+    "Sections": [
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Skill Request Review 1 Command",
+          "UserDescription": "This command shows the requests made for Carpentry, Shipwright, Composities, PaperMilling, Advanced Baking, and Advanced Cooking in the last 24 hours.",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ChatSent"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Tag",
+                    "propDisplayName": "Tag",
+                    "properties": {
+                      "String": null
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Message",
+                    "propDisplayName": "Message",
+                    "properties": {
+                      "String": "!request review1"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>3 Titles</u></linktext><title>3 Titles</title><link=\"view:4354:127156\"><icon name=\"ElectedTitle\" type=\"\"><style=\"Government\">Minister of Education</style></icon></link>\r\n<link=\"view:1675:127163\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Research Assistant</style></icon></link>\r\n<link=\"view:1675:8242271\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Test for Law</style></icon></link></foldout>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+                                "name": "Minister of Education",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Test for Law",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Research Assistant",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                            "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                          },
+                          "Requirements": "HasAny"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Carpentry Scroll Requests",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "RequestCarpentry",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "Federal University",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Shipwright Scroll Requests",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "RequestedShipwright",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "Federal University",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Composites Scroll Requests",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "RequestedComposites",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "Federal University",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "PaperMilling Scroll Requests",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "RequestedPaperMilling",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CurrentTimeBlock",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "Federal University",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Advanced Baking Scroll Requests",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "RequestedAdvancedBaking",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                            "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Advanced Cooking Scroll Requests",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                          "name": "Everyone",
+                          "reference": true
+                        }
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "RequestedAdvancedCooking",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "Federal University",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Skill Request Review 2 Command",
+          "UserDescription": "This command shows the requests made for Baking, Cooking, Basic Engineering, Electronics, Industry, and Mechanics in the last 24 hours.",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ChatSent"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Tag",
+                    "propDisplayName": "Tag",
+                    "properties": {
+                      "String": null
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Message",
+                    "propDisplayName": "Message",
+                    "properties": {
+                      "String": "!request review2"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>3 Titles</u></linktext><title>3 Titles</title><link=\"view:4354:127156\"><icon name=\"ElectedTitle\" type=\"\"><style=\"Government\">Minister of Education</style></icon></link>\r\n<link=\"view:1675:127163\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Research Assistant</style></icon></link>\r\n<link=\"view:1675:8242271\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Test for Law</style></icon></link></foldout>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+                                "name": "Minister of Education",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Test for Law",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Research Assistant",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                            "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                          },
+                          "Requirements": "HasAny"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Baking Scroll Requests",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "RequestedBaking",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "Federal University",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Cooking Scroll Requests",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "RequestedCooking",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "Federal University",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Basic Engineering Scroll Requests",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "RequestedBasicEngineering",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "Federal University",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Electronics Scroll Reuests",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "RequestedElectronics",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "Federal University",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Industry Scroll Requests",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "RequestedIndustry",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "Federal University",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Mechanics Scroll Requests",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "RequestedMechanics",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "Federal University",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Skill Request Review 3 Command",
+          "UserDescription": "This command shows the requests made for Farming, Fertilizer, Milling, Butchery, Masonry, and Pottery in the last 24 hours.",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ChatSent"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Tag",
+                    "propDisplayName": "Tag",
+                    "properties": {
+                      "String": null
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Message",
+                    "propDisplayName": "Message",
+                    "properties": {
+                      "String": "!request review3"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>3 Titles</u></linktext><title>3 Titles</title><link=\"view:4354:127156\"><icon name=\"ElectedTitle\" type=\"\"><style=\"Government\">Minister of Education</style></icon></link>\r\n<link=\"view:1675:127163\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Research Assistant</style></icon></link>\r\n<link=\"view:1675:8242271\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Test for Law</style></icon></link></foldout>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+                                "name": "Minister of Education",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Test for Law",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Research Assistant",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                            "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                          },
+                          "Requirements": "HasAll"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Farming Scroll Requests",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "RequestedFarming",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "Federal University",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Fertilizer Scroll Requests",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "RequestedFertilizer",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "Federal University",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Milling Scroll Requests",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "RequestedMilling",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "Federal University",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Butchery Scroll Requests",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "RequestedButchery",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "Federal University",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Masonry Scroll Requests",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "RequestedMasonry",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "Federal University",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Pottery Scroll Requests",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "RequestedPottery",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "Federal University",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Skill Request Review 4 Command",
+          "UserDescription": "This command shows the requests made for Advanced Masonry, Glassworking, Oil Drilling, Blacksmith, Smelting, Advanced Smelting, Tailoring, and Painting in the last 24 hours.",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ChatSent"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Tag",
+                    "propDisplayName": "Tag",
+                    "properties": {
+                      "String": null
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Message",
+                    "propDisplayName": "Message",
+                    "properties": {
+                      "String": "!request review4"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>3 Titles</u></linktext><title>3 Titles</title><link=\"view:4354:127156\"><icon name=\"ElectedTitle\" type=\"\"><style=\"Government\">Minister of Education</style></icon></link>\r\n<link=\"view:1675:127163\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Research Assistant</style></icon></link>\r\n<link=\"view:1675:8242271\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Test for Law</style></icon></link></foldout>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+                                "name": "Minister of Education",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Test for Law",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Research Assistant",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                            "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                          },
+                          "Requirements": "HasAll"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Advanced Masonry Scroll Requests",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "RequestedAdvancedMasonry",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "Federal University",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "GlassWorking Scroll Requests",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                          "name": "Everyone",
+                          "reference": true
+                        }
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "RequestedGlassworking",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "Federal University",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Oil Drilling Scroll Requests",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "RequestedOilDrilling",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "Federal University",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Blacksmith Scroll Requests",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "RequestedBlacksmith",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "Federal University",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Smelting Scroll Requests",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                          "name": "Everyone",
+                          "reference": true
+                        }
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "RequestedSmelting",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "Federal University",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Advanced Smelthing Scroll Requests",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "RequestedAdvancedSmelting",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "Federal University",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Tailoring Scroll Requests",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "RequestedTailoring",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "Federal University",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Painting Scroll Requests",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "RequestedPainting",
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "The Federation of White Tiger",
+                              "reference": true
+                            }
+                          },
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "RestrictCountToCitizen": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Players.User",
+                              "name": "Federal University",
+                              "reference": true
+                            }
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "State": "Active"
+  }
+}
