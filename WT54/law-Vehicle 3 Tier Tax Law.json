@@ -1,0 +1,2136 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Laws.Law",
+  "name": "Vehicle 3 Tier Tax Law",
+  "reference": false,
+  "description": "Required Bank Account: # Minister of Infrastructure Budget\nHave three tiers of Vehicles placed defined in Section 2,5,6 reduced by section 7,8,9 per tier\nHave two switches defined in Section 3,4\n\nTax Abandoned in Section 10, Active in Section 11\nTax on Active is layered on triggers - Tax only old vehilces (T1) on trigger T2, Tax all vehicles on trigger T3.",
+  "properties": {
+    "Sections": [
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Record Placement of Vehicles (company included) - Tier 1",
+          "UserDescription": "Custom Stat VehPlacT1\nAll Canoes, Wheelbarrow and Small Wood Cart",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.PlaceOrPickUpObject"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlaceOrPickUpObject",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Placed or Picked Up",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.WorldObjectItem"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<foldout><linktext><u>6 Vehicles</u></linktext><title>6 Vehicles</title><link=\"Item:EgyptianCanoeItem\"><style=\"Item\"><icon name=\"EgyptianCanoeItem\" type=\"\">Egyptian Canoe</icon></style></link>\r\n<link=\"Item:LargeCanoeItem\"><style=\"Item\"><icon name=\"LargeCanoeItem\" type=\"\">Large Canoe</icon></style></link>\r\n<link=\"Item:NorseCanoeItem\"><style=\"Item\"><icon name=\"NorseCanoeItem\" type=\"\">Norse Canoe</icon></style></link>\r\n<link=\"Item:SmallCanoeItem\"><style=\"Item\"><icon name=\"SmallCanoeItem\" type=\"\">Small Canoe</icon></style></link>\r\n<link=\"Item:SmallWoodCartItem\"><style=\"Item\"><icon name=\"SmallWoodCartItem\" type=\"\">Small Wood Cart</icon></style></link>\r\n<link=\"Item:WheelbarrowItem\"><style=\"Item\"><icon name=\"WheelbarrowItem\" type=\"\">Wheelbarrow</icon></style></link></foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallWoodCartItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallCanoeItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.NorseCanoeItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.WheelbarrowItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.EgyptianCanoeItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeCanoeItem"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "_name": "PlacingObject",
+                        "markedUpName": "<icon name=\"PlaceOrPickUpObject\" type=\"\">Placing Object</icon>",
+                        "contextDescription": "<i>Was the item placed?</i>"
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.MatchesDemographic",
+                                  "properties": {
+                                    "Demographics": {
+                                      "type": "GamePickerList",
+                                      "mustDeriveType": {
+                                        "type": "Type",
+                                        "value": "Eco.Gameplay.Civics.Demographics.Demographic"
+                                      },
+                                      "requiredTag": null,
+                                      "internalDescription": "<link=\"view:2417:128547\"><icon name=\"Demographic\" type=\"\"><style=\"Government\">Employee of Private Company</style></icon></link>",
+                                      "entries": [
+                                        {
+                                          "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                                          "name": "Employee of Private Company",
+                                          "reference": true
+                                        }
+                                      ]
+                                    },
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                      "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                    },
+                                    "Requirements": "HasNone"
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                              "reference": false,
+                              "properties": {
+                                "StatName": "VehPlacT1",
+                                "Person": {
+                                  "type": "GameValueContext",
+                                  "_name": "Citizen",
+                                  "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                  "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                },
+                                "Count": {
+                                  "type": "GameValueWrapper",
+                                  "value": 1.0
+                                },
+                                "DisplayResultToCitizen": false,
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.MatchesDemographic",
+                                  "properties": {
+                                    "Demographics": {
+                                      "type": "GamePickerList",
+                                      "mustDeriveType": {
+                                        "type": "Type",
+                                        "value": "Eco.Gameplay.Civics.Demographics.Demographic"
+                                      },
+                                      "requiredTag": null,
+                                      "internalDescription": "<link=\"view:2417:128547\"><icon name=\"Demographic\" type=\"\"><style=\"Government\">Employee of Private Company</style></icon></link>",
+                                      "entries": [
+                                        {
+                                          "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                                          "name": "Employee of Private Company",
+                                          "reference": true
+                                        }
+                                      ]
+                                    },
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                      "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                    },
+                                    "Requirements": "HasAll"
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                              "reference": false,
+                              "properties": {
+                                "StatName": "VehPlacT1",
+                                "Person": {
+                                  "type": "Eco.Mods.Companies.EmployerLegalPerson",
+                                  "properties": {
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                      "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                    }
+                                  }
+                                },
+                                "Count": {
+                                  "type": "GameValueWrapper",
+                                  "value": 1.0
+                                },
+                                "DisplayResultToCitizen": false,
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Object-Gate - Small Wooden Boat crafted - Enable Tier2",
+          "UserDescription": "Switch to enable Tier2 with the first Small Wooden Boat crafted on Stat VehTier2",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ItemCraftedAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Crafting Table",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Crafting Table",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item crafted",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "<link=\"Item:SmallWoodenBoatItem\"><style=\"Item\"><icon name=\"SmallWoodenBoatItem\" type=\"\">Small Wooden Boat</icon></style></link>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallWoodenBoatItem"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "Byproduct",
+                    "propDisplayName": "Byproduct",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "VehTier2",
+                              "Settlement": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Settlements.Settlement",
+                                  "name": "The Federation of White Tiger",
+                                  "reference": true
+                                }
+                              },
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CountBackFromPresentTime",
+                              "RestrictCountToCitizen": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Players.User",
+                                  "name": "White Tiger",
+                                  "reference": true
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "EqualTo",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "VehTier2",
+                      "Person": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Players.User",
+                          "name": "White Tiger",
+                          "reference": true
+                        }
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "DisplayResultToCitizen": false,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Object-Gate - Truck crafted - Enable Tier3",
+          "UserDescription": "Switch to enable Tier2 with the first Small Wooden Boat crafted on Stat VehTier2",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ItemCraftedAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Crafting Table",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Crafting Table",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item crafted",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "<link=\"Item:TruckItem\"><style=\"Item\"><icon name=\"TruckItem\" type=\"\">Truck</icon></style></link>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.TruckItem"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "Byproduct",
+                    "propDisplayName": "Byproduct",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "VehTier3",
+                              "Settlement": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Settlements.Settlement",
+                                  "name": "The Federation of White Tiger",
+                                  "reference": true
+                                }
+                              },
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CountBackFromPresentTime",
+                              "RestrictCountToCitizen": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Players.User",
+                                  "name": "White Tiger",
+                                  "reference": true
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "EqualTo",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "VehTier3",
+                      "Person": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Players.User",
+                          "name": "White Tiger",
+                          "reference": true
+                        }
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "DisplayResultToCitizen": false,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Record Placement of Vehicles (company included) - Tier 2",
+          "UserDescription": "Custom Stat VehPlacT2\nPowered Cart, Small Wooden Boat, Steam Tractor, Steam Truck, Wood Shop Cart, Wooden Barge, Wooden Transport Ship",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.PlaceOrPickUpObject"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlaceOrPickUpObject",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Placed or Picked Up",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.WorldObjectItem"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<foldout><linktext><u>7 Vehicles</u></linktext><title>7 Vehicles</title><link=\"Item:PoweredCartItem\"><style=\"Item\"><icon name=\"PoweredCartItem\" type=\"\">Powered Cart</icon></style></link>\r\n<link=\"Item:SmallWoodenBoatItem\"><style=\"Item\"><icon name=\"SmallWoodenBoatItem\" type=\"\">Small Wooden Boat</icon></style></link>\r\n<link=\"Item:SteamTractorItem\"><style=\"Item\"><icon name=\"SteamTractorItem\" type=\"\">Steam Tractor</icon></style></link>\r\n<link=\"Item:SteamTruckItem\"><style=\"Item\"><icon name=\"SteamTruckItem\" type=\"\">Steam Truck</icon></style></link>\r\n<link=\"Item:WoodShopCartItem\"><style=\"Item\"><icon name=\"WoodShopCartItem\" type=\"\">Wood Shop Cart</icon></style></link>\r\n<link=\"Item:WoodenBargeItem\"><style=\"Item\"><icon name=\"WoodenBargeItem\" type=\"\">Wooden Barge</icon></style></link>\r\n<link=\"Item:WoodenTransportShipItem\"><style=\"Item\"><icon name=\"WoodenTransportShipItem\" type=\"\">Wooden Transport Ship</icon></style></link></foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.WoodShopCartItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SteamTruckItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.WoodenBargeItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.PoweredCartItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallWoodenBoatItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.WoodenTransportShipItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SteamTractorItem"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "_name": "PlacingObject",
+                        "markedUpName": "<icon name=\"PlaceOrPickUpObject\" type=\"\">Placing Object</icon>",
+                        "contextDescription": "<i>Was the item placed?</i>"
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.MatchesDemographic",
+                                  "properties": {
+                                    "Demographics": {
+                                      "type": "GamePickerList",
+                                      "mustDeriveType": {
+                                        "type": "Type",
+                                        "value": "Eco.Gameplay.Civics.Demographics.Demographic"
+                                      },
+                                      "requiredTag": null,
+                                      "internalDescription": "<link=\"view:2417:128547\"><icon name=\"Demographic\" type=\"\"><style=\"Government\">Employee of Private Company</style></icon></link>",
+                                      "entries": [
+                                        {
+                                          "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                                          "name": "Employee of Private Company",
+                                          "reference": true
+                                        }
+                                      ]
+                                    },
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                      "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                    },
+                                    "Requirements": "HasNone"
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                              "reference": false,
+                              "properties": {
+                                "StatName": "VehPlacT2",
+                                "Person": {
+                                  "type": "GameValueContext",
+                                  "_name": "Citizen",
+                                  "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                  "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                },
+                                "Count": {
+                                  "type": "GameValueWrapper",
+                                  "value": 1.0
+                                },
+                                "DisplayResultToCitizen": false,
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.MatchesDemographic",
+                                  "properties": {
+                                    "Demographics": {
+                                      "type": "GamePickerList",
+                                      "mustDeriveType": {
+                                        "type": "Type",
+                                        "value": "Eco.Gameplay.Civics.Demographics.Demographic"
+                                      },
+                                      "requiredTag": null,
+                                      "internalDescription": "<link=\"view:2417:128547\"><icon name=\"Demographic\" type=\"\"><style=\"Government\">Employee of Private Company</style></icon></link>",
+                                      "entries": [
+                                        {
+                                          "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                                          "name": "Employee of Private Company",
+                                          "reference": true
+                                        }
+                                      ]
+                                    },
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                      "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                    },
+                                    "Requirements": "HasAll"
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                              "reference": false,
+                              "properties": {
+                                "StatName": "VehPlacT2",
+                                "Person": {
+                                  "type": "Eco.Mods.Companies.EmployerLegalPerson",
+                                  "properties": {
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                      "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                    }
+                                  }
+                                },
+                                "Count": {
+                                  "type": "GameValueWrapper",
+                                  "value": 1.0
+                                },
+                                "DisplayResultToCitizen": false,
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Record Placement of Vehicles (company included) - Tier 3",
+          "UserDescription": "Custom Stat VehPlacT3\nCrane, Excavator, Industrial Barge, Medium Fishing Trawler, Skid Steer, Truck",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.PlaceOrPickUpObject"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlaceOrPickUpObject",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Placed or Picked Up",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.WorldObjectItem"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<foldout><linktext><u>6 Vehicles</u></linktext><title>6 Vehicles</title><link=\"Item:CraneItem\"><style=\"Item\"><icon name=\"CraneItem\" type=\"\">Crane</icon></style></link>\r\n<link=\"Item:ExcavatorItem\"><style=\"Item\"><icon name=\"ExcavatorItem\" type=\"\">Excavator</icon></style></link>\r\n<link=\"Item:IndustrialBargeItem\"><style=\"Item\"><icon name=\"IndustrialBargeItem\" type=\"\">Industrial Barge</icon></style></link>\r\n<link=\"Item:MediumFishingTrawlerItem\"><style=\"Item\"><icon name=\"MediumFishingTrawlerItem\" type=\"\">Medium Fishing Trawler</icon></style></link>\r\n<link=\"Item:SkidSteerItem\"><style=\"Item\"><icon name=\"SkidSteerItem\" type=\"\">Skid Steer</icon></style></link>\r\n<link=\"Item:TruckItem\"><style=\"Item\"><icon name=\"TruckItem\" type=\"\">Truck</icon></style></link></foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.IndustrialBargeItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SkidSteerItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CraneItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.ExcavatorItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.TruckItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.MediumFishingTrawlerItem"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "_name": "PlacingObject",
+                        "markedUpName": "<icon name=\"PlaceOrPickUpObject\" type=\"\">Placing Object</icon>",
+                        "contextDescription": "<i>Was the item placed?</i>"
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.MatchesDemographic",
+                                  "properties": {
+                                    "Demographics": {
+                                      "type": "GamePickerList",
+                                      "mustDeriveType": {
+                                        "type": "Type",
+                                        "value": "Eco.Gameplay.Civics.Demographics.Demographic"
+                                      },
+                                      "requiredTag": null,
+                                      "internalDescription": "<link=\"view:2417:128547\"><icon name=\"Demographic\" type=\"\"><style=\"Government\">Employee of Private Company</style></icon></link>",
+                                      "entries": [
+                                        {
+                                          "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                                          "name": "Employee of Private Company",
+                                          "reference": true
+                                        }
+                                      ]
+                                    },
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                      "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                    },
+                                    "Requirements": "HasNone"
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                              "reference": false,
+                              "properties": {
+                                "StatName": "VehPlacT3",
+                                "Person": {
+                                  "type": "GameValueContext",
+                                  "_name": "Citizen",
+                                  "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                  "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                },
+                                "Count": {
+                                  "type": "GameValueWrapper",
+                                  "value": 1.0
+                                },
+                                "DisplayResultToCitizen": false,
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.MatchesDemographic",
+                                  "properties": {
+                                    "Demographics": {
+                                      "type": "GamePickerList",
+                                      "mustDeriveType": {
+                                        "type": "Type",
+                                        "value": "Eco.Gameplay.Civics.Demographics.Demographic"
+                                      },
+                                      "requiredTag": null,
+                                      "internalDescription": "<link=\"view:2417:128547\"><icon name=\"Demographic\" type=\"\"><style=\"Government\">Employee of Private Company</style></icon></link>",
+                                      "entries": [
+                                        {
+                                          "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                                          "name": "Employee of Private Company",
+                                          "reference": true
+                                        }
+                                      ]
+                                    },
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                      "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                    },
+                                    "Requirements": "HasAll"
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                              "reference": false,
+                              "properties": {
+                                "StatName": "VehPlacT3",
+                                "Person": {
+                                  "type": "Eco.Mods.Companies.EmployerLegalPerson",
+                                  "properties": {
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                      "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                    }
+                                  }
+                                },
+                                "Count": {
+                                  "type": "GameValueWrapper",
+                                  "value": 1.0
+                                },
+                                "DisplayResultToCitizen": false,
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Record Removal of Vehicles Tier 1",
+          "UserDescription": "Custom Parameter: VehPickT1\nTrack Pickups of Vehicles from Tier 1 per player.",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.PlaceOrPickUpObject"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlaceOrPickUpObject",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Placed or Picked Up",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.WorldObjectItem"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<foldout><linktext><u>6 Vehicles</u></linktext><title>6 Vehicles</title><link=\"Item:CraneItem\"><style=\"Item\"><icon name=\"CraneItem\" type=\"\">Crane</icon></style></link>\r\n<link=\"Item:ExcavatorItem\"><style=\"Item\"><icon name=\"ExcavatorItem\" type=\"\">Excavator</icon></style></link>\r\n<link=\"Item:IndustrialBargeItem\"><style=\"Item\"><icon name=\"IndustrialBargeItem\" type=\"\">Industrial Barge</icon></style></link>\r\n<link=\"Item:MediumFishingTrawlerItem\"><style=\"Item\"><icon name=\"MediumFishingTrawlerItem\" type=\"\">Medium Fishing Trawler</icon></style></link>\r\n<link=\"Item:SkidSteerItem\"><style=\"Item\"><icon name=\"SkidSteerItem\" type=\"\">Skid Steer</icon></style></link>\r\n<link=\"Item:TruckItem\"><style=\"Item\"><icon name=\"TruckItem\" type=\"\">Truck</icon></style></link></foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.IndustrialBargeItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SkidSteerItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CraneItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.ExcavatorItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.TruckItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.MediumFishingTrawlerItem"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "_name": "PickingUpObject",
+                        "markedUpName": "<icon name=\"PlaceOrPickUpObject\" type=\"\">Picking Up Object</icon>",
+                        "contextDescription": "<i>Was the item placed?</i>"
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "VehPickT1",
+                      "Person": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "DisplayResultToCitizen": false,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Record Removal of Vehicles Tier 2",
+          "UserDescription": "Custom Parameter: VehPickT2\nTrack Pickups of Vehicles from Tier 2 per player.",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.PlaceOrPickUpObject"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlaceOrPickUpObject",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Placed or Picked Up",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.WorldObjectItem"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<foldout><linktext><u>7 Vehicles</u></linktext><title>7 Vehicles</title><link=\"Item:PoweredCartItem\"><style=\"Item\"><icon name=\"PoweredCartItem\" type=\"\">Powered Cart</icon></style></link>\r\n<link=\"Item:SmallWoodenBoatItem\"><style=\"Item\"><icon name=\"SmallWoodenBoatItem\" type=\"\">Small Wooden Boat</icon></style></link>\r\n<link=\"Item:SteamTractorItem\"><style=\"Item\"><icon name=\"SteamTractorItem\" type=\"\">Steam Tractor</icon></style></link>\r\n<link=\"Item:SteamTruckItem\"><style=\"Item\"><icon name=\"SteamTruckItem\" type=\"\">Steam Truck</icon></style></link>\r\n<link=\"Item:WoodShopCartItem\"><style=\"Item\"><icon name=\"WoodShopCartItem\" type=\"\">Wood Shop Cart</icon></style></link>\r\n<link=\"Item:WoodenBargeItem\"><style=\"Item\"><icon name=\"WoodenBargeItem\" type=\"\">Wooden Barge</icon></style></link>\r\n<link=\"Item:WoodenTransportShipItem\"><style=\"Item\"><icon name=\"WoodenTransportShipItem\" type=\"\">Wooden Transport Ship</icon></style></link></foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.WoodShopCartItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SteamTruckItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.WoodenBargeItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.PoweredCartItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallWoodenBoatItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.WoodenTransportShipItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SteamTractorItem"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "_name": "PickingUpObject",
+                        "markedUpName": "<icon name=\"PlaceOrPickUpObject\" type=\"\">Picking Up Object</icon>",
+                        "contextDescription": "<i>Was the item placed?</i>"
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "VehPickT2",
+                      "Person": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "DisplayResultToCitizen": false,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Record Removal of Vehicles Tier 3",
+          "UserDescription": "Custom Parameter: VehPickT3\nTrack Pickups of Vehicles from Tier 3 per player.",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.PlaceOrPickUpObject"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlaceOrPickUpObject",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Placed or Picked Up",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.WorldObjectItem"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<foldout><linktext><u>6 Vehicles</u></linktext><title>6 Vehicles</title><link=\"Item:CraneItem\"><style=\"Item\"><icon name=\"CraneItem\" type=\"\">Crane</icon></style></link>\r\n<link=\"Item:ExcavatorItem\"><style=\"Item\"><icon name=\"ExcavatorItem\" type=\"\">Excavator</icon></style></link>\r\n<link=\"Item:IndustrialBargeItem\"><style=\"Item\"><icon name=\"IndustrialBargeItem\" type=\"\">Industrial Barge</icon></style></link>\r\n<link=\"Item:MediumFishingTrawlerItem\"><style=\"Item\"><icon name=\"MediumFishingTrawlerItem\" type=\"\">Medium Fishing Trawler</icon></style></link>\r\n<link=\"Item:SkidSteerItem\"><style=\"Item\"><icon name=\"SkidSteerItem\" type=\"\">Skid Steer</icon></style></link>\r\n<link=\"Item:TruckItem\"><style=\"Item\"><icon name=\"TruckItem\" type=\"\">Truck</icon></style></link></foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.IndustrialBargeItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SkidSteerItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CraneItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.ExcavatorItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.TruckItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.MediumFishingTrawlerItem"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "_name": "PickingUpObject",
+                        "markedUpName": "<icon name=\"PlaceOrPickUpObject\" type=\"\">Picking Up Object</icon>",
+                        "contextDescription": "<i>Was the item placed?</i>"
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "VehPickT3",
+                      "Person": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "DisplayResultToCitizen": false,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Tax the Abandoned - MoI Budget",
+          "UserDescription": "Abandoned for testing\n1 Euro *  (T1 Vehilce Placed (and not picked up) + T2 Vehilce Placed (and not picked up) + T3 Vehilce Placed (and not picked up))",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.CitizenTimer"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.CitizenTimerTriggerConfig",
+                    "typeToConfig": null,
+                    "propNameBacker": null,
+                    "propDisplayName": null,
+                    "properties": {
+                      "RepeatForEachCitizen": {
+                        "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                        "name": "Abandoned",
+                        "reference": true
+                      },
+                      "HoursBetweenExecutions": 1.0
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Mods.SmartTax.SmartTax_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "TargetBankAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                          "name": "# Minister of Infrastructure Budget",
+                          "reference": true
+                        }
+                      },
+                      "Currency": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.Currency",
+                          "name": "Euro",
+                          "reference": true
+                        }
+                      },
+                      "Amount": {
+                        "type": "Eco.Gameplay.Civics.GameValues.TextFormula",
+                        "properties": {
+                          "Formula": "1 * ((VehPlacT1-VehPickT1)+(VehPlacT2-VehPickT2)+(VehPlacT3-VehPickT3))",
+                          "Variables": [
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.NamedVariable",
+                              "reference": false,
+                              "properties": {
+                                "Name": "VehPlacT1",
+                                "Definition": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                                  "properties": {
+                                    "CustomStatName": "VehPlacT1",
+                                    "Settlement": {
+                                      "type": "GameValueWrapper",
+                                      "value": {
+                                        "type": "Eco.Gameplay.Settlements.Settlement",
+                                        "name": "The Federation of White Tiger",
+                                        "reference": true
+                                      }
+                                    },
+                                    "TimeRangeInHours": {
+                                      "type": "GameValueWrapper",
+                                      "value": 0.0
+                                    },
+                                    "TimeRangeType": "CurrentTimeBlock",
+                                    "RestrictCountToCitizen": null
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.NamedVariable",
+                              "reference": false,
+                              "properties": {
+                                "Name": "VehPickT1",
+                                "Definition": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                                  "properties": {
+                                    "CustomStatName": "VehPickT1",
+                                    "Settlement": {
+                                      "type": "GameValueWrapper",
+                                      "value": {
+                                        "type": "Eco.Gameplay.Settlements.Settlement",
+                                        "name": "The Federation of White Tiger",
+                                        "reference": true
+                                      }
+                                    },
+                                    "TimeRangeInHours": {
+                                      "type": "GameValueWrapper",
+                                      "value": 0.0
+                                    },
+                                    "TimeRangeType": "CurrentTimeBlock",
+                                    "RestrictCountToCitizen": null
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.NamedVariable",
+                              "reference": false,
+                              "properties": {
+                                "Name": "VehPlacT2",
+                                "Definition": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                                  "properties": {
+                                    "CustomStatName": "VehPlacT2",
+                                    "Settlement": {
+                                      "type": "GameValueWrapper",
+                                      "value": {
+                                        "type": "Eco.Gameplay.Settlements.Settlement",
+                                        "name": "The Federation of White Tiger",
+                                        "reference": true
+                                      }
+                                    },
+                                    "TimeRangeInHours": {
+                                      "type": "GameValueWrapper",
+                                      "value": 0.0
+                                    },
+                                    "TimeRangeType": "CurrentTimeBlock",
+                                    "RestrictCountToCitizen": null
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.NamedVariable",
+                              "reference": false,
+                              "properties": {
+                                "Name": "VehPickT2",
+                                "Definition": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                                  "properties": {
+                                    "CustomStatName": "VehPickT2",
+                                    "Settlement": {
+                                      "type": "GameValueWrapper",
+                                      "value": {
+                                        "type": "Eco.Gameplay.Settlements.Settlement",
+                                        "name": "The Federation of White Tiger",
+                                        "reference": true
+                                      }
+                                    },
+                                    "TimeRangeInHours": {
+                                      "type": "GameValueWrapper",
+                                      "value": 0.0
+                                    },
+                                    "TimeRangeType": "CurrentTimeBlock",
+                                    "RestrictCountToCitizen": null
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.NamedVariable",
+                              "reference": false,
+                              "properties": {
+                                "Name": "VehPlacT3",
+                                "Definition": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                                  "properties": {
+                                    "CustomStatName": "VehPlacT3",
+                                    "Settlement": {
+                                      "type": "GameValueWrapper",
+                                      "value": {
+                                        "type": "Eco.Gameplay.Settlements.Settlement",
+                                        "name": "The Federation of White Tiger",
+                                        "reference": true
+                                      }
+                                    },
+                                    "TimeRangeInHours": {
+                                      "type": "GameValueWrapper",
+                                      "value": 0.0
+                                    },
+                                    "TimeRangeType": "CurrentTimeBlock",
+                                    "RestrictCountToCitizen": null
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.NamedVariable",
+                              "reference": false,
+                              "properties": {
+                                "Name": "VehPickT3",
+                                "Definition": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                                  "properties": {
+                                    "CustomStatName": "VehPickT3",
+                                    "Settlement": {
+                                      "type": "GameValueWrapper",
+                                      "value": {
+                                        "type": "Eco.Gameplay.Settlements.Settlement",
+                                        "name": "The Federation of White Tiger",
+                                        "reference": true
+                                      }
+                                    },
+                                    "TimeRangeInHours": {
+                                      "type": "GameValueWrapper",
+                                      "value": 24.0
+                                    },
+                                    "TimeRangeType": "CurrentTimeBlock",
+                                    "RestrictCountToCitizen": null
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "Target": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen currently being processed for the timer event.</i>"
+                      },
+                      "TaxCode": "Vehicle Tax",
+                      "Suspended": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      },
+                      "Silent": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Active Citizen Vehilce Tax - MoI Budget",
+          "UserDescription": "If Tier 2 Switch is set - Tax all Tier 1 Vehicles placed but not picked up with 1 Euro per hour  (Hint, the \"1\" in the Text Formula)\nIf Tier 3 Switch is set - Tax all Tiers of Vehicles placed but not picked up with 1 Euro per hour.",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.CitizenTimer"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.CitizenTimerTriggerConfig",
+                    "typeToConfig": null,
+                    "propNameBacker": null,
+                    "propDisplayName": null,
+                    "properties": {
+                      "RepeatForEachCitizen": {
+                        "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                        "name": "Active",
+                        "reference": true
+                      },
+                      "HoursBetweenExecutions": 1.0
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "VehTier2",
+                              "Settlement": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Settlements.Settlement",
+                                  "name": "The Federation of White Tiger",
+                                  "reference": true
+                                }
+                              },
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "RestrictCountToCitizen": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Players.User",
+                                  "name": "White Tiger",
+                                  "reference": true
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Mods.SmartTax.SmartTax_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "TargetBankAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                          "name": "# Minister of Infrastructure Budget",
+                          "reference": true
+                        }
+                      },
+                      "Currency": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.Currency",
+                          "name": "Euro",
+                          "reference": true
+                        }
+                      },
+                      "Amount": {
+                        "type": "Eco.Gameplay.Civics.GameValues.TextFormula",
+                        "properties": {
+                          "Formula": "1 * (VehPlacT1-VehPickT1)",
+                          "Variables": [
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.NamedVariable",
+                              "reference": false,
+                              "properties": {
+                                "Name": "VehPlacT1",
+                                "Definition": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                                  "properties": {
+                                    "CustomStatName": "VehPlacT1",
+                                    "Settlement": {
+                                      "type": "GameValueWrapper",
+                                      "value": {
+                                        "type": "Eco.Gameplay.Settlements.Settlement",
+                                        "name": "The Federation of White Tiger",
+                                        "reference": true
+                                      }
+                                    },
+                                    "TimeRangeInHours": {
+                                      "type": "GameValueWrapper",
+                                      "value": 0.0
+                                    },
+                                    "TimeRangeType": "CurrentTimeBlock",
+                                    "RestrictCountToCitizen": null
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.NamedVariable",
+                              "reference": false,
+                              "properties": {
+                                "Name": "VehPickT1",
+                                "Definition": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                                  "properties": {
+                                    "CustomStatName": "VehPickT1",
+                                    "Settlement": {
+                                      "type": "GameValueWrapper",
+                                      "value": {
+                                        "type": "Eco.Gameplay.Settlements.Settlement",
+                                        "name": "The Federation of White Tiger",
+                                        "reference": true
+                                      }
+                                    },
+                                    "TimeRangeInHours": {
+                                      "type": "GameValueWrapper",
+                                      "value": 0.0
+                                    },
+                                    "TimeRangeType": "CurrentTimeBlock",
+                                    "RestrictCountToCitizen": null
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "Target": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen currently being processed for the timer event.</i>"
+                      },
+                      "TaxCode": null,
+                      "Suspended": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      },
+                      "Silent": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "VehTier3",
+                              "Settlement": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Settlements.Settlement",
+                                  "name": "The Federation of White Tiger",
+                                  "reference": true
+                                }
+                              },
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "RestrictCountToCitizen": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Players.User",
+                                  "name": "White Tiger",
+                                  "reference": true
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Mods.SmartTax.SmartTax_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "TargetBankAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                          "name": "# Minister of Infrastructure Budget",
+                          "reference": true
+                        }
+                      },
+                      "Currency": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.Currency",
+                          "name": "Euro",
+                          "reference": true
+                        }
+                      },
+                      "Amount": {
+                        "type": "Eco.Gameplay.Civics.GameValues.TextFormula",
+                        "properties": {
+                          "Formula": "1 * ((VehPlacT1-VehPickT1)+(VehPlacT2-VehPickT2)+(VehPlacT3-VehPickT3))",
+                          "Variables": [
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.NamedVariable",
+                              "reference": false,
+                              "properties": {
+                                "Name": "VehPlacT1",
+                                "Definition": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                                  "properties": {
+                                    "CustomStatName": "VehPlacT1",
+                                    "Settlement": {
+                                      "type": "GameValueWrapper",
+                                      "value": {
+                                        "type": "Eco.Gameplay.Settlements.Settlement",
+                                        "name": "The Federation of White Tiger",
+                                        "reference": true
+                                      }
+                                    },
+                                    "TimeRangeInHours": {
+                                      "type": "GameValueWrapper",
+                                      "value": 0.0
+                                    },
+                                    "TimeRangeType": "CurrentTimeBlock",
+                                    "RestrictCountToCitizen": null
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.NamedVariable",
+                              "reference": false,
+                              "properties": {
+                                "Name": "VehPickT1",
+                                "Definition": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                                  "properties": {
+                                    "CustomStatName": "VehPickT1",
+                                    "Settlement": {
+                                      "type": "GameValueWrapper",
+                                      "value": {
+                                        "type": "Eco.Gameplay.Settlements.Settlement",
+                                        "name": "The Federation of White Tiger",
+                                        "reference": true
+                                      }
+                                    },
+                                    "TimeRangeInHours": {
+                                      "type": "GameValueWrapper",
+                                      "value": 0.0
+                                    },
+                                    "TimeRangeType": "CurrentTimeBlock",
+                                    "RestrictCountToCitizen": null
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.NamedVariable",
+                              "reference": false,
+                              "properties": {
+                                "Name": "VehPlacT2",
+                                "Definition": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                                  "properties": {
+                                    "CustomStatName": "VehPlacT2",
+                                    "Settlement": {
+                                      "type": "GameValueWrapper",
+                                      "value": {
+                                        "type": "Eco.Gameplay.Settlements.Settlement",
+                                        "name": "The Federation of White Tiger",
+                                        "reference": true
+                                      }
+                                    },
+                                    "TimeRangeInHours": {
+                                      "type": "GameValueWrapper",
+                                      "value": 0.0
+                                    },
+                                    "TimeRangeType": "CurrentTimeBlock",
+                                    "RestrictCountToCitizen": null
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.NamedVariable",
+                              "reference": false,
+                              "properties": {
+                                "Name": "VehPickT2",
+                                "Definition": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                                  "properties": {
+                                    "CustomStatName": "VehPickT2",
+                                    "Settlement": {
+                                      "type": "GameValueWrapper",
+                                      "value": {
+                                        "type": "Eco.Gameplay.Settlements.Settlement",
+                                        "name": "The Federation of White Tiger",
+                                        "reference": true
+                                      }
+                                    },
+                                    "TimeRangeInHours": {
+                                      "type": "GameValueWrapper",
+                                      "value": 0.0
+                                    },
+                                    "TimeRangeType": "CurrentTimeBlock",
+                                    "RestrictCountToCitizen": null
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.NamedVariable",
+                              "reference": false,
+                              "properties": {
+                                "Name": "VehPlacT3",
+                                "Definition": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                                  "properties": {
+                                    "CustomStatName": "VehPlacT3",
+                                    "Settlement": {
+                                      "type": "GameValueWrapper",
+                                      "value": {
+                                        "type": "Eco.Gameplay.Settlements.Settlement",
+                                        "name": "The Federation of White Tiger",
+                                        "reference": true
+                                      }
+                                    },
+                                    "TimeRangeInHours": {
+                                      "type": "GameValueWrapper",
+                                      "value": 0.0
+                                    },
+                                    "TimeRangeType": "CurrentTimeBlock",
+                                    "RestrictCountToCitizen": null
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.NamedVariable",
+                              "reference": false,
+                              "properties": {
+                                "Name": "VehPickT3",
+                                "Definition": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.Stats.CustomStatQuery",
+                                  "properties": {
+                                    "CustomStatName": "VehPickT3",
+                                    "Settlement": {
+                                      "type": "GameValueWrapper",
+                                      "value": {
+                                        "type": "Eco.Gameplay.Settlements.Settlement",
+                                        "name": "The Federation of White Tiger",
+                                        "reference": true
+                                      }
+                                    },
+                                    "TimeRangeInHours": {
+                                      "type": "GameValueWrapper",
+                                      "value": 0.0
+                                    },
+                                    "TimeRangeType": "CurrentTimeBlock",
+                                    "RestrictCountToCitizen": null
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "Target": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                        "contextDescription": "<i>The citizen currently being processed for the timer event.</i>"
+                      },
+                      "TaxCode": "Vehilce Tax",
+                      "Suspended": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      },
+                      "Silent": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "State": "Draft"
+  }
+}
