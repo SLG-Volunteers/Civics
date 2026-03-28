@@ -14,7 +14,7 @@
         "reference": false,
         "properties": {
           "Title": "Tax Accounting",
-          "UserDescription": "This section pulls a large amount of personal credits into the federal tax accounting system to prevent and/or reduce spam on the personal wallets. It must target the largest group of people to ensure that the tax accounting system has personal currency prior to the tax amount registering otherwise the later transfer sections cannot complete.",
+          "UserDescription": "This section pulls a large amount of personal credits into the Stats Accounting system to prevent and/or reduce spam on the personal wallets. It must target the largest group of people to ensure that the tax accounting system has personal currency prior to the tax amount registering otherwise the later transfer sections cannot complete.",
           "Triggers": [
             {
               "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
@@ -73,7 +73,7 @@
                                 "type": "GameValueWrapper",
                                 "value": {
                                   "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                  "name": "Federal Tax Accounting",
+                                  "name": "Stats Accounting",
                                   "reference": true
                                 }
                               }
@@ -190,7 +190,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                          "name": "Federal Tax Accounting",
+                          "name": "Stats Accounting",
                           "reference": true
                         }
                       },
@@ -468,7 +468,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                          "name": "Federal Tax Accounting",
+                          "name": "Stats Accounting",
                           "reference": true
                         }
                       },
@@ -525,7 +525,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                          "name": "Federal Tax Accounting",
+                          "name": "Stats Accounting",
                           "reference": true
                         }
                       },
@@ -985,7 +985,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                          "name": "Federal Tax Accounting",
+                          "name": "Stats Accounting",
                           "reference": true
                         }
                       },
@@ -1042,7 +1042,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                          "name": "Federal Tax Accounting",
+                          "name": "Stats Accounting",
                           "reference": true
                         }
                       },
@@ -1474,7 +1474,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                          "name": "Federal Tax Accounting",
+                          "name": "Stats Accounting",
                           "reference": true
                         }
                       },
@@ -1648,7 +1648,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                          "name": "Federal Tax Accounting",
+                          "name": "Stats Accounting",
                           "reference": true
                         }
                       },
@@ -1762,7 +1762,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                          "name": "Federal Tax Accounting",
+                          "name": "Stats Accounting",
                           "reference": true
                         }
                       },
@@ -1906,7 +1906,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                          "name": "Federal Tax Accounting",
+                          "name": "Stats Accounting",
                           "reference": true
                         }
                       },
@@ -2414,7 +2414,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                    "name": "Federal Tax Accounting",
+                                    "name": "Stats Accounting",
                                     "reference": true
                                   }
                                 },
@@ -2549,7 +2549,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                    "name": "Federal Tax Accounting",
+                                    "name": "Stats Accounting",
                                     "reference": true
                                   }
                                 },
@@ -2923,7 +2923,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                    "name": "Federal Tax Accounting",
+                                    "name": "Stats Accounting",
                                     "reference": true
                                   }
                                 },
@@ -2995,7 +2995,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                    "name": "Federal Tax Accounting",
+                                    "name": "Stats Accounting",
                                     "reference": true
                                   }
                                 },
@@ -3185,7 +3185,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                    "name": "Federal Tax Accounting",
+                                    "name": "Stats Accounting",
                                     "reference": true
                                   }
                                 },
@@ -3267,7 +3267,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                    "name": "Federal Tax Accounting",
+                                    "name": "Stats Accounting",
                                     "reference": true
                                   }
                                 },
@@ -3759,7 +3759,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                          "name": "Federal Tax Accounting",
+                          "name": "Stats Accounting",
                           "reference": true
                         }
                       },
@@ -3855,7 +3855,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                          "name": "Federal Tax Accounting",
+                          "name": "Stats Accounting",
                           "reference": true
                         }
                       },
@@ -4141,11 +4141,11 @@
                           "value": "Eco.Gameplay.Economy.BankAccount"
                         },
                         "requiredTag": null,
-                        "internalDescription": "<foldout><linktext><u>3 Bank Accounts</u></linktext><title>3 Bank Accounts</title><link=\"view:4061:3018095\"><icon name=\"EconomyViewerItem\" type=\"\"><style=\"BankAccount\">Effective Tax Rate</style></icon></link>\r\n<link=\"view:4061:3013028\"><icon name=\"EconomyViewerItem\" type=\"\"><style=\"BankAccount\">Federal Tax Accounting</style></icon></link>\r\n<link=\"view:4061:3016008\"><icon name=\"EconomyViewerItem\" type=\"\"><style=\"BankAccount\">Tax Payment</style></icon></link></foldout>",
+                        "internalDescription": "<foldout><linktext><u>3 Bank Accounts</u></linktext><title>3 Bank Accounts</title><link=\"view:4061:3018095\"><icon name=\"EconomyViewerItem\" type=\"\"><style=\"BankAccount\">Effective Tax Rate</style></icon></link>\r\n<link=\"view:4061:3013028\"><icon name=\"EconomyViewerItem\" type=\"\"><style=\"BankAccount\">Stats Accounting</style></icon></link>\r\n<link=\"view:4061:3016008\"><icon name=\"EconomyViewerItem\" type=\"\"><style=\"BankAccount\">Tax Payment</style></icon></link></foldout>",
                         "entries": [
                           {
                             "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                            "name": "Federal Tax Accounting",
+                            "name": "Stats Accounting",
                             "reference": true
                           },
                           {
@@ -5478,7 +5478,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                          "name": "Federal Tax Accounting",
+                          "name": "Stats Accounting",
                           "reference": true
                         }
                       },
@@ -5704,7 +5704,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                          "name": "Federal Tax Accounting",
+                          "name": "Stats Accounting",
                           "reference": true
                         }
                       },
@@ -5840,7 +5840,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                          "name": "Federal Tax Accounting",
+                          "name": "Stats Accounting",
                           "reference": true
                         }
                       },
@@ -6066,7 +6066,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                          "name": "Federal Tax Accounting",
+                          "name": "Stats Accounting",
                           "reference": true
                         }
                       },
@@ -6210,7 +6210,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                          "name": "Federal Tax Accounting",
+                          "name": "Stats Accounting",
                           "reference": true
                         }
                       },
