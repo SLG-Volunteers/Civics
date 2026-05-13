@@ -60,7 +60,7 @@
           "reference": false,
           "description": null,
           "properties": {
-            "State": "Uninitialized"
+            "State": "Draft"
           },
           "color": [
             0.405835,
@@ -103220,7 +103220,7 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:3179:68689365\"><icon name=\"District\" type=\"\"><color=#000BBAFF>Default Town Roads</color> <style=\"ErrorLight\">(removed)</style></icon></link>",
+                                "internalDescription": "<link=\"view:4997:694259\"><icon name=\"District\" type=\"\"><color=#67D9F6FF>Default Town Roads</color> <style=\"InfoLight\">(draft)</style></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
@@ -103264,7 +103264,7 @@
                             "type": "GameValueWrapper",
                             "value": {
                               "type": "Eco.Gameplay.Economy.Currency",
-                              "name": "Euro",
+                              "name": "Pound",
                               "reference": true
                             }
                           },
@@ -103327,7 +103327,7 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:3179:68689365\"><icon name=\"District\" type=\"\"><color=#000BBAFF>Default Town Roads</color> <style=\"ErrorLight\">(removed)</style></icon></link>",
+                                "internalDescription": "<link=\"view:4997:694259\"><icon name=\"District\" type=\"\"><color=#67D9F6FF>Default Town Roads</color> <style=\"InfoLight\">(draft)</style></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
@@ -103360,7 +103360,7 @@
                             "type": "GameValueWrapper",
                             "value": {
                               "type": "Eco.Gameplay.Economy.Currency",
-                              "name": "Euro",
+                              "name": "Pound",
                               "reference": true
                             }
                           },
@@ -103483,7 +103483,7 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:3179:68689365\"><icon name=\"District\" type=\"\"><color=#000BBAFF>Default Town Roads</color> <style=\"ErrorLight\">(removed)</style></icon></link>",
+                                "internalDescription": "<link=\"view:4997:694259\"><icon name=\"District\" type=\"\"><color=#67D9F6FF>Default Town Roads</color> <style=\"InfoLight\">(draft)</style></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
@@ -103527,7 +103527,7 @@
                             "type": "GameValueWrapper",
                             "value": {
                               "type": "Eco.Gameplay.Economy.Currency",
-                              "name": "Euro",
+                              "name": "Pound",
                               "reference": true
                             }
                           },
@@ -103594,7 +103594,7 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:3179:68689365\"><icon name=\"District\" type=\"\"><color=#000BBAFF>Default Town Roads</color> <style=\"ErrorLight\">(removed)</style></icon></link>",
+                                "internalDescription": "<link=\"view:4997:694259\"><icon name=\"District\" type=\"\"><color=#67D9F6FF>Default Town Roads</color> <style=\"InfoLight\">(draft)</style></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
@@ -103627,7 +103627,7 @@
                             "type": "GameValueWrapper",
                             "value": {
                               "type": "Eco.Gameplay.Economy.Currency",
-                              "name": "Euro",
+                              "name": "Pound",
                               "reference": true
                             }
                           },
@@ -103791,7 +103791,7 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:3179:68689365\"><icon name=\"District\" type=\"\"><color=#000BBAFF>Default Town Roads</color> <style=\"ErrorLight\">(removed)</style></icon></link>",
+                                "internalDescription": "<link=\"view:4997:694259\"><icon name=\"District\" type=\"\"><color=#67D9F6FF>Default Town Roads</color> <style=\"InfoLight\">(draft)</style></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
@@ -103950,7 +103950,7 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:3179:68689365\"><icon name=\"District\" type=\"\"><color=#000BBAFF>Default Town Roads</color> <style=\"ErrorLight\">(removed)</style></icon></link>",
+                                "internalDescription": "<link=\"view:4997:694259\"><icon name=\"District\" type=\"\"><color=#67D9F6FF>Default Town Roads</color> <style=\"InfoLight\">(draft)</style></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
@@ -103994,7 +103994,7 @@
                             "type": "GameValueWrapper",
                             "value": {
                               "type": "Eco.Gameplay.Economy.Currency",
-                              "name": "Euro",
+                              "name": "Pound",
                               "reference": true
                             }
                           },
@@ -104057,7 +104057,7 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:3179:68689365\"><icon name=\"District\" type=\"\"><color=#000BBAFF>Default Town Roads</color> <style=\"ErrorLight\">(removed)</style></icon></link>",
+                                "internalDescription": "<link=\"view:4997:694259\"><icon name=\"District\" type=\"\"><color=#67D9F6FF>Default Town Roads</color> <style=\"InfoLight\">(draft)</style></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
@@ -104090,7 +104090,7 @@
                             "type": "GameValueWrapper",
                             "value": {
                               "type": "Eco.Gameplay.Economy.Currency",
-                              "name": "Euro",
+                              "name": "Pound",
                               "reference": true
                             }
                           },
@@ -104213,7 +104213,7 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:3179:68689365\"><icon name=\"District\" type=\"\"><color=#000BBAFF>Default Town Roads</color> <style=\"ErrorLight\">(removed)</style></icon></link>",
+                                "internalDescription": "<link=\"view:4997:694259\"><icon name=\"District\" type=\"\"><color=#67D9F6FF>Default Town Roads</color> <style=\"InfoLight\">(draft)</style></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
@@ -104257,7 +104257,7 @@
                             "type": "GameValueWrapper",
                             "value": {
                               "type": "Eco.Gameplay.Economy.Currency",
-                              "name": "Euro",
+                              "name": "Pound",
                               "reference": true
                             }
                           },
@@ -104324,7 +104324,7 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:3179:68689365\"><icon name=\"District\" type=\"\"><color=#000BBAFF>Default Town Roads</color> <style=\"ErrorLight\">(removed)</style></icon></link>",
+                                "internalDescription": "<link=\"view:4997:694259\"><icon name=\"District\" type=\"\"><color=#67D9F6FF>Default Town Roads</color> <style=\"InfoLight\">(draft)</style></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
@@ -104357,7 +104357,7 @@
                             "type": "GameValueWrapper",
                             "value": {
                               "type": "Eco.Gameplay.Economy.Currency",
-                              "name": "Euro",
+                              "name": "Pound",
                               "reference": true
                             }
                           },
@@ -104454,11 +104454,11 @@
                               "value": "Eco.Gameplay.Economy.Currency"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<link=\"view:3914:103248\"><icon name=\"CurrencySymbol\" type=\"nobg\"><style=\"Currency\">Euro</style></icon></link>",
+                            "internalDescription": "<link=\"view:333:142861\"><icon name=\"CurrencySymbol\" type=\"nobg\"><style=\"Currency\">Pound</style></icon></link>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.Economy.Currency",
-                                "name": "Euro",
+                                "name": "Pound",
                                 "reference": true
                               }
                             ]
@@ -104565,11 +104565,11 @@
                                               "value": "Eco.Gameplay.LegislationSystem.District"
                                             },
                                             "requiredTag": null,
-                                            "internalDescription": "<link=\"view:3396:46184967\"><icon name=\"District\" type=\"\"><color=#BEB769FF>Offices of the Governments of the States</color></icon></link>",
+                                            "internalDescription": "<link=\"view:4997:274727\"><icon name=\"District\" type=\"\"><color=#BEB769FF>Town and State Offices</color></icon></link>",
                                             "entries": [
                                               {
                                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                                "name": "Offices of the Governments of the States",
+                                                "name": "Town and State Offices",
                                                 "reference": true
                                               }
                                             ]
@@ -104645,7 +104645,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -104738,7 +104738,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -104871,7 +104871,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -105044,7 +105044,7 @@
                                   "value": "Eco.Gameplay.Civics.Demographics.Demographic"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:2487:1754\"><icon name=\"Demographic\" type=\"\"><style=\"Government\">Active</style></icon></link>",
+                                "internalDescription": "<link=\"view:5063:1769\"><icon name=\"Demographic\" type=\"\"><style=\"Government\">Active</style></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.Civics.Demographics.Demographic",
@@ -105083,7 +105083,7 @@
                             "type": "GameValueWrapper",
                             "value": {
                               "type": "Eco.Gameplay.Economy.Currency",
-                              "name": "Euro",
+                              "name": "Pound",
                               "reference": true
                             }
                           },
