@@ -11786,6 +11786,100 @@
         ],
         "State": "Active"
       }
+    },
+    {
+      "version": [
+        1,
+        0
+      ],
+      "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+      "name": "Unica Non-Abandoned",
+      "reference": false,
+      "description": "This demographic encompasses every citizen that has not abandoned within Unica.",
+      "properties": {
+        "BackupOwner": {
+          "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+          "name": "Everyone",
+          "reference": true
+        },
+        "Conditions": [
+          {
+            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+            "properties": {
+              "List": [
+                {
+                  "type": "Eco.Gameplay.Civics.GameValues.Values.MatchesDemographic",
+                  "properties": {
+                    "Demographics": {
+                      "type": "GamePickerList",
+                      "mustDeriveType": {
+                        "type": "Type",
+                        "value": "Eco.Gameplay.Civics.Demographics.Demographic"
+                      },
+                      "requiredTag": null,
+                      "internalDescription": "<link=\"view:5063:1771\"><icon name=\"Demographic\" type=\"\"><style=\"Government\">Abandoned</style></icon></link>",
+                      "entries": [
+                        {
+                          "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                          "name": "Abandoned",
+                          "reference": true
+                        }
+                      ]
+                    },
+                    "Citizen": {
+                      "type": "GameValueContext",
+                      "_name": "Citizen",
+                      "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                      "contextDescription": "<i>The citizen being checked for this demographic.</i>"
+                    },
+                    "Requirements": "HasNone"
+                  }
+                },
+                {
+                  "type": "Eco.Gameplay.Civics.GameValues.Values.MatchesDemographic",
+                  "properties": {
+                    "Demographics": {
+                      "type": "GamePickerList",
+                      "mustDeriveType": {
+                        "type": "Type",
+                        "value": "Eco.Gameplay.Civics.Demographics.Demographic"
+                      },
+                      "requiredTag": null,
+                      "internalDescription": "<link=\"view:5063:553275\"><icon name=\"Demographic\" type=\"\"><style=\"Government\">Citizens of The State of Unica</style></icon></link>",
+                      "entries": [
+                        {
+                          "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                          "name": "Citizens of The State of Unica",
+                          "reference": true
+                        }
+                      ]
+                    },
+                    "Citizen": {
+                      "type": "GameValueContext",
+                      "_name": "Citizen",
+                      "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                      "contextDescription": "<i>The citizen being checked for this demographic.</i>"
+                    },
+                    "Requirements": "HasAll"
+                  }
+                }
+              ],
+              "Comparison": "All"
+            }
+          }
+        ],
+        "Wages": {
+          "type": "Eco.Gameplay.Economy.Jobs.RecurringTransferDefinition",
+          "reference": false,
+          "properties": {
+            "Currency": null,
+            "AmountPerHour": null,
+            "PaymentType": "OnlineAndOfflineHours"
+          }
+        },
+        "WagesSourceBankAccount": null,
+        "State": "Active"
+      }
     }
   ]
 }
