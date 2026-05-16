@@ -73,7 +73,7 @@
                                           "type": "GameValueWrapper",
                                           "value": {
                                             "type": "Eco.Gameplay.Economy.Currency",
-                                            "name": "Euro",
+                                            "name": "Pound",
                                             "reference": true
                                           }
                                         },
@@ -123,7 +123,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -137,7 +137,7 @@
                                           "type": "GameValueWrapper",
                                           "value": {
                                             "type": "Eco.Gameplay.Economy.Currency",
-                                            "name": "Euro",
+                                            "name": "Pound",
                                             "reference": true
                                           }
                                         },
@@ -198,7 +198,7 @@
                                           "type": "GameValueWrapper",
                                           "value": {
                                             "type": "Eco.Gameplay.Economy.Currency",
-                                            "name": "Euro",
+                                            "name": "Pound",
                                             "reference": true
                                           }
                                         },
@@ -248,7 +248,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -262,7 +262,7 @@
                                           "type": "GameValueWrapper",
                                           "value": {
                                             "type": "Eco.Gameplay.Economy.Currency",
-                                            "name": "Euro",
+                                            "name": "Pound",
                                             "reference": true
                                           }
                                         },
@@ -323,7 +323,7 @@
                                           "type": "GameValueWrapper",
                                           "value": {
                                             "type": "Eco.Gameplay.Economy.Currency",
-                                            "name": "Euro",
+                                            "name": "Pound",
                                             "reference": true
                                           }
                                         },
@@ -373,7 +373,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -387,7 +387,7 @@
                                           "type": "GameValueWrapper",
                                           "value": {
                                             "type": "Eco.Gameplay.Economy.Currency",
-                                            "name": "Euro",
+                                            "name": "Pound",
                                             "reference": true
                                           }
                                         },
@@ -448,7 +448,7 @@
                                           "type": "GameValueWrapper",
                                           "value": {
                                             "type": "Eco.Gameplay.Economy.Currency",
-                                            "name": "Euro",
+                                            "name": "Pound",
                                             "reference": true
                                           }
                                         },
@@ -498,7 +498,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -512,7 +512,7 @@
                                           "type": "GameValueWrapper",
                                           "value": {
                                             "type": "Eco.Gameplay.Economy.Currency",
-                                            "name": "Euro",
+                                            "name": "Pound",
                                             "reference": true
                                           }
                                         },
@@ -573,7 +573,7 @@
                                           "type": "GameValueWrapper",
                                           "value": {
                                             "type": "Eco.Gameplay.Economy.Currency",
-                                            "name": "Euro",
+                                            "name": "Pound",
                                             "reference": true
                                           }
                                         },
@@ -623,7 +623,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -637,7 +637,7 @@
                                           "type": "GameValueWrapper",
                                           "value": {
                                             "type": "Eco.Gameplay.Economy.Currency",
-                                            "name": "Euro",
+                                            "name": "Pound",
                                             "reference": true
                                           }
                                         },
@@ -700,7 +700,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.Currency",
-                          "name": "Euro",
+                          "name": "Pound",
                           "reference": true
                         }
                       },
@@ -714,7 +714,7 @@
                                 "type": "GameValueWrapper",
                                 "value": {
                                   "type": "Eco.Gameplay.Economy.Currency",
-                                  "name": "Euro",
+                                  "name": "Pound",
                                   "reference": true
                                 }
                               },
@@ -755,7 +755,7 @@
         "reference": false,
         "properties": {
           "Title": "Emergency Funds Transfer",
-          "UserDescription": "Parliament hearby authorizes one time payments to be made to the Ministry of Education in the event of critical fund shortages. Payments could be made by Members of Parliament, using the \"!to-moe\" command will transfer 10000 Euro from the Federal Executive Funds to the MoE Budget account. - Senator Dandelion",
+          "UserDescription": "Parliament hearby authorizes one time payments to be made to the Ministry of Education in the event of critical fund shortages. Payments could be made by Members of Parliament, using the \"!to-moe\" command will transfer 10000 Pound from the Federal Executive Funds to the MoE Budget account. - Senator Dandelion",
           "Triggers": [
             {
               "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
@@ -835,7 +835,7 @@
                                 "type": "GameValueWrapper",
                                 "value": {
                                   "type": "Eco.Gameplay.Economy.Currency",
-                                  "name": "Euro",
+                                  "name": "Pound",
                                   "reference": true
                                 }
                               },
@@ -885,7 +885,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.Currency",
-                          "name": "Euro",
+                          "name": "Pound",
                           "reference": true
                         }
                       },
@@ -914,7 +914,7 @@
         "reference": false,
         "properties": {
           "Title": "Emergency Transfer to the Meteor Store",
-          "UserDescription": "Parliament hearby authorizes one time payments to be made to the Meteor Store in the event of critical fund shortages. Payments could be made by Members of Parliament and Ministers of Infrastructure or Education, using the \"!to-meteor\" command will transfer 10000 Euro from the Federal Executive Funds to the Meteor Store Budget account. - Prime Minister Senator Dandelion",
+          "UserDescription": "Parliament hearby authorizes one time payments to be made to the Meteor Store in the event of critical fund shortages. Payments could be made by Members of Parliament and Ministers of Infrastructure or Education, using the \"!to-meteor\" command will transfer 10000 Pound from the Federal Executive Funds to the Meteor Store Budget account. - Prime Minister Senator Dandelion",
           "Triggers": [
             {
               "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
@@ -1004,7 +1004,7 @@
                                 "type": "GameValueWrapper",
                                 "value": {
                                   "type": "Eco.Gameplay.Economy.Currency",
-                                  "name": "Euro",
+                                  "name": "Pound",
                                   "reference": true
                                 }
                               },
@@ -1054,7 +1054,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.Currency",
-                          "name": "Euro",
+                          "name": "Pound",
                           "reference": true
                         }
                       },
