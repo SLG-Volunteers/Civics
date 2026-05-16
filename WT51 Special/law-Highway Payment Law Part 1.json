@@ -6,7 +6,7 @@
   "type": "Eco.Gameplay.Civics.Laws.Law",
   "name": "Highway Payment Law Part 1",
   "reference": false,
-  "description": "The Minister of Infrastructure is herby made responsible to make a design for the Federal Highway and through setting the ammounts in the payout account set standard payments of the different materials.\n\nAs minimum requirements the design and endresult need to be\n- same height as the capital (except tunnels under and bridges above oceans including ramps up to them)\n- include asphalt drivable paths when the price of ashalt is reasonable\n\nThis work shall be done by the group \"Federal Highways Workers\" and \"Federal Engineers\" (Engineers are for those areas that have non standard requirements like tunnels and bridges). Tose to include in the groups is at full discretion of the Minister of Infrastructure and they can set requiremnts and requlations before adding them to those titles. The Minister of Infrastucture does remain responsable for the end result of the work that is done.\n\nIf additional payments besides the set standard payments through the payout accounts are required they can be done through contracts as desired.\n\n50.1 \n-Made all infobox on success as YES.\n-Digging/mining now uses \"calories consumed to dig/mine block * payment account /1000\" so that the account number is euros per 1k labor\n\n50.2 \n-Turned all notifications to \"Silent:No\"\n50.3\n-Fixed chopping trees and stumps to only pay or tax on fell tree or destruction of stump\n50.4\n-Because receive government funds does not trigger on smart tax/pay, which is intended to change in future cycles, income from HW payouts was not added to the player's income stat. Income earned is now tracked and added to player income stat. Tax (such as picking up a block) is now a smart rebate to the income tax (reduces income stat). \n\n50.5 - Removes section 10 - anyone is able to place transmission poles\n\n50.6 -> Modified Section 8 digging to specify manual tools, added section 15 for digging payments on machinery. Fixed the height restriction.",
+  "description": "The Minister of Infrastructure is herby made responsible to make a design for the Federal Highway and through setting the ammounts in the payout account set standard payments of the different materials.\n\nAs minimum requirements the design and endresult need to be\n- same height as the capital (except tunnels under and bridges above oceans including ramps up to them)\n- include asphalt drivable paths when the price of ashalt is reasonable\n\nThis work shall be done by the group \"National Highways Workers\" and \"Federal Engineers\" (Engineers are for those areas that have non standard requirements like tunnels and bridges). Tose to include in the groups is at full discretion of the Minister of Infrastructure and they can set requiremnts and requlations before adding them to those titles. The Minister of Infrastucture does remain responsable for the end result of the work that is done.\n\nIf additional payments besides the set standard payments through the payout accounts are required they can be done through contracts as desired.\n\n50.1 \n-Made all infobox on success as YES.\n-Digging/mining now uses \"calories consumed to dig/mine block * payment account /1000\" so that the account number is euros per 1k labor\n\n50.2 \n-Turned all notifications to \"Silent:No\"\n50.3\n-Fixed chopping trees and stumps to only pay or tax on fell tree or destruction of stump\n50.4\n-Because receive government funds does not trigger on smart tax/pay, which is intended to change in future cycles, income from HW payouts was not added to the player's income stat. Income earned is now tracked and added to player income stat. Tax (such as picking up a block) is now a smart rebate to the income tax (reduces income stat). \n\n50.5 - Removes section 10 - anyone is able to place transmission poles\n\n50.6 -> Modified Section 8 digging to specify manual tools, added section 15 for digging payments on machinery. Fixed the height restriction.",
   "properties": {
     "Sections": [
       {
@@ -95,11 +95,11 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>Federal Highways</color></icon></link>",
+                            "internalDescription": "<link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>National Highways</color></icon></link>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Federal Highways",
+                                "name": "National Highways",
                                 "reference": true
                               }
                             ]
@@ -205,11 +205,11 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>Federal Highways</color></icon></link>",
+                            "internalDescription": "<link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>National Highways</color></icon></link>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Federal Highways",
+                                "name": "National Highways",
                                 "reference": true
                               }
                             ]
@@ -266,7 +266,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -277,7 +277,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -285,7 +285,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (Stone)",
+                                        "name": "# National Infrastructure Payout (Stone)",
                                         "reference": true
                                       }
                                     }
@@ -340,7 +340,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -348,7 +348,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (Stone)",
+                                        "name": "# National Infrastructure Payout (Stone)",
                                         "reference": true
                                       }
                                     }
@@ -433,7 +433,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -444,7 +444,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -452,7 +452,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (Stone)",
+                                        "name": "# National Infrastructure Payout (Stone)",
                                         "reference": true
                                       }
                                     }
@@ -502,7 +502,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -510,7 +510,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (Stone)",
+                                        "name": "# National Infrastructure Payout (Stone)",
                                         "reference": true
                                       }
                                     }
@@ -579,11 +579,11 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>Federal Highways</color></icon></link>",
+                            "internalDescription": "<link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>National Highways</color></icon></link>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Federal Highways",
+                                "name": "National Highways",
                                 "reference": true
                               }
                             ]
@@ -640,7 +640,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -651,7 +651,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -659,7 +659,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (Stone)",
+                                        "name": "# National Infrastructure Payout (Stone)",
                                         "reference": true
                                       }
                                     }
@@ -718,7 +718,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -726,7 +726,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (Stone)",
+                                        "name": "# National Infrastructure Payout (Stone)",
                                         "reference": true
                                       }
                                     }
@@ -807,7 +807,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -818,7 +818,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -826,7 +826,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (Stone)",
+                                        "name": "# National Infrastructure Payout (Stone)",
                                         "reference": true
                                       }
                                     }
@@ -880,7 +880,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -888,7 +888,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (Stone)",
+                                        "name": "# National Infrastructure Payout (Stone)",
                                         "reference": true
                                       }
                                     }
@@ -1012,11 +1012,11 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>Federal Highways</color></icon></link>",
+                            "internalDescription": "<link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>National Highways</color></icon></link>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Federal Highways",
+                                "name": "National Highways",
                                 "reference": true
                               }
                             ]
@@ -1122,11 +1122,11 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>Federal Highways</color></icon></link>",
+                            "internalDescription": "<link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>National Highways</color></icon></link>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Federal Highways",
+                                "name": "National Highways",
                                 "reference": true
                               }
                             ]
@@ -1183,7 +1183,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -1194,7 +1194,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -1202,7 +1202,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (Asphalt)",
+                                        "name": "# National Infrastructure Payout (Asphalt)",
                                         "reference": true
                                       }
                                     }
@@ -1257,7 +1257,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -1265,7 +1265,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (Asphalt)",
+                                        "name": "# National Infrastructure Payout (Asphalt)",
                                         "reference": true
                                       }
                                     }
@@ -1350,7 +1350,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -1361,7 +1361,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -1369,7 +1369,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (Asphalt)",
+                                        "name": "# National Infrastructure Payout (Asphalt)",
                                         "reference": true
                                       }
                                     }
@@ -1419,7 +1419,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -1427,7 +1427,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (Asphalt)",
+                                        "name": "# National Infrastructure Payout (Asphalt)",
                                         "reference": true
                                       }
                                     }
@@ -1496,11 +1496,11 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>Federal Highways</color></icon></link>",
+                            "internalDescription": "<link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>National Highways</color></icon></link>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Federal Highways",
+                                "name": "National Highways",
                                 "reference": true
                               }
                             ]
@@ -1557,7 +1557,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -1568,7 +1568,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -1576,7 +1576,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (Asphalt)",
+                                        "name": "# National Infrastructure Payout (Asphalt)",
                                         "reference": true
                                       }
                                     }
@@ -1635,7 +1635,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -1643,7 +1643,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (Asphalt)",
+                                        "name": "# National Infrastructure Payout (Asphalt)",
                                         "reference": true
                                       }
                                     }
@@ -1724,7 +1724,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -1735,7 +1735,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -1743,7 +1743,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (Asphalt)",
+                                        "name": "# National Infrastructure Payout (Asphalt)",
                                         "reference": true
                                       }
                                     }
@@ -1797,7 +1797,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -1805,7 +1805,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (Asphalt)",
+                                        "name": "# National Infrastructure Payout (Asphalt)",
                                         "reference": true
                                       }
                                     }
@@ -1941,16 +1941,16 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>Federal Highways</color></icon></link>\r\n<link=\"view:3900:122246\"><icon name=\"District\" type=\"\"><color=#949291FF>Federal Highways Buffer</color></icon></link></foldout>",
+                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>National Highways</color></icon></link>\r\n<link=\"view:3900:122246\"><icon name=\"District\" type=\"\"><color=#949291FF>National Highways Buffer</color></icon></link></foldout>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Federal Highways Buffer",
+                                "name": "National Highways Buffer",
                                 "reference": true
                               },
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Federal Highways",
+                                "name": "National Highways",
                                 "reference": true
                               }
                             ]
@@ -2056,16 +2056,16 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>Federal Highways</color></icon></link>\r\n<link=\"view:3900:122246\"><icon name=\"District\" type=\"\"><color=#949291FF>Federal Highways Buffer</color></icon></link></foldout>",
+                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>National Highways</color></icon></link>\r\n<link=\"view:3900:122246\"><icon name=\"District\" type=\"\"><color=#949291FF>National Highways Buffer</color></icon></link></foldout>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Federal Highways Buffer",
+                                "name": "National Highways Buffer",
                                 "reference": true
                               },
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Federal Highways",
+                                "name": "National Highways",
                                 "reference": true
                               }
                             ]
@@ -2122,7 +2122,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -2133,7 +2133,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -2141,7 +2141,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T2)",
+                                        "name": "# National Infrastructure Payout (T2)",
                                         "reference": true
                                       }
                                     }
@@ -2196,7 +2196,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -2204,7 +2204,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T2)",
+                                        "name": "# National Infrastructure Payout (T2)",
                                         "reference": true
                                       }
                                     }
@@ -2289,7 +2289,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -2300,7 +2300,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -2308,7 +2308,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T2)",
+                                        "name": "# National Infrastructure Payout (T2)",
                                         "reference": true
                                       }
                                     }
@@ -2358,7 +2358,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -2366,7 +2366,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T2)",
+                                        "name": "# National Infrastructure Payout (T2)",
                                         "reference": true
                                       }
                                     }
@@ -2435,16 +2435,16 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>Federal Highways</color></icon></link>\r\n<link=\"view:3900:122246\"><icon name=\"District\" type=\"\"><color=#949291FF>Federal Highways Buffer</color></icon></link></foldout>",
+                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>National Highways</color></icon></link>\r\n<link=\"view:3900:122246\"><icon name=\"District\" type=\"\"><color=#949291FF>National Highways Buffer</color></icon></link></foldout>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Federal Highways Buffer",
+                                "name": "National Highways Buffer",
                                 "reference": true
                               },
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Federal Highways",
+                                "name": "National Highways",
                                 "reference": true
                               }
                             ]
@@ -2501,7 +2501,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -2512,7 +2512,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -2520,7 +2520,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T2)",
+                                        "name": "# National Infrastructure Payout (T2)",
                                         "reference": true
                                       }
                                     }
@@ -2579,7 +2579,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -2587,7 +2587,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T2)",
+                                        "name": "# National Infrastructure Payout (T2)",
                                         "reference": true
                                       }
                                     }
@@ -2668,7 +2668,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -2679,7 +2679,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -2687,7 +2687,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T2)",
+                                        "name": "# National Infrastructure Payout (T2)",
                                         "reference": true
                                       }
                                     }
@@ -2741,7 +2741,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -2749,7 +2749,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T2)",
+                                        "name": "# National Infrastructure Payout (T2)",
                                         "reference": true
                                       }
                                     }
@@ -2877,16 +2877,16 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>Federal Highways</color></icon></link>\r\n<link=\"view:3900:122246\"><icon name=\"District\" type=\"\"><color=#949291FF>Federal Highways Buffer</color></icon></link></foldout>",
+                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>National Highways</color></icon></link>\r\n<link=\"view:3900:122246\"><icon name=\"District\" type=\"\"><color=#949291FF>National Highways Buffer</color></icon></link></foldout>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Federal Highways Buffer",
+                                "name": "National Highways Buffer",
                                 "reference": true
                               },
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Federal Highways",
+                                "name": "National Highways",
                                 "reference": true
                               }
                             ]
@@ -2992,16 +2992,16 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>Federal Highways</color></icon></link>\r\n<link=\"view:3900:122246\"><icon name=\"District\" type=\"\"><color=#949291FF>Federal Highways Buffer</color></icon></link></foldout>",
+                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>National Highways</color></icon></link>\r\n<link=\"view:3900:122246\"><icon name=\"District\" type=\"\"><color=#949291FF>National Highways Buffer</color></icon></link></foldout>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Federal Highways Buffer",
+                                "name": "National Highways Buffer",
                                 "reference": true
                               },
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Federal Highways",
+                                "name": "National Highways",
                                 "reference": true
                               }
                             ]
@@ -3058,7 +3058,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -3069,7 +3069,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -3077,7 +3077,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T3)",
+                                        "name": "# National Infrastructure Payout (T3)",
                                         "reference": true
                                       }
                                     }
@@ -3132,7 +3132,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -3140,7 +3140,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T3)",
+                                        "name": "# National Infrastructure Payout (T3)",
                                         "reference": true
                                       }
                                     }
@@ -3225,7 +3225,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -3236,7 +3236,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -3244,7 +3244,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T3)",
+                                        "name": "# National Infrastructure Payout (T3)",
                                         "reference": true
                                       }
                                     }
@@ -3294,7 +3294,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -3302,7 +3302,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T3)",
+                                        "name": "# National Infrastructure Payout (T3)",
                                         "reference": true
                                       }
                                     }
@@ -3371,16 +3371,16 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>Federal Highways</color></icon></link>\r\n<link=\"view:3900:122246\"><icon name=\"District\" type=\"\"><color=#949291FF>Federal Highways Buffer</color></icon></link></foldout>",
+                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>National Highways</color></icon></link>\r\n<link=\"view:3900:122246\"><icon name=\"District\" type=\"\"><color=#949291FF>National Highways Buffer</color></icon></link></foldout>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Federal Highways Buffer",
+                                "name": "National Highways Buffer",
                                 "reference": true
                               },
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Federal Highways",
+                                "name": "National Highways",
                                 "reference": true
                               }
                             ]
@@ -3437,7 +3437,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -3448,7 +3448,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -3456,7 +3456,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T3)",
+                                        "name": "# National Infrastructure Payout (T3)",
                                         "reference": true
                                       }
                                     }
@@ -3515,7 +3515,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -3523,7 +3523,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T3)",
+                                        "name": "# National Infrastructure Payout (T3)",
                                         "reference": true
                                       }
                                     }
@@ -3592,7 +3592,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -3603,7 +3603,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -3611,7 +3611,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T3)",
+                                        "name": "# National Infrastructure Payout (T3)",
                                         "reference": true
                                       }
                                     }
@@ -3665,7 +3665,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -3673,7 +3673,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T3)",
+                                        "name": "# National Infrastructure Payout (T3)",
                                         "reference": true
                                       }
                                     }
@@ -3801,16 +3801,16 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>Federal Highways</color></icon></link>\r\n<link=\"view:3900:122246\"><icon name=\"District\" type=\"\"><color=#949291FF>Federal Highways Buffer</color></icon></link></foldout>",
+                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>National Highways</color></icon></link>\r\n<link=\"view:3900:122246\"><icon name=\"District\" type=\"\"><color=#949291FF>National Highways Buffer</color></icon></link></foldout>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Federal Highways Buffer",
+                                "name": "National Highways Buffer",
                                 "reference": true
                               },
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Federal Highways",
+                                "name": "National Highways",
                                 "reference": true
                               }
                             ]
@@ -3916,16 +3916,16 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>Federal Highways</color></icon></link>\r\n<link=\"view:3900:122246\"><icon name=\"District\" type=\"\"><color=#949291FF>Federal Highways Buffer</color></icon></link></foldout>",
+                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>National Highways</color></icon></link>\r\n<link=\"view:3900:122246\"><icon name=\"District\" type=\"\"><color=#949291FF>National Highways Buffer</color></icon></link></foldout>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Federal Highways Buffer",
+                                "name": "National Highways Buffer",
                                 "reference": true
                               },
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Federal Highways",
+                                "name": "National Highways",
                                 "reference": true
                               }
                             ]
@@ -3982,7 +3982,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -3993,7 +3993,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -4001,7 +4001,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T4)",
+                                        "name": "# National Infrastructure Payout (T4)",
                                         "reference": true
                                       }
                                     }
@@ -4056,7 +4056,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -4064,7 +4064,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T4)",
+                                        "name": "# National Infrastructure Payout (T4)",
                                         "reference": true
                                       }
                                     }
@@ -4149,7 +4149,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -4160,7 +4160,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -4168,7 +4168,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T4)",
+                                        "name": "# National Infrastructure Payout (T4)",
                                         "reference": true
                                       }
                                     }
@@ -4218,7 +4218,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -4226,7 +4226,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T4)",
+                                        "name": "# National Infrastructure Payout (T4)",
                                         "reference": true
                                       }
                                     }
@@ -4295,16 +4295,16 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>Federal Highways</color></icon></link>\r\n<link=\"view:3900:122246\"><icon name=\"District\" type=\"\"><color=#949291FF>Federal Highways Buffer</color></icon></link></foldout>",
+                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:3900:122244\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>National Highways</color></icon></link>\r\n<link=\"view:3900:122246\"><icon name=\"District\" type=\"\"><color=#949291FF>National Highways Buffer</color></icon></link></foldout>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Federal Highways Buffer",
+                                "name": "National Highways Buffer",
                                 "reference": true
                               },
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Federal Highways",
+                                "name": "National Highways",
                                 "reference": true
                               }
                             ]
@@ -4361,7 +4361,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -4372,7 +4372,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -4380,7 +4380,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T4)",
+                                        "name": "# National Infrastructure Payout (T4)",
                                         "reference": true
                                       }
                                     }
@@ -4439,7 +4439,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -4447,7 +4447,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T4)",
+                                        "name": "# National Infrastructure Payout (T4)",
                                         "reference": true
                                       }
                                     }
@@ -4528,7 +4528,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -4539,7 +4539,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -4547,7 +4547,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T4)",
+                                        "name": "# National Infrastructure Payout (T4)",
                                         "reference": true
                                       }
                                     }
@@ -4601,7 +4601,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -4609,7 +4609,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T4)",
+                                        "name": "# National Infrastructure Payout (T4)",
                                         "reference": true
                                       }
                                     }
@@ -4846,7 +4846,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -4857,7 +4857,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -4865,7 +4865,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T4)",
+                                        "name": "# National Infrastructure Payout (T4)",
                                         "reference": true
                                       }
                                     }
@@ -4920,7 +4920,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -4928,7 +4928,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T4)",
+                                        "name": "# National Infrastructure Payout (T4)",
                                         "reference": true
                                       }
                                     }
@@ -5013,7 +5013,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -5024,7 +5024,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -5032,7 +5032,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T4)",
+                                        "name": "# National Infrastructure Payout (T4)",
                                         "reference": true
                                       }
                                     }
@@ -5082,7 +5082,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -5090,7 +5090,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T4)",
+                                        "name": "# National Infrastructure Payout (T4)",
                                         "reference": true
                                       }
                                     }
@@ -5248,7 +5248,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -5259,7 +5259,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -5267,7 +5267,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T4)",
+                                        "name": "# National Infrastructure Payout (T4)",
                                         "reference": true
                                       }
                                     }
@@ -5326,7 +5326,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -5334,7 +5334,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T4)",
+                                        "name": "# National Infrastructure Payout (T4)",
                                         "reference": true
                                       }
                                     }
@@ -5415,7 +5415,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -5426,7 +5426,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -5434,7 +5434,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T4)",
+                                        "name": "# National Infrastructure Payout (T4)",
                                         "reference": true
                                       }
                                     }
@@ -5488,7 +5488,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -5496,7 +5496,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T4)",
+                                        "name": "# National Infrastructure Payout (T4)",
                                         "reference": true
                                       }
                                     }
@@ -5882,7 +5882,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -5893,7 +5893,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -5901,7 +5901,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T5)",
+                                        "name": "# National Infrastructure Payout (T5)",
                                         "reference": true
                                       }
                                     }
@@ -5956,7 +5956,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -5964,7 +5964,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T5)",
+                                        "name": "# National Infrastructure Payout (T5)",
                                         "reference": true
                                       }
                                     }
@@ -6049,7 +6049,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -6060,7 +6060,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -6068,7 +6068,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T5)",
+                                        "name": "# National Infrastructure Payout (T5)",
                                         "reference": true
                                       }
                                     }
@@ -6118,7 +6118,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -6126,7 +6126,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T5)",
+                                        "name": "# National Infrastructure Payout (T5)",
                                         "reference": true
                                       }
                                     }
@@ -6284,7 +6284,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -6295,7 +6295,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -6303,7 +6303,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T5)",
+                                        "name": "# National Infrastructure Payout (T5)",
                                         "reference": true
                                       }
                                     }
@@ -6362,7 +6362,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -6370,7 +6370,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T5)",
+                                        "name": "# National Infrastructure Payout (T5)",
                                         "reference": true
                                       }
                                     }
@@ -6451,7 +6451,7 @@
                                   "type": "GameValueWrapper",
                                   "value": {
                                     "type": "Eco.Gameplay.Economy.Currency",
-                                    "name": "Euro",
+                                    "name": "Pound",
                                     "reference": true
                                   }
                                 },
@@ -6462,7 +6462,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -6470,7 +6470,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T5)",
+                                        "name": "# National Infrastructure Payout (T5)",
                                         "reference": true
                                       }
                                     }
@@ -6524,7 +6524,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.Currency",
-                                        "name": "Euro",
+                                        "name": "Pound",
                                         "reference": true
                                       }
                                     },
@@ -6532,7 +6532,7 @@
                                       "type": "GameValueWrapper",
                                       "value": {
                                         "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                        "name": "# Federal Infrastructure Payout (T5)",
+                                        "name": "# National Infrastructure Payout (T5)",
                                         "reference": true
                                       }
                                     }
@@ -6575,7 +6575,7 @@
         "reference": false,
         "properties": {
           "Title": "Payment account protection",
-          "UserDescription": "Protect the payment account that are used as configuration to set the different payouts for materials to be changed by anyone except the Miniuster of Infrastructure. If the Minister is not available for a longer period and/or there is a high priority to change the payments the Cardinal Dean is the backup to change the ammounts in the payment accounts.",
+          "UserDescription": "Protect the payment account that are used as configuration to set the different payouts for materials to be changed by anyone except the Miniuster of Infrastructure. If the Minister is not available for a longer period and/or there is a high priority to change the payments the Prime Minister is the backup to change the ammounts in the payment accounts.",
           "Triggers": [
             {
               "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
@@ -6617,41 +6617,41 @@
                           "value": "Eco.Gameplay.Economy.BankAccount"
                         },
                         "requiredTag": null,
-                        "internalDescription": "<foldout><linktext><u>7 Bank Accounts</u></linktext><title>7 Bank Accounts</title><link=\"view:767:2768055\"><icon name=\"EconomyViewerItem\" type=\"\"><style=\"BankAccount\"># Federal Infrastructure Payout (Asphalt)</style></icon></link>\r\n<link=\"view:767:2767912\"><icon name=\"EconomyViewerItem\" type=\"\"><style=\"BankAccount\"># Federal Infrastructure Payout (Mining)</style></icon></link>\r\n<link=\"view:767:2768121\"><icon name=\"EconomyViewerItem\" type=\"\"><style=\"BankAccount\"># Federal Infrastructure Payout (Stone)</style></icon></link>\r\n<link=\"view:767:2767449\"><icon name=\"EconomyViewerItem\" type=\"\"><style=\"BankAccount\"># Federal Infrastructure Payout (T2)</style></icon></link>\r\n<link=\"view:767:2767590\"><icon name=\"EconomyViewerItem\" type=\"\"><style=\"BankAccount\"># Federal Infrastructure Payout (T3)</style></icon></link>\r\n<link=\"view:767:2767647\"><icon name=\"EconomyViewerItem\" type=\"\"><style=\"BankAccount\"># Federal Infrastructure Payout (T4)</style></icon></link>\r\n<link=\"view:767:2767854\"><icon name=\"EconomyViewerItem\" type=\"\"><style=\"BankAccount\"># Federal Infrastructure Payout (T5)</style></icon></link></foldout>",
+                        "internalDescription": "<foldout><linktext><u>7 Bank Accounts</u></linktext><title>7 Bank Accounts</title><link=\"view:767:2768055\"><icon name=\"EconomyViewerItem\" type=\"\"><style=\"BankAccount\"># National Infrastructure Payout (Asphalt)</style></icon></link>\r\n<link=\"view:767:2767912\"><icon name=\"EconomyViewerItem\" type=\"\"><style=\"BankAccount\"># National Infrastructure Payout (Mining)</style></icon></link>\r\n<link=\"view:767:2768121\"><icon name=\"EconomyViewerItem\" type=\"\"><style=\"BankAccount\"># National Infrastructure Payout (Stone)</style></icon></link>\r\n<link=\"view:767:2767449\"><icon name=\"EconomyViewerItem\" type=\"\"><style=\"BankAccount\"># National Infrastructure Payout (T2)</style></icon></link>\r\n<link=\"view:767:2767590\"><icon name=\"EconomyViewerItem\" type=\"\"><style=\"BankAccount\"># National Infrastructure Payout (T3)</style></icon></link>\r\n<link=\"view:767:2767647\"><icon name=\"EconomyViewerItem\" type=\"\"><style=\"BankAccount\"># National Infrastructure Payout (T4)</style></icon></link>\r\n<link=\"view:767:2767854\"><icon name=\"EconomyViewerItem\" type=\"\"><style=\"BankAccount\"># National Infrastructure Payout (T5)</style></icon></link></foldout>",
                         "entries": [
                           {
                             "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                            "name": "# Federal Infrastructure Payout (T5)",
+                            "name": "# National Infrastructure Payout (T5)",
                             "reference": true
                           },
                           {
                             "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                            "name": "# Federal Infrastructure Payout (T4)",
+                            "name": "# National Infrastructure Payout (T4)",
                             "reference": true
                           },
                           {
                             "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                            "name": "# Federal Infrastructure Payout (T2)",
+                            "name": "# National Infrastructure Payout (T2)",
                             "reference": true
                           },
                           {
                             "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                            "name": "# Federal Infrastructure Payout (T3)",
+                            "name": "# National Infrastructure Payout (T3)",
                             "reference": true
                           },
                           {
                             "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                            "name": "# Federal Infrastructure Payout (Stone)",
+                            "name": "# National Infrastructure Payout (Stone)",
                             "reference": true
                           },
                           {
                             "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                            "name": "# Federal Infrastructure Payout (Asphalt)",
+                            "name": "# National Infrastructure Payout (Asphalt)",
                             "reference": true
                           },
                           {
                             "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                            "name": "# Federal Infrastructure Payout (Mining)",
+                            "name": "# National Infrastructure Payout (Mining)",
                             "reference": true
                           }
                         ]
@@ -6699,11 +6699,11 @@
                               "value": "Eco.Gameplay.Civics.Titles.Title"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<foldout><linktext><u>2 Titles</u></linktext><title>2 Titles</title><link=\"view:1713:122268\"><icon name=\"ElectedTitle\" type=\"\"><style=\"Government\">Minister of Infrastructure</style></icon></link>\r\n<link=\"view:1713:122274\"><icon name=\"ElectedTitle\" type=\"\"><style=\"Government\">Cardinal Dean</style></icon></link></foldout>",
+                            "internalDescription": "<foldout><linktext><u>2 Titles</u></linktext><title>2 Titles</title><link=\"view:1713:122268\"><icon name=\"ElectedTitle\" type=\"\"><style=\"Government\">Minister of Infrastructure</style></icon></link>\r\n<link=\"view:1713:122274\"><icon name=\"ElectedTitle\" type=\"\"><style=\"Government\">Prime Minister</style></icon></link></foldout>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
-                                "name": "Cardinal Dean",
+                                "name": "Prime Minister",
                                 "reference": true
                               },
                               {
