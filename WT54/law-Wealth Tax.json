@@ -84,7 +84,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.Currency",
-                          "name": "Euro",
+                          "name": "Pound",
                           "reference": true
                         }
                       },
@@ -101,7 +101,7 @@
                                     "type": "GameValueWrapper",
                                     "value": {
                                       "type": "Eco.Gameplay.Economy.Currency",
-                                      "name": "Euro",
+                                      "name": "Pound",
                                       "reference": true
                                     }
                                   },
@@ -131,7 +131,7 @@
                                               "type": "GameValueWrapper",
                                               "value": {
                                                 "type": "Eco.Gameplay.Economy.Currency",
-                                                "name": "Euro",
+                                                "name": "Pound",
                                                 "reference": true
                                               }
                                             },
@@ -178,7 +178,7 @@
                                               "type": "GameValueWrapper",
                                               "value": {
                                                 "type": "Eco.Gameplay.Economy.Currency",
-                                                "name": "Euro",
+                                                "name": "Pound",
                                                 "reference": true
                                               }
                                             },
@@ -350,7 +350,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.Currency",
-                          "name": "Euro",
+                          "name": "Pound",
                           "reference": true
                         }
                       },
@@ -367,7 +367,7 @@
                                     "type": "GameValueWrapper",
                                     "value": {
                                       "type": "Eco.Gameplay.Economy.Currency",
-                                      "name": "Euro",
+                                      "name": "Pound",
                                       "reference": true
                                     }
                                   },
@@ -397,7 +397,7 @@
                                               "type": "GameValueWrapper",
                                               "value": {
                                                 "type": "Eco.Gameplay.Economy.Currency",
-                                                "name": "Euro",
+                                                "name": "Pound",
                                                 "reference": true
                                               }
                                             },
@@ -444,7 +444,7 @@
                                               "type": "GameValueWrapper",
                                               "value": {
                                                 "type": "Eco.Gameplay.Economy.Currency",
-                                                "name": "Euro",
+                                                "name": "Pound",
                                                 "reference": true
                                               }
                                             },
