@@ -351,7 +351,7 @@
                                               "type": "GameValueWrapper",
                                               "value": {
                                                 "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                                "name": "# Federal Infrastructure Payout (Mining)",
+                                                "name": "# National Infrastructure Payout (Mining)",
                                                 "reference": true
                                               }
                                             }
@@ -436,7 +436,7 @@
                                               "type": "GameValueWrapper",
                                               "value": {
                                                 "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                                "name": "# Federal Infrastructure Payout (Mining)",
+                                                "name": "# National Infrastructure Payout (Mining)",
                                                 "reference": true
                                               }
                                             }
@@ -562,7 +562,7 @@
                                               "type": "GameValueWrapper",
                                               "value": {
                                                 "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                                "name": "# Federal Infrastructure Payout (Mining)",
+                                                "name": "# National Infrastructure Payout (Mining)",
                                                 "reference": true
                                               }
                                             }
@@ -642,7 +642,7 @@
                                               "type": "GameValueWrapper",
                                               "value": {
                                                 "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
-                                                "name": "# Federal Infrastructure Payout (Mining)",
+                                                "name": "# National Infrastructure Payout (Mining)",
                                                 "reference": true
                                               }
                                             }
