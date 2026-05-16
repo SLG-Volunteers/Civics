@@ -4664,7 +4664,7 @@
                               "value": "Eco.Gameplay.Civics.Titles.Title"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<foldout><linktext><u>3 Titles</u></linktext><title>3 Titles</title><link=\"view:3198:116032\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Game Masters</style></icon></link>\r\n<link=\"view:4829:116114\"><icon name=\"ElectedTitle\" type=\"\"><style=\"Government\">Cardinal</style></icon></link>\r\n<link=\"view:4829:116103\"><icon name=\"ElectedTitle\" type=\"\"><style=\"Government\">Cardinal Dean</style></icon></link></foldout>",
+                            "internalDescription": "<foldout><linktext><u>3 Titles</u></linktext><title>3 Titles</title><link=\"view:3198:116032\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Game Masters</style></icon></link>\r\n<link=\"view:4829:116114\"><icon name=\"ElectedTitle\" type=\"\"><style=\"Government\">Members of Parliament</style></icon></link>\r\n<link=\"view:4829:116103\"><icon name=\"ElectedTitle\" type=\"\"><style=\"Government\">Prime Minister</style></icon></link></foldout>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
@@ -4673,12 +4673,12 @@
                               },
                               {
                                 "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
-                                "name": "Cardinal",
+                                "name": "Members of Parliament",
                                 "reference": true
                               },
                               {
                                 "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
-                                "name": "Cardinal Dean",
+                                "name": "Prime Minister",
                                 "reference": true
                               }
                             ]
@@ -4929,7 +4929,7 @@
                                   "value": "Eco.Gameplay.Civics.Titles.Title"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<foldout><linktext><u>2 Titles</u></linktext><title>2 Titles</title><link=\"view:3198:116032\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Game Masters</style></icon></link>\r\n<link=\"view:4829:116103\"><icon name=\"ElectedTitle\" type=\"\"><style=\"Government\">Cardinal Dean</style></icon></link></foldout>",
+                                "internalDescription": "<foldout><linktext><u>2 Titles</u></linktext><title>2 Titles</title><link=\"view:3198:116032\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Game Masters</style></icon></link>\r\n<link=\"view:4829:116103\"><icon name=\"ElectedTitle\" type=\"\"><style=\"Government\">Prime Minister</style></icon></link></foldout>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
@@ -4938,7 +4938,7 @@
                                   },
                                   {
                                     "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
-                                    "name": "Cardinal Dean",
+                                    "name": "Prime Minister",
                                     "reference": true
                                   }
                                 ]
@@ -6326,7 +6326,7 @@
                               "value": "Eco.Gameplay.Civics.Titles.Title"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<foldout><linktext><u>2 Titles</u></linktext><title>2 Titles</title><link=\"view:3198:116032\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Game Masters</style></icon></link>\r\n<link=\"view:4829:116103\"><icon name=\"ElectedTitle\" type=\"\"><style=\"Government\">Cardinal Dean</style></icon></link></foldout>",
+                            "internalDescription": "<foldout><linktext><u>2 Titles</u></linktext><title>2 Titles</title><link=\"view:3198:116032\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Game Masters</style></icon></link>\r\n<link=\"view:4829:116103\"><icon name=\"ElectedTitle\" type=\"\"><style=\"Government\">Prime Minister</style></icon></link></foldout>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
@@ -6335,7 +6335,7 @@
                               },
                               {
                                 "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
-                                "name": "Cardinal Dean",
+                                "name": "Prime Minister",
                                 "reference": true
                               }
                             ]
