@@ -1,0 +1,1651 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Laws.Law",
+  "name": "Farming Districts",
+  "reference": false,
+  "description": "Protects certain districts from having ecominically significant plants harvested except by a designated tite. Collects a modest amount on harvest to cover cost of administration.",
+  "properties": {
+    "Sections": [
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Harvest protections",
+          "UserDescription": "Harvesting is limited to designated individuals. A fee is assessed for authorized harvesting.",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.HarvestOrHunt"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.HarvestOrHunt",
+                    "propNameBacker": "Species",
+                    "propDisplayName": "Species",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Simulation.Types.Species"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<foldout><linktext><u>26 Plants</u></linktext><title>26 Plants</title><link=\"view:184:-1\"><icon name=\"AgaveSpecies\" type=\"\"><color=#60FFFFFF>Agave Species</color></icon></link>\r\n<link=\"view:2289:-1\"><icon name=\"AmanitaMushroomSpecies\" type=\"\"><color=#60FFFFFF>Amanita Mushroom Species</color></icon></link>\r\n<link=\"view:600:-1\"><icon name=\"BeansSpecies\" type=\"\"><color=#60FFFFFF>Beans Species</color></icon></link>\r\n<link=\"view:1703:-1\"><icon name=\"BeetsSpecies\" type=\"\"><color=#60FFFFFF>Beets Species</color></icon></link>\r\n<link=\"view:782:-1\"><icon name=\"BoleteMushroomSpecies\" type=\"\"><color=#60FFFFFF>Bolete Mushroom Species</color></icon></link>\r\n<link=\"view:3947:-1\"><icon name=\"CamasSpecies\" type=\"\"><color=#60FFFFFF>Camas Species</color></icon></link>\r\n<link=\"view:258:-1\"><icon name=\"CookeinaMushroomSpecies\" type=\"\"><color=#60FFFFFF>Cookeina Mushroom Species</color></icon></link>\r\n<link=\"view:5213:-1\"><icon name=\"CornSpecies\" type=\"\"><color=#60FFFFFF>Corn Species</color></icon></link>\r\n<link=\"view:2532:-1\"><icon name=\"CottonSpecies\" type=\"\"><color=#60FFFFFF>Cotton Species</color></icon></link>\r\n<link=\"view:2145:-1\"><icon name=\"CriminiMushroomSpecies\" type=\"\"><color=#60FFFFFF>Crimini Mushroom Species</color></icon></link>\r\n<link=\"view:2310:-1\"><icon name=\"FernSpecies\" type=\"\"><color=#60FFFFFF>Fern Species</color></icon></link>\r\n<link=\"view:4865:-1\"><icon name=\"FireweedSpecies\" type=\"\"><color=#60FFFFFF>Fireweed Species</color></icon></link>\r\n<link=\"view:1039:-1\"><icon name=\"FlaxSpecies\" type=\"\"><color=#60FFFFFF>Flax Species</color></icon></link>\r\n<link=\"view:3220:-1\"><icon name=\"OrchidSpecies\" type=\"\"><color=#60FFFFFF>Orchid Species</color></icon></link>\r\n<link=\"view:2008:-1\"><icon name=\"PapayaSpecies\" type=\"\"><color=#60FFFFFF>Papaya Species</color></icon></link>\r\n<link=\"view:5219:-1\"><icon name=\"PineappleSpecies\" type=\"\"><color=#60FFFFFF>Pineapple Species</color></icon></link>\r\n<link=\"view:2951:-1\"><icon name=\"PricklyPearSpecies\" type=\"\"><color=#60FFFFFF>Prickly Pear Species</color></icon></link>\r\n<link=\"view:5070:-1\"><icon name=\"PumpkinSpecies\" type=\"\"><color=#60FFFFFF>Pumpkin Species</color></icon></link>\r\n<link=\"view:3920:-1\"><icon name=\"RiceSpecies\" type=\"\"><color=#60FFFFFF>Rice Species</color></icon></link>\r\n<link=\"view:2805:-1\"><icon name=\"RoseBushSpecies\" type=\"\"><color=#60FFFFFF>Rose Bush Species</color></icon></link>\r\n<link=\"view:930:-1\"><icon name=\"SunflowerSpecies\" type=\"\"><color=#60FFFFFF>Sunflower Species</color></icon></link>\r\n<link=\"view:93:-1\"><icon name=\"TaroSpecies\" type=\"\"><color=#60FFFFFF>Taro Species</color></icon></link>\r\n<link=\"view:5170:-1\"><icon name=\"TomatoesSpecies\" type=\"\"><color=#60FFFFFF>Tomatoes Species</color></icon></link>\r\n<link=\"view:905:-1\"><icon name=\"TrilliumSpecies\" type=\"\"><color=#60FFFFFF>Trillium Species</color></icon></link>\r\n<link=\"view:1219:-1\"><icon name=\"TulipSpecies\" type=\"\"><color=#60FFFFFF>Tulip Species</color></icon></link>\r\n<link=\"view:3948:-1\"><icon name=\"WheatSpecies\" type=\"\"><color=#60FFFFFF>Wheat Species</color></icon></link></foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Pumpkin+PumpkinSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.BoleteMushroom+BoleteMushroomSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Taro+TaroSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Camas+CamasSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.PricklyPear+PricklyPearSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Sunflower+SunflowerSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.CookeinaMushroom+CookeinaMushroomSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.CriminiMushroom+CriminiMushroomSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.RoseBush+RoseBushSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Fireweed+FireweedSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Rice+RiceSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Cotton+CottonSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Papaya+PapayaSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.AmanitaMushroom+AmanitaMushroomSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Beans+BeansSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Beets+BeetsSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Trillium+TrilliumSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Agave+AgaveSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Tomatoes+TomatoesSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Flax+FlaxSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Wheat+WheatSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Pineapple+PineappleSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Fern+FernSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Orchid+OrchidSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Corn+CornSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Tulip+TulipSpecies"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.HarvestOrHunt",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Harvester",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "_name": "Action Location",
+                            "markedUpName": "<icon name=\"HarvestOrHunt\" type=\"\">Action Location</icon>",
+                            "contextDescription": "<i>The position where the interaction took place.</i>"
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<link=\"view:2662:2793494\"><icon name=\"District\" type=\"\"><color=#0F123BFF>Farming district 1</color></icon></link>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Farming district 1",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "InsideOne"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                                  "properties": {
+                                    "Titles": {
+                                      "type": "GamePickerList",
+                                      "mustDeriveType": {
+                                        "type": "Type",
+                                        "value": "Eco.Gameplay.Civics.Titles.Title"
+                                      },
+                                      "requiredTag": null,
+                                      "internalDescription": "<link=\"view:3403:2795781\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Farmer, District 1</style></icon></link>",
+                                      "entries": [
+                                        {
+                                          "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                          "name": "Farmer, District 1",
+                                          "reference": true
+                                        }
+                                      ]
+                                    },
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                      "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                    },
+                                    "Requirements": "HasAny"
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Mods.SmartTax.SmartTax_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "TargetBankAccount": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                    "name": "The Federation of White Tiger Treasury",
+                                    "reference": true
+                                  }
+                                },
+                                "Currency": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.Currency",
+                                    "name": "Euro",
+                                    "reference": true
+                                  }
+                                },
+                                "Amount": {
+                                  "type": "GameValueWrapper",
+                                  "value": 0.1
+                                },
+                                "Target": {
+                                  "type": "GameValueContext",
+                                  "_name": "Citizen",
+                                  "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                  "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                },
+                                "TaxCode": "Farmer Shares",
+                                "Suspended": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                },
+                                "Silent": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                                  "properties": {
+                                    "Titles": {
+                                      "type": "GamePickerList",
+                                      "mustDeriveType": {
+                                        "type": "Type",
+                                        "value": "Eco.Gameplay.Civics.Titles.Title"
+                                      },
+                                      "requiredTag": null,
+                                      "internalDescription": "<link=\"view:3403:2795781\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Farmer, District 1</style></icon></link>",
+                                      "entries": [
+                                        {
+                                          "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                          "name": "Farmer, District 1",
+                                          "reference": true
+                                        }
+                                      ]
+                                    },
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                      "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                    },
+                                    "Requirements": "HasNone"
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "DisplayText": "This district is reserved",
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "_name": "Action Location",
+                            "markedUpName": "<icon name=\"HarvestOrHunt\" type=\"\">Action Location</icon>",
+                            "contextDescription": "<i>The position where the interaction took place.</i>"
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<link=\"view:2662:2793495\"><icon name=\"District\" type=\"\"><color=#3F692AFF>Farming District 2</color></icon></link>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Farming District 2",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "InsideOne"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                                  "properties": {
+                                    "Titles": {
+                                      "type": "GamePickerList",
+                                      "mustDeriveType": {
+                                        "type": "Type",
+                                        "value": "Eco.Gameplay.Civics.Titles.Title"
+                                      },
+                                      "requiredTag": null,
+                                      "internalDescription": "<link=\"view:3403:2795768\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Farmer, District 2</style></icon></link>",
+                                      "entries": [
+                                        {
+                                          "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                          "name": "Farmer, District 2",
+                                          "reference": true
+                                        }
+                                      ]
+                                    },
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                      "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                    },
+                                    "Requirements": "HasAll"
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Mods.SmartTax.SmartTax_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "TargetBankAccount": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                    "name": "The Federation of White Tiger Treasury",
+                                    "reference": true
+                                  }
+                                },
+                                "Currency": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.Currency",
+                                    "name": "Euro",
+                                    "reference": true
+                                  }
+                                },
+                                "Amount": {
+                                  "type": "GameValueWrapper",
+                                  "value": 0.1
+                                },
+                                "Target": {
+                                  "type": "GameValueContext",
+                                  "_name": "Citizen",
+                                  "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                  "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                },
+                                "TaxCode": "Farmer Shares",
+                                "Suspended": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                },
+                                "Silent": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                                  "properties": {
+                                    "Titles": {
+                                      "type": "GamePickerList",
+                                      "mustDeriveType": {
+                                        "type": "Type",
+                                        "value": "Eco.Gameplay.Civics.Titles.Title"
+                                      },
+                                      "requiredTag": null,
+                                      "internalDescription": "<link=\"view:3403:2795768\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Farmer, District 2</style></icon></link>",
+                                      "entries": [
+                                        {
+                                          "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                          "name": "Farmer, District 2",
+                                          "reference": true
+                                        }
+                                      ]
+                                    },
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                      "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                    },
+                                    "Requirements": "HasNone"
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "DisplayText": null,
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "_name": "Action Location",
+                            "markedUpName": "<icon name=\"HarvestOrHunt\" type=\"\">Action Location</icon>",
+                            "contextDescription": "<i>The position where the interaction took place.</i>"
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<link=\"view:2662:2793496\"><icon name=\"District\" type=\"\"><color=#937754FF>Farming District 3</color></icon></link>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Farming District 3",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "InsideOne"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                                  "properties": {
+                                    "Titles": {
+                                      "type": "GamePickerList",
+                                      "mustDeriveType": {
+                                        "type": "Type",
+                                        "value": "Eco.Gameplay.Civics.Titles.Title"
+                                      },
+                                      "requiredTag": null,
+                                      "internalDescription": "<link=\"view:3403:2795654\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Farmer, District 3</style></icon></link>",
+                                      "entries": [
+                                        {
+                                          "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                          "name": "Farmer, District 3",
+                                          "reference": true
+                                        }
+                                      ]
+                                    },
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                      "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                    },
+                                    "Requirements": "HasAll"
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Mods.SmartTax.SmartTax_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "TargetBankAccount": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                    "name": "The Federation of White Tiger Treasury",
+                                    "reference": true
+                                  }
+                                },
+                                "Currency": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.Currency",
+                                    "name": "Euro",
+                                    "reference": true
+                                  }
+                                },
+                                "Amount": {
+                                  "type": "GameValueWrapper",
+                                  "value": 0.1
+                                },
+                                "Target": {
+                                  "type": "GameValueContext",
+                                  "_name": "Citizen",
+                                  "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                  "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                },
+                                "TaxCode": "Farmer Shares",
+                                "Suspended": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                },
+                                "Silent": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                                  "properties": {
+                                    "Titles": {
+                                      "type": "GamePickerList",
+                                      "mustDeriveType": {
+                                        "type": "Type",
+                                        "value": "Eco.Gameplay.Civics.Titles.Title"
+                                      },
+                                      "requiredTag": null,
+                                      "internalDescription": "<link=\"view:3403:2795654\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Farmer, District 3</style></icon></link>",
+                                      "entries": [
+                                        {
+                                          "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                          "name": "Farmer, District 3",
+                                          "reference": true
+                                        }
+                                      ]
+                                    },
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                      "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                    },
+                                    "Requirements": "HasNone"
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "DisplayText": null,
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "_name": "Action Location",
+                            "markedUpName": "<icon name=\"HarvestOrHunt\" type=\"\">Action Location</icon>",
+                            "contextDescription": "<i>The position where the interaction took place.</i>"
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<link=\"view:2662:2793497\"><icon name=\"District\" type=\"\"><color=#C04B70FF>Farming District 4</color></icon></link>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Farming District 4",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "InsideOne"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                                  "properties": {
+                                    "Titles": {
+                                      "type": "GamePickerList",
+                                      "mustDeriveType": {
+                                        "type": "Type",
+                                        "value": "Eco.Gameplay.Civics.Titles.Title"
+                                      },
+                                      "requiredTag": null,
+                                      "internalDescription": "<link=\"view:3403:2795717\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Farmer, District 4</style></icon></link>",
+                                      "entries": [
+                                        {
+                                          "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                          "name": "Farmer, District 4",
+                                          "reference": true
+                                        }
+                                      ]
+                                    },
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                      "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                    },
+                                    "Requirements": "HasAll"
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Mods.SmartTax.SmartTax_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "TargetBankAccount": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                    "name": "The Federation of White Tiger Treasury",
+                                    "reference": true
+                                  }
+                                },
+                                "Currency": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.Currency",
+                                    "name": "Euro",
+                                    "reference": true
+                                  }
+                                },
+                                "Amount": {
+                                  "type": "GameValueWrapper",
+                                  "value": 0.1
+                                },
+                                "Target": {
+                                  "type": "GameValueContext",
+                                  "_name": "Citizen",
+                                  "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                  "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                },
+                                "TaxCode": "Farmer Shares",
+                                "Suspended": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                },
+                                "Silent": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                                  "properties": {
+                                    "Titles": {
+                                      "type": "GamePickerList",
+                                      "mustDeriveType": {
+                                        "type": "Type",
+                                        "value": "Eco.Gameplay.Civics.Titles.Title"
+                                      },
+                                      "requiredTag": null,
+                                      "internalDescription": "<link=\"view:3403:2795717\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Farmer, District 4</style></icon></link>",
+                                      "entries": [
+                                        {
+                                          "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                          "name": "Farmer, District 4",
+                                          "reference": true
+                                        }
+                                      ]
+                                    },
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                      "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                    },
+                                    "Requirements": "HasNone"
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "DisplayText": null,
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Secondary protection",
+          "UserDescription": "This covers non-harvesting actions that might disrupt farmsing. ",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.DigOrMine"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DigOrMine",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Excavatable",
+                        "internalDescription": "<link=\"Item:DirtItem\"><style=\"Item\"><icon name=\"DirtItem\" type=\"\">Dirt</icon></style></link>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.DirtItem"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DigOrMine",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Excavation",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.FertilizeAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.FertilizeAction",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.PlaceOrPickUpObject"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlaceOrPickUpObject",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Placed or Picked Up",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.WorldObjectItem"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.PlowField"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlowField",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Plow",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ClaimOrUnclaimProperty"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ClaimOrUnclaimProperty",
+                    "propNameBacker": "PreviousDeedOwner",
+                    "propDisplayName": "Previous Deed Owner",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Aliases.IAlias"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<style=\"ErrorLight\">None</style>",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ClaimOrUnclaimProperty",
+                    "propNameBacker": "Deed",
+                    "propDisplayName": "Deed",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Property.Deed"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "_name": "Action Location",
+                            "markedUpName": "<icon name=\"DigOrMine\" type=\"\">Action Location</icon>",
+                            "contextDescription": "<i>The position where the interaction took place.</i>"
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<link=\"view:2662:2793494\"><icon name=\"District\" type=\"\"><color=#0F123BFF>Farming district 1</color></icon></link>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Farming district 1",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "InsideOne"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                                  "properties": {
+                                    "Titles": {
+                                      "type": "GamePickerList",
+                                      "mustDeriveType": {
+                                        "type": "Type",
+                                        "value": "Eco.Gameplay.Civics.Titles.Title"
+                                      },
+                                      "requiredTag": null,
+                                      "internalDescription": "<link=\"view:3403:2795781\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Farmer, District 1</style></icon></link>",
+                                      "entries": [
+                                        {
+                                          "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                          "name": "Farmer, District 1",
+                                          "reference": true
+                                        }
+                                      ]
+                                    },
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                      "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                    },
+                                    "Requirements": "HasNone"
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "DisplayText": "This area is protected farmland",
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "_name": "Action Location",
+                            "markedUpName": "<icon name=\"DigOrMine\" type=\"\">Action Location</icon>",
+                            "contextDescription": "<i>The position where the interaction took place.</i>"
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<link=\"view:2662:2793495\"><icon name=\"District\" type=\"\"><color=#3F692AFF>Farming District 2</color></icon></link>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Farming District 2",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "InsideOne"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                                  "properties": {
+                                    "Titles": {
+                                      "type": "GamePickerList",
+                                      "mustDeriveType": {
+                                        "type": "Type",
+                                        "value": "Eco.Gameplay.Civics.Titles.Title"
+                                      },
+                                      "requiredTag": null,
+                                      "internalDescription": "<link=\"view:3403:2795768\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Farmer, District 2</style></icon></link>",
+                                      "entries": [
+                                        {
+                                          "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                          "name": "Farmer, District 2",
+                                          "reference": true
+                                        }
+                                      ]
+                                    },
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                      "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                    },
+                                    "Requirements": "HasNone"
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "DisplayText": "This area is protected farmland",
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "_name": "Action Location",
+                            "markedUpName": "<icon name=\"DigOrMine\" type=\"\">Action Location</icon>",
+                            "contextDescription": "<i>The position where the interaction took place.</i>"
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<link=\"view:2662:2793496\"><icon name=\"District\" type=\"\"><color=#937754FF>Farming District 3</color></icon></link>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Farming District 3",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "InsideOne"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                                  "properties": {
+                                    "Titles": {
+                                      "type": "GamePickerList",
+                                      "mustDeriveType": {
+                                        "type": "Type",
+                                        "value": "Eco.Gameplay.Civics.Titles.Title"
+                                      },
+                                      "requiredTag": null,
+                                      "internalDescription": "<link=\"view:3403:2795654\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Farmer, District 3</style></icon></link>",
+                                      "entries": [
+                                        {
+                                          "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                          "name": "Farmer, District 3",
+                                          "reference": true
+                                        }
+                                      ]
+                                    },
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                      "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                    },
+                                    "Requirements": "HasNone"
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "DisplayText": "This area is protected farmland",
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "_name": "Action Location",
+                            "markedUpName": "<icon name=\"DigOrMine\" type=\"\">Action Location</icon>",
+                            "contextDescription": "<i>The position where the interaction took place.</i>"
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<link=\"view:2662:2793497\"><icon name=\"District\" type=\"\"><color=#C04B70FF>Farming District 4</color></icon></link>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Farming District 4",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "InsideOne"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                                  "properties": {
+                                    "Titles": {
+                                      "type": "GamePickerList",
+                                      "mustDeriveType": {
+                                        "type": "Type",
+                                        "value": "Eco.Gameplay.Civics.Titles.Title"
+                                      },
+                                      "requiredTag": null,
+                                      "internalDescription": "<link=\"view:3403:2795717\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Farmer, District 4</style></icon></link>",
+                                      "entries": [
+                                        {
+                                          "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                          "name": "Farmer, District 4",
+                                          "reference": true
+                                        }
+                                      ]
+                                    },
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                      "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                    },
+                                    "Requirements": "HasNone"
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "DisplayText": "This area is protected farmland",
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "State": "Active"
+  }
+}

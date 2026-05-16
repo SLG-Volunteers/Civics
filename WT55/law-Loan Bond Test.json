@@ -1,0 +1,2264 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Laws.Law",
+  "name": "Loan Bond Test",
+  "reference": false,
+  "description": null,
+  "properties": {
+    "Sections": [
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Loan Details",
+          "UserDescription": "Similar to bonds: Here Borrower and Citizen are null, thus will error this paragraph out if checked. This means tracking who receives a loan won't work.",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.AcceptedLoanOrBond"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.AcceptedLoanOrBond",
+                    "propNameBacker": "Currency",
+                    "propDisplayName": "Currency",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Economy.Currency"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<link=\"view:457:120633\"><icon name=\"CurrencySymbol\" type=\"nobg\"><style=\"Currency\">Euro</style></icon></link>",
+                        "entries": [
+                          {
+                            "type": "Eco.Gameplay.Economy.Currency",
+                            "name": "Euro",
+                            "reference": true
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "_name": "Loan",
+                        "markedUpName": "<icon name=\"AcceptedLoanOrBond\" type=\"\">Loan</icon>",
+                        "contextDescription": "<i>Was it a loan or bond?</i>"
+                      },
+                      {
+                        "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Borrower",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Borrower</icon>",
+                            "contextDescription": "<i>The citizen who took the money.</i>"
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Mods.SmartTax.SmartTax_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "TargetBankAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                          "name": "Loan Tracking",
+                          "reference": true
+                        }
+                      },
+                      "Currency": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.Currency",
+                          "name": "Stat (Tracking)",
+                          "reference": true
+                        }
+                      },
+                      "Amount": {
+                        "type": "GameValueContext",
+                        "_name": "Currency Amount",
+                        "markedUpName": "<icon name=\"AcceptedLoanOrBond\" type=\"\">Currency Amount</icon>",
+                        "contextDescription": "<i>Amount for payment.</i>"
+                      },
+                      "Target": {
+                        "type": "Eco.Mods.Companies.EmployerLegalPersonAlias",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Borrower",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Borrower</icon>",
+                            "contextDescription": "<i>The citizen who took the money.</i>"
+                          }
+                        }
+                      },
+                      "TaxCode": "LoanAmount",
+                      "Suspended": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      },
+                      "Silent": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "_name": "Loan",
+                        "markedUpName": "<icon name=\"AcceptedLoanOrBond\" type=\"\">Loan</icon>",
+                        "contextDescription": "<i>Was it a loan or bond?</i>"
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Mods.SmartTax.SmartTax_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "TargetBankAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                          "name": "Loan Tracking",
+                          "reference": true
+                        }
+                      },
+                      "Currency": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.Currency",
+                          "name": "Stat (Tracking)",
+                          "reference": true
+                        }
+                      },
+                      "Amount": {
+                        "type": "GameValueContext",
+                        "_name": "Currency Amount",
+                        "markedUpName": "<icon name=\"AcceptedLoanOrBond\" type=\"\">Currency Amount</icon>",
+                        "contextDescription": "<i>Amount for payment.</i>"
+                      },
+                      "Target": {
+                        "type": "GameValueContext",
+                        "_name": "Borrower",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Borrower</icon>",
+                        "contextDescription": "<i>The citizen who took the money.</i>"
+                      },
+                      "TaxCode": "LoanAmount",
+                      "Suspended": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      },
+                      "Silent": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Track Repaid Loans",
+          "UserDescription": "Loans are not income, so it can't be wealth either. Needs to be tracked in order to be subtracted out.\nInterest can be both an expense and income though, so it's added to tracking.",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.RepaidLoanOrBond"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.RepaidLoanOrBond",
+                    "propNameBacker": "Currency",
+                    "propDisplayName": "Currency",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Economy.Currency"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<link=\"view:457:120633\"><icon name=\"CurrencySymbol\" type=\"nobg\"><style=\"Currency\">Euro</style></icon></link>",
+                        "entries": [
+                          {
+                            "type": "Eco.Gameplay.Economy.Currency",
+                            "name": "Euro",
+                            "reference": true
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "_name": "Loan",
+                        "markedUpName": "<icon name=\"RepaidLoanOrBond\" type=\"\">Loan</icon>",
+                        "contextDescription": "<i>Was it a loan or bond?</i>"
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                                  "properties": {
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Lender",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Lender</icon>",
+                                      "contextDescription": "<i>The citizen who offered the money.</i>"
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Mods.SmartTax.SmartTax_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "TargetBankAccount": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                                    "name": "Income Tracking",
+                                    "reference": true
+                                  }
+                                },
+                                "Currency": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.Currency",
+                                    "name": "Stat (Tracking)",
+                                    "reference": true
+                                  }
+                                },
+                                "Amount": {
+                                  "type": "GameValueContext",
+                                  "_name": "Interest Value",
+                                  "markedUpName": "<icon name=\"RepaidLoanOrBond\" type=\"\">Interest Value</icon>",
+                                  "contextDescription": "<i>Total amount to be charged.</i>"
+                                },
+                                "Target": {
+                                  "type": "Eco.Mods.Companies.EmployerLegalPersonAlias",
+                                  "properties": {
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Lender",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Lender</icon>",
+                                      "contextDescription": "<i>The citizen who offered the money.</i>"
+                                    }
+                                  }
+                                },
+                                "TaxCode": "LoanInterest",
+                                "Suspended": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                },
+                                "Silent": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                                  "properties": {
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Lender",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Lender</icon>",
+                                      "contextDescription": "<i>The citizen who offered the money.</i>"
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "None"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Mods.SmartTax.SmartTax_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "TargetBankAccount": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                                    "name": "Income Tracking",
+                                    "reference": true
+                                  }
+                                },
+                                "Currency": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.Currency",
+                                    "name": "Stat (Tracking)",
+                                    "reference": true
+                                  }
+                                },
+                                "Amount": {
+                                  "type": "GameValueContext",
+                                  "_name": "Interest Value",
+                                  "markedUpName": "<icon name=\"RepaidLoanOrBond\" type=\"\">Interest Value</icon>",
+                                  "contextDescription": "<i>Total amount to be charged.</i>"
+                                },
+                                "Target": {
+                                  "type": "GameValueContext",
+                                  "_name": "Lender",
+                                  "markedUpName": "<icon name=\"User\" type=\"\">Lender</icon>",
+                                  "contextDescription": "<i>The citizen who offered the money.</i>"
+                                },
+                                "TaxCode": "LoanInterest",
+                                "Suspended": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                },
+                                "Silent": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                                  "properties": {
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Borrower",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Borrower</icon>",
+                                      "contextDescription": "<i>The citizen who took the money.</i>"
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Mods.SmartTax.SmartTax_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "TargetBankAccount": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                                    "name": "Expense Tracking",
+                                    "reference": true
+                                  }
+                                },
+                                "Currency": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.Currency",
+                                    "name": "Stat (Tracking)",
+                                    "reference": true
+                                  }
+                                },
+                                "Amount": {
+                                  "type": "GameValueContext",
+                                  "_name": "Interest Value",
+                                  "markedUpName": "<icon name=\"RepaidLoanOrBond\" type=\"\">Interest Value</icon>",
+                                  "contextDescription": "<i>Total amount to be charged.</i>"
+                                },
+                                "Target": {
+                                  "type": "Eco.Mods.Companies.EmployerLegalPersonAlias",
+                                  "properties": {
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Borrower",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Borrower</icon>",
+                                      "contextDescription": "<i>The citizen who took the money.</i>"
+                                    }
+                                  }
+                                },
+                                "TaxCode": "LoanInterest",
+                                "Suspended": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                },
+                                "Silent": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                                  "properties": {
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Borrower",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Borrower</icon>",
+                                      "contextDescription": "<i>The citizen who took the money.</i>"
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "None"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Mods.SmartTax.SmartTax_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "TargetBankAccount": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                                    "name": "Expense Tracking",
+                                    "reference": true
+                                  }
+                                },
+                                "Currency": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.Currency",
+                                    "name": "Stat (Tracking)",
+                                    "reference": true
+                                  }
+                                },
+                                "Amount": {
+                                  "type": "GameValueContext",
+                                  "_name": "Interest Value",
+                                  "markedUpName": "<icon name=\"RepaidLoanOrBond\" type=\"\">Interest Value</icon>",
+                                  "contextDescription": "<i>Total amount to be charged.</i>"
+                                },
+                                "Target": {
+                                  "type": "GameValueContext",
+                                  "_name": "Borrower",
+                                  "markedUpName": "<icon name=\"User\" type=\"\">Borrower</icon>",
+                                  "contextDescription": "<i>The citizen who took the money.</i>"
+                                },
+                                "TaxCode": "LoanInterest",
+                                "Suspended": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                },
+                                "Silent": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Accept Loan Workaround",
+          "UserDescription": "(Tested) This only hits on the initial Loan Payment\n(Untested) Debt Payment might be its counter",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.TransferMoney"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.TransferMoney",
+                    "propNameBacker": "SourceBankAccount",
+                    "propDisplayName": "Source Bank Account",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Economy.BankAccount"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.TransferMoney",
+                    "propNameBacker": "TargetBankAccount",
+                    "propDisplayName": "Target Bank Account",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Economy.BankAccount"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.TransferMoney",
+                    "propNameBacker": "Currency",
+                    "propDisplayName": "Currency",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Economy.Currency"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<link=\"view:457:120633\"><icon name=\"CurrencySymbol\" type=\"nobg\"><style=\"Currency\">Euro</style></icon></link>",
+                        "entries": [
+                          {
+                            "type": "Eco.Gameplay.Economy.Currency",
+                            "name": "Euro",
+                            "reference": true
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "_name": "Loan",
+                        "markedUpName": "<icon name=\"TransferMoney\" type=\"\">Loan</icon>",
+                        "contextDescription": "<i>The reason of the transfer.</i>"
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                                  "properties": {
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Receiver",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Receiver</icon>",
+                                      "contextDescription": "<i>The citizen who received the money.</i>"
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.Laws.LegalActions.Money.TransferToAccount_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "SourceAccount": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                                    "name": "Stats Accounting",
+                                    "reference": true
+                                  }
+                                },
+                                "TargetAccount": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                                    "name": "Loan Tracking",
+                                    "reference": true
+                                  }
+                                },
+                                "Currency": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.PersonalCurrency",
+                                  "properties": {
+                                    "User": {
+                                      "type": "Eco.Mods.Companies.EmployerLegalPerson",
+                                      "properties": {
+                                        "Citizen": {
+                                          "type": "GameValueContext",
+                                          "_name": "Receiver",
+                                          "markedUpName": "<icon name=\"User\" type=\"\">Receiver</icon>",
+                                          "contextDescription": "<i>The citizen who received the money.</i>"
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "Amount": {
+                                  "type": "GameValueContext",
+                                  "_name": "Currency Amount",
+                                  "markedUpName": "<icon name=\"TransferMoney\" type=\"\">Currency Amount</icon>",
+                                  "contextDescription": "<i>The amount of money transfered.</i>"
+                                },
+                                "PreventIfUnableToPay": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                                  "properties": {
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Receiver",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Receiver</icon>",
+                                      "contextDescription": "<i>The citizen who received the money.</i>"
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "None"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.Laws.LegalActions.Money.TransferToAccount_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "SourceAccount": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                                    "name": "Stats Accounting",
+                                    "reference": true
+                                  }
+                                },
+                                "TargetAccount": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                                    "name": "Loan Tracking",
+                                    "reference": true
+                                  }
+                                },
+                                "Currency": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.PersonalCurrency",
+                                  "properties": {
+                                    "User": {
+                                      "type": "GameValueContext",
+                                      "_name": "Receiver",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Receiver</icon>",
+                                      "contextDescription": "<i>The citizen who received the money.</i>"
+                                    }
+                                  }
+                                },
+                                "Amount": {
+                                  "type": "GameValueContext",
+                                  "_name": "Currency Amount",
+                                  "markedUpName": "<icon name=\"TransferMoney\" type=\"\">Currency Amount</icon>",
+                                  "contextDescription": "<i>The amount of money transfered.</i>"
+                                },
+                                "PreventIfUnableToPay": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "_name": "DebtPayment",
+                        "markedUpName": "<icon name=\"TransferMoney\" type=\"\">Debt Payment</icon>",
+                        "contextDescription": "<i>The reason of the transfer.</i>"
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                                  "properties": {
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                      "contextDescription": "<i>The citizen who transfered the money. Note: Can only be taxed if they are a citizen of the settlement of the law executing.</i>"
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.Laws.LegalActions.Money.TransferToAccount_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "SourceAccount": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                                    "name": "Loan Tracking",
+                                    "reference": true
+                                  }
+                                },
+                                "TargetAccount": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                                    "name": "Stats Accounting",
+                                    "reference": true
+                                  }
+                                },
+                                "Currency": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.PersonalCurrency",
+                                  "properties": {
+                                    "User": {
+                                      "type": "Eco.Mods.Companies.EmployerLegalPerson",
+                                      "properties": {
+                                        "Citizen": {
+                                          "type": "GameValueContext",
+                                          "_name": "Citizen",
+                                          "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                          "contextDescription": "<i>The citizen who transfered the money. Note: Can only be taxed if they are a citizen of the settlement of the law executing.</i>"
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "Amount": {
+                                  "type": "GameValueContext",
+                                  "_name": "Currency Amount",
+                                  "markedUpName": "<icon name=\"TransferMoney\" type=\"\">Currency Amount</icon>",
+                                  "contextDescription": "<i>The amount of money transfered.</i>"
+                                },
+                                "PreventIfUnableToPay": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                                  "properties": {
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                      "contextDescription": "<i>The citizen who transfered the money. Note: Can only be taxed if they are a citizen of the settlement of the law executing.</i>"
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "None"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.Laws.LegalActions.Money.TransferToAccount_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "SourceAccount": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                                    "name": "Loan Tracking",
+                                    "reference": true
+                                  }
+                                },
+                                "TargetAccount": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                                    "name": "Stats Accounting",
+                                    "reference": true
+                                  }
+                                },
+                                "Currency": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.PersonalCurrency",
+                                  "properties": {
+                                    "User": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                      "contextDescription": "<i>The citizen who transfered the money. Note: Can only be taxed if they are a citizen of the settlement of the law executing.</i>"
+                                    }
+                                  }
+                                },
+                                "Amount": {
+                                  "type": "GameValueContext",
+                                  "_name": "Currency Amount",
+                                  "markedUpName": "<icon name=\"TransferMoney\" type=\"\">Currency Amount</icon>",
+                                  "contextDescription": "<i>The amount of money transfered.</i>"
+                                },
+                                "PreventIfUnableToPay": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Loan Default Handling",
+          "UserDescription": "Not Implemented",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.DefaultedOnLoanOrBond"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DefaultedOnLoanOrBond",
+                    "propNameBacker": "Currency",
+                    "propDisplayName": "Currency",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Economy.Currency"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<link=\"view:457:120633\"><icon name=\"CurrencySymbol\" type=\"nobg\"><style=\"Currency\">Euro</style></icon></link>",
+                        "entries": [
+                          {
+                            "type": "Eco.Gameplay.Economy.Currency",
+                            "name": "Euro",
+                            "reference": true
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "_name": "Loan",
+                        "markedUpName": "<icon name=\"DefaultedOnLoanOrBond\" type=\"\">Loan</icon>",
+                        "contextDescription": "<i>Was it a loan or bond?</i>"
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "default detected:",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Players.User",
+                          "name": "Weylin",
+                          "reference": true
+                        }
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.TextFormula",
+                        "properties": {
+                          "Formula": "currrencyamount+defaultamount+interestrate+interestvalue+payback+percent+numdays",
+                          "Variables": [
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.NamedVariable",
+                              "reference": false,
+                              "properties": {
+                                "Name": "currrencyamount",
+                                "Definition": {
+                                  "type": "GameValueContext",
+                                  "_name": "Currency Amount",
+                                  "markedUpName": "<icon name=\"DefaultedOnLoanOrBond\" type=\"\">Currency Amount</icon>",
+                                  "contextDescription": "<i>Amount for payment.</i>"
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.NamedVariable",
+                              "reference": false,
+                              "properties": {
+                                "Name": "interestrate",
+                                "Definition": {
+                                  "type": "GameValueContext",
+                                  "_name": "Interest Rate",
+                                  "markedUpName": "<icon name=\"DefaultedOnLoanOrBond\" type=\"\">Interest Rate</icon>",
+                                  "contextDescription": "<i>A percentage to be charged.</i>"
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.NamedVariable",
+                              "reference": false,
+                              "properties": {
+                                "Name": "interestvalue",
+                                "Definition": {
+                                  "type": "GameValueContext",
+                                  "_name": "Interest Value",
+                                  "markedUpName": "<icon name=\"DefaultedOnLoanOrBond\" type=\"\">Interest Value</icon>",
+                                  "contextDescription": "<i>Total amount to be charged.</i>"
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.NamedVariable",
+                              "reference": false,
+                              "properties": {
+                                "Name": "payback",
+                                "Definition": {
+                                  "type": "GameValueContext",
+                                  "_name": "Payback Amount",
+                                  "markedUpName": "<icon name=\"DefaultedOnLoanOrBond\" type=\"\">Payback Amount</icon>",
+                                  "contextDescription": "<i>Total amount to be repaid.</i>"
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.NamedVariable",
+                              "reference": false,
+                              "properties": {
+                                "Name": "percent",
+                                "Definition": {
+                                  "type": "GameValueContext",
+                                  "_name": "Percent Done",
+                                  "markedUpName": "<icon name=\"DefaultedOnLoanOrBond\" type=\"\">Percent Done</icon>",
+                                  "contextDescription": "<i>Current percent completion of total work.</i>"
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.NamedVariable",
+                              "reference": false,
+                              "properties": {
+                                "Name": "numdays",
+                                "Definition": {
+                                  "type": "GameValueContext",
+                                  "_name": "Term",
+                                  "markedUpName": "<icon name=\"DefaultedOnLoanOrBond\" type=\"\">Term</icon>",
+                                  "contextDescription": "<i>Number of days for term of the debt.</i>"
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.NamedVariable",
+                              "reference": false,
+                              "properties": {
+                                "Name": "defaultamount",
+                                "Definition": {
+                                  "type": "GameValueContext",
+                                  "_name": "Defaulted Amount",
+                                  "markedUpName": "<icon name=\"DefaultedOnLoanOrBond\" type=\"\">Defaulted Amount</icon>",
+                                  "contextDescription": "<i>How much is left to pay.</i>"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Track Bonds Accepted",
+          "UserDescription": "Lender + Client are missing for Bonds, so this cannot do much",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.AcceptedLoanOrBond"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.AcceptedLoanOrBond",
+                    "propNameBacker": "Currency",
+                    "propDisplayName": "Currency",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Economy.Currency"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<link=\"view:457:120633\"><icon name=\"CurrencySymbol\" type=\"nobg\"><style=\"Currency\">Euro</style></icon></link>",
+                        "entries": [
+                          {
+                            "type": "Eco.Gameplay.Economy.Currency",
+                            "name": "Euro",
+                            "reference": true
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "_name": "Bond",
+                        "markedUpName": "<icon name=\"AcceptedLoanOrBond\" type=\"\">Bond</icon>",
+                        "contextDescription": "<i>Was it a loan or bond?</i>"
+                      },
+                      {
+                        "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Borrower",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Borrower</icon>",
+                            "contextDescription": "<i>The citizen who took the money.</i>"
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>2 Titles</u></linktext><title>2 Titles</title><link=\"view:3403:121529\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Game Masters</style></icon></link>\r\n<link=\"view:4129:121527\"><icon name=\"ElectedTitle\" type=\"\"><style=\"Government\">Prime Minister</style></icon></link></foldout>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Game Masters",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+                                "name": "Prime Minister",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Client",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Client</icon>",
+                            "contextDescription": "<i>The citizen who posted the work.</i>"
+                          },
+                          "Requirements": "HasAny"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Bond Accepted:",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Borrower",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Borrower</icon>",
+                        "contextDescription": "<i>The citizen who took the money.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "GameValueContext",
+                        "_name": "Currency Amount",
+                        "markedUpName": "<icon name=\"AcceptedLoanOrBond\" type=\"\">Currency Amount</icon>",
+                        "contextDescription": "<i>Amount for payment.</i>"
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "_name": "Bond",
+                        "markedUpName": "<icon name=\"AcceptedLoanOrBond\" type=\"\">Bond</icon>",
+                        "contextDescription": "<i>Was it a loan or bond?</i>"
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>2 Titles</u></linktext><title>2 Titles</title><link=\"view:3403:121529\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Game Masters</style></icon></link>\r\n<link=\"view:4129:121527\"><icon name=\"ElectedTitle\" type=\"\"><style=\"Government\">Prime Minister</style></icon></link></foldout>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Game Masters",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+                                "name": "Prime Minister",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Client",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Client</icon>",
+                            "contextDescription": "<i>The citizen who posted the work.</i>"
+                          },
+                          "Requirements": "HasAny"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Bond Accepted:",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "_name": "Borrower",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Borrower</icon>",
+                        "contextDescription": "<i>The citizen who took the money.</i>"
+                      },
+                      "ValueToDisplay": {
+                        "type": "GameValueContext",
+                        "_name": "Currency Amount",
+                        "markedUpName": "<icon name=\"AcceptedLoanOrBond\" type=\"\">Currency Amount</icon>",
+                        "contextDescription": "<i>Amount for payment.</i>"
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "_name": "Bond",
+                        "markedUpName": "<icon name=\"AcceptedLoanOrBond\" type=\"\">Bond</icon>",
+                        "contextDescription": "<i>Was it a loan or bond?</i>"
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "DisplayText": "Only PM issues bonds.",
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Prevent Bonds from Non-PM",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.OfferedLoanOrBond"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.OfferedLoanOrBond",
+                    "propNameBacker": "Currency",
+                    "propDisplayName": "Currency",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Economy.Currency"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<link=\"view:457:120633\"><icon name=\"CurrencySymbol\" type=\"nobg\"><style=\"Currency\">Euro</style></icon></link>",
+                        "entries": [
+                          {
+                            "type": "Eco.Gameplay.Economy.Currency",
+                            "name": "Euro",
+                            "reference": true
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "_name": "Bond",
+                        "markedUpName": "<icon name=\"OfferedLoanOrBond\" type=\"\">Bond</icon>",
+                        "contextDescription": "<i>Was it a loan or bond?</i>"
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>2 Titles</u></linktext><title>2 Titles</title><link=\"view:3403:121529\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Game Masters</style></icon></link>\r\n<link=\"view:4129:121527\"><icon name=\"ElectedTitle\" type=\"\"><style=\"Government\">Prime Minister</style></icon></link></foldout>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Game Masters",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+                                "name": "Prime Minister",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Client",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Client</icon>",
+                            "contextDescription": "<i>The citizen who posted the work.</i>"
+                          },
+                          "Requirements": "HasNone"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "DisplayText": "Only PM issues bonds",
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Track Repaiment",
+          "UserDescription": "Repayment needs to become tax-free. Here is where that magic should happen.",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.RepaidLoanOrBond"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.RepaidLoanOrBond",
+                    "propNameBacker": "Currency",
+                    "propDisplayName": "Currency",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Economy.Currency"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<link=\"view:457:120633\"><icon name=\"CurrencySymbol\" type=\"nobg\"><style=\"Currency\">Euro</style></icon></link>",
+                        "entries": [
+                          {
+                            "type": "Eco.Gameplay.Economy.Currency",
+                            "name": "Euro",
+                            "reference": true
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "_name": "Bond",
+                        "markedUpName": "<icon name=\"RepaidLoanOrBond\" type=\"\">Bond</icon>",
+                        "contextDescription": "<i>Was it a loan or bond?</i>"
+                      },
+                      {
+                        "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Lender",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Lender</icon>",
+                            "contextDescription": "<i>The citizen who offered the money.</i>"
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.Money.TransferToAccount_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "SourceAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                          "name": "Stats Accounting",
+                          "reference": true
+                        }
+                      },
+                      "TargetAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                          "name": "Federal Bonds Tracking",
+                          "reference": true
+                        }
+                      },
+                      "Currency": {
+                        "type": "Eco.Gameplay.Civics.GameValues.PersonalCurrency",
+                        "properties": {
+                          "User": {
+                            "type": "Eco.Mods.Companies.EmployerLegalPerson",
+                            "properties": {
+                              "Citizen": {
+                                "type": "GameValueContext",
+                                "_name": "Lender",
+                                "markedUpName": "<icon name=\"User\" type=\"\">Lender</icon>",
+                                "contextDescription": "<i>The citizen who offered the money.</i>"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "Amount": {
+                        "type": "GameValueContext",
+                        "_name": "Currency Amount",
+                        "markedUpName": "<icon name=\"RepaidLoanOrBond\" type=\"\">Currency Amount</icon>",
+                        "contextDescription": "<i>Amount for payment.</i>"
+                      },
+                      "PreventIfUnableToPay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "BondRepayment",
+                      "Person": {
+                        "type": "Eco.Mods.Companies.EmployerLegalPerson",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Lender",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Lender</icon>",
+                            "contextDescription": "<i>The citizen who offered the money.</i>"
+                          }
+                        }
+                      },
+                      "Count": {
+                        "type": "GameValueContext",
+                        "_name": "Currency Amount",
+                        "markedUpName": "<icon name=\"RepaidLoanOrBond\" type=\"\">Currency Amount</icon>",
+                        "contextDescription": "<i>Amount for payment.</i>"
+                      },
+                      "DisplayResultToCitizen": true,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "_name": "Bond",
+                        "markedUpName": "<icon name=\"RepaidLoanOrBond\" type=\"\">Bond</icon>",
+                        "contextDescription": "<i>Was it a loan or bond?</i>"
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.Money.TransferToAccount_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "SourceAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                          "name": "Stats Accounting",
+                          "reference": true
+                        }
+                      },
+                      "TargetAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                          "name": "Federal Bonds Tracking",
+                          "reference": true
+                        }
+                      },
+                      "Currency": {
+                        "type": "Eco.Gameplay.Civics.GameValues.PersonalCurrency",
+                        "properties": {
+                          "User": {
+                            "type": "GameValueContext",
+                            "_name": "Lender",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Lender</icon>",
+                            "contextDescription": "<i>The citizen who offered the money.</i>"
+                          }
+                        }
+                      },
+                      "Amount": {
+                        "type": "GameValueContext",
+                        "_name": "Currency Amount",
+                        "markedUpName": "<icon name=\"RepaidLoanOrBond\" type=\"\">Currency Amount</icon>",
+                        "contextDescription": "<i>Amount for payment.</i>"
+                      },
+                      "PreventIfUnableToPay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "BondRepayment",
+                      "Person": {
+                        "type": "GameValueContext",
+                        "_name": "Lender",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Lender</icon>",
+                        "contextDescription": "<i>The citizen who offered the money.</i>"
+                      },
+                      "Count": {
+                        "type": "GameValueContext",
+                        "_name": "Currency Amount",
+                        "markedUpName": "<icon name=\"RepaidLoanOrBond\" type=\"\">Currency Amount</icon>",
+                        "contextDescription": "<i>Amount for payment.</i>"
+                      },
+                      "DisplayResultToCitizen": true,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Force Government to Pay Back",
+          "UserDescription": "Enable tax-exemption of backpay. Defaulted Amount might be 0, because missclick.\nDefaulted Amount needs to be paid back, but the entire amount needs to be noted on the Bonds Tracking account, due to partial defaults likely not firing the Repaid Event.\nTo see whether this is actually true, we would need to compare the CustomStat with Bonds Tracking account. If both are equal, this assumption is true and everything is working as intended.",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.DefaultedOnLoanOrBond"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DefaultedOnLoanOrBond",
+                    "propNameBacker": "Currency",
+                    "propDisplayName": "Currency",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Economy.Currency"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<link=\"view:457:120633\"><icon name=\"CurrencySymbol\" type=\"nobg\"><style=\"Currency\">Euro</style></icon></link>",
+                        "entries": [
+                          {
+                            "type": "Eco.Gameplay.Economy.Currency",
+                            "name": "Euro",
+                            "reference": true
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "_name": "Bond",
+                        "markedUpName": "<icon name=\"DefaultedOnLoanOrBond\" type=\"\">Bond</icon>",
+                        "contextDescription": "<i>Was it a loan or bond?</i>"
+                      },
+                      {
+                        "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Lender",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Lender</icon>",
+                            "contextDescription": "<i>The citizen who offered the money.</i>"
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Mods.SmartTax.SmartPay_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "SourceBankAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                          "name": "# Federal Executive Funds",
+                          "reference": true
+                        }
+                      },
+                      "Currency": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.Currency",
+                          "name": "Euro",
+                          "reference": true
+                        }
+                      },
+                      "Amount": {
+                        "type": "GameValueContext",
+                        "_name": "Defaulted Amount",
+                        "markedUpName": "<icon name=\"DefaultedOnLoanOrBond\" type=\"\">Defaulted Amount</icon>",
+                        "contextDescription": "<i>How much is left to pay.</i>"
+                      },
+                      "Target": {
+                        "type": "Eco.Mods.Companies.EmployerLegalPersonAlias",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Lender",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Lender</icon>",
+                            "contextDescription": "<i>The citizen who offered the money.</i>"
+                          }
+                        }
+                      },
+                      "PaymentCode": "Bond Defaulted",
+                      "Silent": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.Money.TransferToAccount_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "SourceAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                          "name": "Stats Accounting",
+                          "reference": true
+                        }
+                      },
+                      "TargetAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                          "name": "Federal Bonds Tracking",
+                          "reference": true
+                        }
+                      },
+                      "Currency": {
+                        "type": "Eco.Gameplay.Civics.GameValues.PersonalCurrency",
+                        "properties": {
+                          "User": {
+                            "type": "Eco.Mods.Companies.EmployerLegalPerson",
+                            "properties": {
+                              "Citizen": {
+                                "type": "GameValueContext",
+                                "_name": "Lender",
+                                "markedUpName": "<icon name=\"User\" type=\"\">Lender</icon>",
+                                "contextDescription": "<i>The citizen who offered the money.</i>"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "Amount": {
+                        "type": "GameValueContext",
+                        "_name": "Currency Amount",
+                        "markedUpName": "<icon name=\"DefaultedOnLoanOrBond\" type=\"\">Currency Amount</icon>",
+                        "contextDescription": "<i>Amount for payment.</i>"
+                      },
+                      "PreventIfUnableToPay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "BondRepayment",
+                      "Person": {
+                        "type": "Eco.Mods.Companies.EmployerLegalPerson",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Lender",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Lender</icon>",
+                            "contextDescription": "<i>The citizen who offered the money.</i>"
+                          }
+                        }
+                      },
+                      "Count": {
+                        "type": "GameValueContext",
+                        "_name": "Currency Amount",
+                        "markedUpName": "<icon name=\"DefaultedOnLoanOrBond\" type=\"\">Currency Amount</icon>",
+                        "contextDescription": "<i>Amount for payment.</i>"
+                      },
+                      "DisplayResultToCitizen": true,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "_name": "Bond",
+                        "markedUpName": "<icon name=\"DefaultedOnLoanOrBond\" type=\"\">Bond</icon>",
+                        "contextDescription": "<i>Was it a loan or bond?</i>"
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Mods.SmartTax.SmartPay_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "SourceBankAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                          "name": "# Federal Executive Funds",
+                          "reference": true
+                        }
+                      },
+                      "Currency": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.Currency",
+                          "name": "Euro",
+                          "reference": true
+                        }
+                      },
+                      "Amount": {
+                        "type": "GameValueContext",
+                        "_name": "Defaulted Amount",
+                        "markedUpName": "<icon name=\"DefaultedOnLoanOrBond\" type=\"\">Defaulted Amount</icon>",
+                        "contextDescription": "<i>How much is left to pay.</i>"
+                      },
+                      "Target": {
+                        "type": "GameValueContext",
+                        "_name": "Lender",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Lender</icon>",
+                        "contextDescription": "<i>The citizen who offered the money.</i>"
+                      },
+                      "PaymentCode": "Bond Defaulted",
+                      "Silent": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.Money.TransferToAccount_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "SourceAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                          "name": "Stats Accounting",
+                          "reference": true
+                        }
+                      },
+                      "TargetAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                          "name": "Federal Bonds Tracking",
+                          "reference": true
+                        }
+                      },
+                      "Currency": {
+                        "type": "Eco.Gameplay.Civics.GameValues.PersonalCurrency",
+                        "properties": {
+                          "User": {
+                            "type": "GameValueContext",
+                            "_name": "Lender",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Lender</icon>",
+                            "contextDescription": "<i>The citizen who offered the money.</i>"
+                          }
+                        }
+                      },
+                      "Amount": {
+                        "type": "GameValueContext",
+                        "_name": "Currency Amount",
+                        "markedUpName": "<icon name=\"DefaultedOnLoanOrBond\" type=\"\">Currency Amount</icon>",
+                        "contextDescription": "<i>Amount for payment.</i>"
+                      },
+                      "PreventIfUnableToPay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "BondRepayment",
+                      "Person": {
+                        "type": "GameValueContext",
+                        "_name": "Lender",
+                        "markedUpName": "<icon name=\"User\" type=\"\">Lender</icon>",
+                        "contextDescription": "<i>The citizen who offered the money.</i>"
+                      },
+                      "Count": {
+                        "type": "GameValueContext",
+                        "_name": "Currency Amount",
+                        "markedUpName": "<icon name=\"DefaultedOnLoanOrBond\" type=\"\">Currency Amount</icon>",
+                        "contextDescription": "<i>Amount for payment.</i>"
+                      },
+                      "DisplayResultToCitizen": true,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "State": "Active"
+  }
+}

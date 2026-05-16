@@ -1,0 +1,168 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Laws.Law",
+  "name": "Transmission Pole QoL",
+  "reference": false,
+  "description": "[WT54][MoI] Transmission Payout and Tax.",
+  "properties": {
+    "Sections": [
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Restrict Placement Distance",
+          "UserDescription": "1. Prevent Placement of Transmission Pole in Fed Highway and Buffer District with 21 Fields\n2. Payout from MoI Budget - amount defined by # Federal Highway Payout (Powerpole) Account to company or player account.",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.PlaceOrPickUpObject"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlaceOrPickUpObject",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Placed or Picked Up",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.WorldObjectItem"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<link=\"Item:TransmissionPoleItem\"><style=\"Item\"><icon name=\"TransmissionPoleItem\" type=\"\">Transmission Pole</icon></style></link>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.TransmissionPoleItem"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "_name": "PlacingObject",
+                        "markedUpName": "<icon name=\"PlaceOrPickUpObject\" type=\"\">Placing Object</icon>",
+                        "contextDescription": "<i>Was the item placed?</i>"
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "_name": "Action Location",
+                            "markedUpName": "<icon name=\"PlaceOrPickUpObject\" type=\"\">Action Location</icon>",
+                            "contextDescription": "<i>The position where the interaction took place.</i>"
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:2662:121654\"><icon name=\"District\" type=\"\"><color=#7F7F7FFF>Federal Highways</color></icon></link>\r\n<link=\"view:2662:121651\"><icon name=\"District\" type=\"\"><color=#949291FF>Federal Highways Buffer</color></icon></link></foldout>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Federal Highways",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Federal Highways Buffer",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "InsideOne"
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Mods.LawExtensions.DistanceToClosestWorldObject",
+                            "properties": {
+                              "Location": {
+                                "type": "GameValueContext",
+                                "_name": "Action Location",
+                                "markedUpName": "<icon name=\"PlaceOrPickUpObject\" type=\"\">Action Location</icon>",
+                                "contextDescription": "<i>The position where the interaction took place.</i>"
+                              },
+                              "ObjectType": {
+                                "type": "GamePickerList",
+                                "mustDeriveType": {
+                                  "type": "Type",
+                                  "value": "Eco.Gameplay.Objects.WorldObject"
+                                },
+                                "requiredTag": null,
+                                "internalDescription": "<link=\"view:3122:-1\"><icon name=\"Contract\" type=\"\"><color=#60FFFFFF>Transmission Pole Object</color></icon></link>",
+                                "entries": [
+                                  {
+                                    "type": "Type",
+                                    "value": "Eco.Mods.TechTree.TransmissionPoleObject"
+                                  }
+                                ]
+                              },
+                              "IgnoreAtLocation": {
+                                "type": "Eco.Gameplay.Civics.GameValues.No",
+                                "properties": {}
+                              }
+                            }
+                          },
+                          "Comparison": "LessThanOrEqualTo",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 21.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "DisplayText": "too close to other pole.",
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "State": "Active"
+  }
+}

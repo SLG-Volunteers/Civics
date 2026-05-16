@@ -1,0 +1,1084 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Laws.Law",
+  "name": "Federal Budget",
+  "reference": false,
+  "description": "Federal budget distributions",
+  "properties": {
+    "Sections": [
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Federal Budget Distribution",
+          "UserDescription": "Allocation to Education, Infrastructure, Wages, Culture, Finance and Meteor Store sending the remainder to the Executive account.",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.GlobalTimer"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.TimerTriggerConfig",
+                    "typeToConfig": null,
+                    "propNameBacker": null,
+                    "propDisplayName": null,
+                    "properties": {
+                      "HoursBetweenExecutions": 1.0
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                  "properties": {
+                                    "Left": {
+                                      "type": "Eco.Mods.LawExtensions.GovernmentAccountHolding",
+                                      "properties": {
+                                        "Currency": {
+                                          "type": "GameValueWrapper",
+                                          "value": {
+                                            "type": "Eco.Gameplay.Economy.Currency",
+                                            "name": "Euro",
+                                            "reference": true
+                                          }
+                                        },
+                                        "Account": {
+                                          "type": "GameValueWrapper",
+                                          "value": {
+                                            "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                                            "name": "# Minister of Education Budget",
+                                            "reference": true
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "Comparison": "LessThan",
+                                    "Right": {
+                                      "type": "GameValueWrapper",
+                                      "value": 50000.0
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.Laws.LegalActions.Money.TransferToAccount_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "SourceAccount": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                    "name": "The Federation of White Tiger Treasury",
+                                    "reference": true
+                                  }
+                                },
+                                "TargetAccount": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                                    "name": "# Minister of Education Budget",
+                                    "reference": true
+                                  }
+                                },
+                                "Currency": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.Currency",
+                                    "name": "Euro",
+                                    "reference": true
+                                  }
+                                },
+                                "Amount": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Percent_GameValue",
+                                  "properties": {
+                                    "Number": {
+                                      "type": "Eco.Mods.LawExtensions.GovernmentAccountHolding",
+                                      "properties": {
+                                        "Currency": {
+                                          "type": "GameValueWrapper",
+                                          "value": {
+                                            "type": "Eco.Gameplay.Economy.Currency",
+                                            "name": "Euro",
+                                            "reference": true
+                                          }
+                                        },
+                                        "Account": {
+                                          "type": "GameValueWrapper",
+                                          "value": {
+                                            "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                            "name": "The Federation of White Tiger Treasury",
+                                            "reference": true
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "Percent": {
+                                      "type": "GameValueWrapper",
+                                      "value": 15.0
+                                    }
+                                  }
+                                },
+                                "PreventIfUnableToPay": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                  "properties": {
+                                    "Left": {
+                                      "type": "Eco.Mods.LawExtensions.GovernmentAccountHolding",
+                                      "properties": {
+                                        "Currency": {
+                                          "type": "GameValueWrapper",
+                                          "value": {
+                                            "type": "Eco.Gameplay.Economy.Currency",
+                                            "name": "Euro",
+                                            "reference": true
+                                          }
+                                        },
+                                        "Account": {
+                                          "type": "GameValueWrapper",
+                                          "value": {
+                                            "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                                            "name": "# Minister of Infrastructure Budget",
+                                            "reference": true
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "Comparison": "LessThan",
+                                    "Right": {
+                                      "type": "GameValueWrapper",
+                                      "value": 100000.0
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.Laws.LegalActions.Money.TransferToAccount_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "SourceAccount": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                    "name": "The Federation of White Tiger Treasury",
+                                    "reference": true
+                                  }
+                                },
+                                "TargetAccount": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                                    "name": "# Minister of Infrastructure Budget",
+                                    "reference": true
+                                  }
+                                },
+                                "Currency": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.Currency",
+                                    "name": "Euro",
+                                    "reference": true
+                                  }
+                                },
+                                "Amount": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Percent_GameValue",
+                                  "properties": {
+                                    "Number": {
+                                      "type": "Eco.Mods.LawExtensions.GovernmentAccountHolding",
+                                      "properties": {
+                                        "Currency": {
+                                          "type": "GameValueWrapper",
+                                          "value": {
+                                            "type": "Eco.Gameplay.Economy.Currency",
+                                            "name": "Euro",
+                                            "reference": true
+                                          }
+                                        },
+                                        "Account": {
+                                          "type": "GameValueWrapper",
+                                          "value": {
+                                            "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                            "name": "The Federation of White Tiger Treasury",
+                                            "reference": true
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "Percent": {
+                                      "type": "GameValueWrapper",
+                                      "value": 30.0
+                                    }
+                                  }
+                                },
+                                "PreventIfUnableToPay": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                  "properties": {
+                                    "Left": {
+                                      "type": "Eco.Mods.LawExtensions.GovernmentAccountHolding",
+                                      "properties": {
+                                        "Currency": {
+                                          "type": "GameValueWrapper",
+                                          "value": {
+                                            "type": "Eco.Gameplay.Economy.Currency",
+                                            "name": "Euro",
+                                            "reference": true
+                                          }
+                                        },
+                                        "Account": {
+                                          "type": "GameValueWrapper",
+                                          "value": {
+                                            "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                                            "name": "# Federal Government Wages Fund",
+                                            "reference": true
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "Comparison": "LessThan",
+                                    "Right": {
+                                      "type": "GameValueWrapper",
+                                      "value": 10000.0
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.Laws.LegalActions.Money.TransferToAccount_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "SourceAccount": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                    "name": "The Federation of White Tiger Treasury",
+                                    "reference": true
+                                  }
+                                },
+                                "TargetAccount": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                                    "name": "# Federal Government Wages Fund",
+                                    "reference": true
+                                  }
+                                },
+                                "Currency": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.Currency",
+                                    "name": "Euro",
+                                    "reference": true
+                                  }
+                                },
+                                "Amount": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Percent_GameValue",
+                                  "properties": {
+                                    "Number": {
+                                      "type": "Eco.Mods.LawExtensions.GovernmentAccountHolding",
+                                      "properties": {
+                                        "Currency": {
+                                          "type": "GameValueWrapper",
+                                          "value": {
+                                            "type": "Eco.Gameplay.Economy.Currency",
+                                            "name": "Euro",
+                                            "reference": true
+                                          }
+                                        },
+                                        "Account": {
+                                          "type": "GameValueWrapper",
+                                          "value": {
+                                            "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                            "name": "The Federation of White Tiger Treasury",
+                                            "reference": true
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "Percent": {
+                                      "type": "GameValueWrapper",
+                                      "value": 10.0
+                                    }
+                                  }
+                                },
+                                "PreventIfUnableToPay": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                  "properties": {
+                                    "Left": {
+                                      "type": "Eco.Mods.LawExtensions.GovernmentAccountHolding",
+                                      "properties": {
+                                        "Currency": {
+                                          "type": "GameValueWrapper",
+                                          "value": {
+                                            "type": "Eco.Gameplay.Economy.Currency",
+                                            "name": "Euro",
+                                            "reference": true
+                                          }
+                                        },
+                                        "Account": {
+                                          "type": "GameValueWrapper",
+                                          "value": {
+                                            "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                                            "name": "# Minister of Culture Budget",
+                                            "reference": true
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "Comparison": "LessThan",
+                                    "Right": {
+                                      "type": "GameValueWrapper",
+                                      "value": 5000.0
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.Laws.LegalActions.Money.TransferToAccount_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "SourceAccount": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                    "name": "The Federation of White Tiger Treasury",
+                                    "reference": true
+                                  }
+                                },
+                                "TargetAccount": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                                    "name": "# Minister of Culture Budget",
+                                    "reference": true
+                                  }
+                                },
+                                "Currency": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.Currency",
+                                    "name": "Euro",
+                                    "reference": true
+                                  }
+                                },
+                                "Amount": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Percent_GameValue",
+                                  "properties": {
+                                    "Number": {
+                                      "type": "Eco.Mods.LawExtensions.GovernmentAccountHolding",
+                                      "properties": {
+                                        "Currency": {
+                                          "type": "GameValueWrapper",
+                                          "value": {
+                                            "type": "Eco.Gameplay.Economy.Currency",
+                                            "name": "Euro",
+                                            "reference": true
+                                          }
+                                        },
+                                        "Account": {
+                                          "type": "GameValueWrapper",
+                                          "value": {
+                                            "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                            "name": "The Federation of White Tiger Treasury",
+                                            "reference": true
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "Percent": {
+                                      "type": "GameValueWrapper",
+                                      "value": 5.0
+                                    }
+                                  }
+                                },
+                                "PreventIfUnableToPay": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                  "properties": {
+                                    "Left": {
+                                      "type": "Eco.Mods.LawExtensions.GovernmentAccountHolding",
+                                      "properties": {
+                                        "Currency": {
+                                          "type": "GameValueWrapper",
+                                          "value": {
+                                            "type": "Eco.Gameplay.Economy.Currency",
+                                            "name": "Euro",
+                                            "reference": true
+                                          }
+                                        },
+                                        "Account": {
+                                          "type": "GameValueWrapper",
+                                          "value": {
+                                            "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                                            "name": "# Meteor Store",
+                                            "reference": true
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "Comparison": "LessThan",
+                                    "Right": {
+                                      "type": "GameValueWrapper",
+                                      "value": 200000.0
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.Laws.LegalActions.Money.TransferToAccount_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "SourceAccount": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                    "name": "The Federation of White Tiger Treasury",
+                                    "reference": true
+                                  }
+                                },
+                                "TargetAccount": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                                    "name": "# Meteor Store",
+                                    "reference": true
+                                  }
+                                },
+                                "Currency": {
+                                  "type": "GameValueWrapper",
+                                  "value": {
+                                    "type": "Eco.Gameplay.Economy.Currency",
+                                    "name": "Euro",
+                                    "reference": true
+                                  }
+                                },
+                                "Amount": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Percent_GameValue",
+                                  "properties": {
+                                    "Number": {
+                                      "type": "Eco.Mods.LawExtensions.GovernmentAccountHolding",
+                                      "properties": {
+                                        "Currency": {
+                                          "type": "GameValueWrapper",
+                                          "value": {
+                                            "type": "Eco.Gameplay.Economy.Currency",
+                                            "name": "Euro",
+                                            "reference": true
+                                          }
+                                        },
+                                        "Account": {
+                                          "type": "GameValueWrapper",
+                                          "value": {
+                                            "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                            "name": "The Federation of White Tiger Treasury",
+                                            "reference": true
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "Percent": {
+                                      "type": "GameValueWrapper",
+                                      "value": 80.0
+                                    }
+                                  }
+                                },
+                                "PreventIfUnableToPay": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.Money.TransferToAccount_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "SourceAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                          "name": "The Federation of White Tiger Treasury",
+                          "reference": true
+                        }
+                      },
+                      "TargetAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                          "name": "# Federal Executive Funds",
+                          "reference": true
+                        }
+                      },
+                      "Currency": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.Currency",
+                          "name": "Euro",
+                          "reference": true
+                        }
+                      },
+                      "Amount": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Percent_GameValue",
+                        "properties": {
+                          "Number": {
+                            "type": "Eco.Mods.LawExtensions.GovernmentAccountHolding",
+                            "properties": {
+                              "Currency": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Economy.Currency",
+                                  "name": "Euro",
+                                  "reference": true
+                                }
+                              },
+                              "Account": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                  "name": "The Federation of White Tiger Treasury",
+                                  "reference": true
+                                }
+                              }
+                            }
+                          },
+                          "Percent": {
+                            "type": "GameValueWrapper",
+                            "value": 95.0
+                          }
+                        }
+                      },
+                      "PreventIfUnableToPay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Emergency Funds Transfer",
+          "UserDescription": "Parliament hearby authorizes one time payments to be made to the Ministry of Education in the event of critical fund shortages. Payments could be made by Members of Parliament, using the \"!to-moe\" command will transfer 10000 Euro from the Federal Executive Funds to the MoE Budget account. - Senator Dandelion",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ChatSent"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Tag",
+                    "propDisplayName": "Tag",
+                    "properties": {
+                      "String": null
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Message",
+                    "propDisplayName": "Message",
+                    "properties": {
+                      "String": "!to-moe"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<link=\"view:4129:121532\"><icon name=\"ElectedTitle\" type=\"\"><style=\"Government\">Members of Parliament</style></icon></link>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+                                "name": "Members of Parliament",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                            "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                          },
+                          "Requirements": "HasAll"
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Mods.LawExtensions.GovernmentAccountHolding",
+                            "properties": {
+                              "Currency": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Economy.Currency",
+                                  "name": "Euro",
+                                  "reference": true
+                                }
+                              },
+                              "Account": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                                  "name": "# Federal Executive Funds",
+                                  "reference": true
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 10000.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.Money.TransferToAccount_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "SourceAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                          "name": "# Federal Executive Funds",
+                          "reference": true
+                        }
+                      },
+                      "TargetAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                          "name": "# Minister of Education Budget",
+                          "reference": true
+                        }
+                      },
+                      "Currency": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.Currency",
+                          "name": "Euro",
+                          "reference": true
+                        }
+                      },
+                      "Amount": {
+                        "type": "GameValueWrapper",
+                        "value": 10000.0
+                      },
+                      "PreventIfUnableToPay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Emergency Transfer to the Meteor Store",
+          "UserDescription": "Parliament hearby authorizes one time payments to be made to the Meteor Store in the event of critical fund shortages. Payments could be made by Members of Parliament and Ministers of Infrastructure or Education, using the \"!to-meteor\" command will transfer 10000 Euro from the Federal Executive Funds to the Meteor Store Budget account. - Prime Minister Senator Dandelion",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ChatSent"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Tag",
+                    "propDisplayName": "Tag",
+                    "properties": {
+                      "String": null
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Message",
+                    "propDisplayName": "Message",
+                    "properties": {
+                      "String": "!to-meteor"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>3 Titles</u></linktext><title>3 Titles</title><link=\"view:4129:121532\"><icon name=\"ElectedTitle\" type=\"\"><style=\"Government\">Members of Parliament</style></icon></link>\r\n<link=\"view:4129:121677\"><icon name=\"ElectedTitle\" type=\"\"><style=\"Government\">Minister of Education</style></icon></link>\r\n<link=\"view:4129:121530\"><icon name=\"ElectedTitle\" type=\"\"><style=\"Government\">Minister of Infrastructure</style></icon></link></foldout>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+                                "name": "Minister of Education",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+                                "name": "Minister of Infrastructure",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+                                "name": "Members of Parliament",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                            "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                          },
+                          "Requirements": "HasAny"
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Mods.LawExtensions.GovernmentAccountHolding",
+                            "properties": {
+                              "Currency": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Economy.Currency",
+                                  "name": "Euro",
+                                  "reference": true
+                                }
+                              },
+                              "Account": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                                  "name": "# Federal Executive Funds",
+                                  "reference": true
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 10000.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Laws.LegalActions.Money.TransferToAccount_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "SourceAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                          "name": "# Federal Executive Funds",
+                          "reference": true
+                        }
+                      },
+                      "TargetAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                          "name": "# Meteor Store",
+                          "reference": true
+                        }
+                      },
+                      "Currency": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.Currency",
+                          "name": "Euro",
+                          "reference": true
+                        }
+                      },
+                      "Amount": {
+                        "type": "GameValueWrapper",
+                        "value": 10000.0
+                      },
+                      "PreventIfUnableToPay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "State": "Active"
+  }
+}
