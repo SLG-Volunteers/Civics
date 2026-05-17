@@ -38,11 +38,11 @@
                           "value": "Eco.Gameplay.Economy.Currency"
                         },
                         "requiredTag": null,
-                        "internalDescription": "<link=\"view:457:120633\"><icon name=\"CurrencySymbol\" type=\"nobg\"><style=\"Currency\">Euro</style></icon></link>",
+                        "internalDescription": "<link=\"view:457:120633\"><icon name=\"CurrencySymbol\" type=\"nobg\"><style=\"Currency\">Pound</style></icon></link>",
                         "entries": [
                           {
                             "type": "Eco.Gameplay.Economy.Currency",
-                            "name": "Euro",
+                            "name": "Pound",
                             "reference": true
                           }
                         ]
@@ -240,11 +240,11 @@
                           "value": "Eco.Gameplay.Economy.Currency"
                         },
                         "requiredTag": null,
-                        "internalDescription": "<link=\"view:457:120633\"><icon name=\"CurrencySymbol\" type=\"nobg\"><style=\"Currency\">Euro</style></icon></link>",
+                        "internalDescription": "<link=\"view:457:120633\"><icon name=\"CurrencySymbol\" type=\"nobg\"><style=\"Currency\">Pound</style></icon></link>",
                         "entries": [
                           {
                             "type": "Eco.Gameplay.Economy.Currency",
-                            "name": "Euro",
+                            "name": "Pound",
                             "reference": true
                           }
                         ]
@@ -692,11 +692,11 @@
                           "value": "Eco.Gameplay.Economy.Currency"
                         },
                         "requiredTag": null,
-                        "internalDescription": "<link=\"view:457:120633\"><icon name=\"CurrencySymbol\" type=\"nobg\"><style=\"Currency\">Euro</style></icon></link>",
+                        "internalDescription": "<link=\"view:457:120633\"><icon name=\"CurrencySymbol\" type=\"nobg\"><style=\"Currency\">Pound</style></icon></link>",
                         "entries": [
                           {
                             "type": "Eco.Gameplay.Economy.Currency",
-                            "name": "Euro",
+                            "name": "Pound",
                             "reference": true
                           }
                         ]
@@ -1130,11 +1130,11 @@
                           "value": "Eco.Gameplay.Economy.Currency"
                         },
                         "requiredTag": null,
-                        "internalDescription": "<link=\"view:457:120633\"><icon name=\"CurrencySymbol\" type=\"nobg\"><style=\"Currency\">Euro</style></icon></link>",
+                        "internalDescription": "<link=\"view:457:120633\"><icon name=\"CurrencySymbol\" type=\"nobg\"><style=\"Currency\">Pound</style></icon></link>",
                         "entries": [
                           {
                             "type": "Eco.Gameplay.Economy.Currency",
-                            "name": "Euro",
+                            "name": "Pound",
                             "reference": true
                           }
                         ]
@@ -1320,11 +1320,11 @@
                           "value": "Eco.Gameplay.Economy.Currency"
                         },
                         "requiredTag": null,
-                        "internalDescription": "<link=\"view:457:120633\"><icon name=\"CurrencySymbol\" type=\"nobg\"><style=\"Currency\">Euro</style></icon></link>",
+                        "internalDescription": "<link=\"view:457:120633\"><icon name=\"CurrencySymbol\" type=\"nobg\"><style=\"Currency\">Pound</style></icon></link>",
                         "entries": [
                           {
                             "type": "Eco.Gameplay.Economy.Currency",
-                            "name": "Euro",
+                            "name": "Pound",
                             "reference": true
                           }
                         ]
@@ -1572,11 +1572,11 @@
                           "value": "Eco.Gameplay.Economy.Currency"
                         },
                         "requiredTag": null,
-                        "internalDescription": "<link=\"view:457:120633\"><icon name=\"CurrencySymbol\" type=\"nobg\"><style=\"Currency\">Euro</style></icon></link>",
+                        "internalDescription": "<link=\"view:457:120633\"><icon name=\"CurrencySymbol\" type=\"nobg\"><style=\"Currency\">Pound</style></icon></link>",
                         "entries": [
                           {
                             "type": "Eco.Gameplay.Economy.Currency",
-                            "name": "Euro",
+                            "name": "Pound",
                             "reference": true
                           }
                         ]
@@ -1686,11 +1686,11 @@
                           "value": "Eco.Gameplay.Economy.Currency"
                         },
                         "requiredTag": null,
-                        "internalDescription": "<link=\"view:457:120633\"><icon name=\"CurrencySymbol\" type=\"nobg\"><style=\"Currency\">Euro</style></icon></link>",
+                        "internalDescription": "<link=\"view:457:120633\"><icon name=\"CurrencySymbol\" type=\"nobg\"><style=\"Currency\">Pound</style></icon></link>",
                         "entries": [
                           {
                             "type": "Eco.Gameplay.Economy.Currency",
-                            "name": "Euro",
+                            "name": "Pound",
                             "reference": true
                           }
                         ]
@@ -1941,11 +1941,11 @@
                           "value": "Eco.Gameplay.Economy.Currency"
                         },
                         "requiredTag": null,
-                        "internalDescription": "<link=\"view:457:120633\"><icon name=\"CurrencySymbol\" type=\"nobg\"><style=\"Currency\">Euro</style></icon></link>",
+                        "internalDescription": "<link=\"view:457:120633\"><icon name=\"CurrencySymbol\" type=\"nobg\"><style=\"Currency\">Pound</style></icon></link>",
                         "entries": [
                           {
                             "type": "Eco.Gameplay.Economy.Currency",
-                            "name": "Euro",
+                            "name": "Pound",
                             "reference": true
                           }
                         ]
@@ -2003,7 +2003,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.Currency",
-                          "name": "Euro",
+                          "name": "Pound",
                           "reference": true
                         }
                       },
@@ -2154,7 +2154,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.Currency",
-                          "name": "Euro",
+                          "name": "Pound",
                           "reference": true
                         }
                       },
