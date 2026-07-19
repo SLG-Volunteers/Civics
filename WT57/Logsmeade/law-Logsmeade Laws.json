@@ -1,0 +1,434 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Laws.Law",
+  "name": "Logsmeade Laws",
+  "reference": false,
+  "description": null,
+  "properties": {
+    "Sections": [
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Protects Roads and Forests from Claiming",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ClaimOrUnclaimProperty"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ClaimOrUnclaimProperty",
+                    "propNameBacker": "PreviousDeedOwner",
+                    "propDisplayName": "Previous Deed Owner",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Aliases.IAlias"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "_name": "ClaimingLand",
+                        "markedUpName": "<icon name=\"ClaimOrUnclaimProperty\" type=\"\">Claiming Land</icon>",
+                        "contextDescription": "<i>Was the property claimed or unclaimed?</i>"
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "_name": "Action Location",
+                            "markedUpName": "<icon name=\"ClaimOrUnclaimProperty\" type=\"\">Action Location</icon>",
+                            "contextDescription": "<i>The position of the claim.</i>"
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:2579:22055742\"><icon name=\"District\" type=\"\"><color=#6A797FFF>Logsmeade Forests</color></icon></link>\r\n<link=\"view:2579:22055743\"><icon name=\"District\" type=\"\"><color=#392631FF>Logsmeade Roads</color></icon></link></foldout>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Logsmeade Forests",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Logsmeade Roads",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "InsideOne"
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>2 Titles</u></linktext><title>2 Titles</title><link=\"view:890:110473\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Game Masters</style></icon></link>\r\n<link=\"view:501:1735335\"><icon name=\"ElectedTitle\" type=\"\"><style=\"Government\">Logsmeade Mayor</style></icon></link></foldout>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Game Masters",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+                                "name": "Logsmeade Mayor",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                            "contextDescription": "<i>The citizen who claimed or unclaimed the land.</i>"
+                          },
+                          "Requirements": "HasNone"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Management of Forest and Forestry Districts",
+          "UserDescription": "Promoting full tree growth before cutting trees and managing there growth in districted areas.",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ChopTree"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChopTree",
+                    "propNameBacker": "Species",
+                    "propDisplayName": "Species",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Simulation.Types.TreeSpecies"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<foldout><linktext><u>4 Plants</u></linktext><title>4 Plants</title><link=\"view:854:-1\"><icon name=\"CedarSpecies\" type=\"\"><color=#60FFFFFF>Cedar Species</color></icon></link>\r\n<link=\"view:1442:-1\"><icon name=\"CeibaSpecies\" type=\"\"><color=#60FFFFFF>Ceiba Species</color></icon></link>\r\n<link=\"view:3675:-1\"><icon name=\"OakSpecies\" type=\"\"><color=#60FFFFFF>Oak Species</color></icon></link>\r\n<link=\"view:2653:-1\"><icon name=\"PalmSpecies\" type=\"\"><color=#60FFFFFF>Palm Species</color></icon></link></foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Cedar+CedarSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Oak+OakSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Palm+PalmSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Ceiba+CeibaSpecies"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChopTree",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Logging",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "_name": "Action Location",
+                            "markedUpName": "<icon name=\"ChopTree\" type=\"\">Action Location</icon>",
+                            "contextDescription": "<i>The position where the interaction took place.</i>"
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<link=\"view:2579:22055742\"><icon name=\"District\" type=\"\"><color=#6A797FFF>Logsmeade Forests</color></icon></link>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Logsmeade Forests",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "InsideOne"
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<link=\"view:890:21173380\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Logsmeade Forestry Worker</style></icon></link>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Logsmeade Forestry Worker",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                            "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                          },
+                          "Requirements": "HasNone"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "QoL",
+          "UserDescription": "Clearing wood pulp and stumps from property.",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.CleanupTreeDebris"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.CleanupTreeDebris",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Logging",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ChopStump"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChopStump",
+                    "propNameBacker": "Species",
+                    "propDisplayName": "Species",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Simulation.Types.TreeSpecies"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChopStump",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Logging",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.OnOwnedLand",
+                        "properties": {}
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.IgnoreAuth_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "State": "Active"
+  }
+}
