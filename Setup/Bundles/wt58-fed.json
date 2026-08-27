@@ -559693,11 +559693,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:1865:51873813\"><icon name=\"District\" type=\"\"><color=#B0DFAEFF>GM Claimed Revision 2</color></icon></link>",
+                                "internalDescription": "<link=\"view:1865:51873813\"><icon name=\"District\" type=\"\"><color=#B0DFAEFF>GM Claimed</color></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "GM Claimed Revision 2",
+                                    "name": "GM Claimed",
                                     "reference": true
                                   }
                                 ]
@@ -560568,11 +560568,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:1865:45450783\"><icon name=\"District\" type=\"\"><color=#BEB769FF>Town and State Offices Revision 10</color></icon></link>",
+                                "internalDescription": "<link=\"view:1865:45450783\"><icon name=\"District\" type=\"\"><color=#BEB769FF>Town and State Offices</color></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "Town and State Offices Revision 10",
+                                    "name": "Town and State Offices",
                                     "reference": true
                                   }
                                 ]
@@ -560724,7 +560724,7 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<foldout><linktext><u>6 Districts</u></linktext><title>6 Districts</title><link=\"view:1865:573511\"><icon name=\"District\" type=\"\"><color=#BCBC00FF>Federal Bank</color></icon></link>\r\n<link=\"view:1865:573514\"><icon name=\"District\" type=\"\"><color=#3A1F00FF>Houses of Parliament</color></icon></link>\r\n<link=\"view:1865:573524\"><icon name=\"District\" type=\"\"><color=#AB0300FF>Prime Ministers Office</color></icon></link>\r\n<link=\"view:1865:573522\"><icon name=\"District\" type=\"\"><color=#252A2AFF>Royal Palace</color></icon></link>\r\n<link=\"view:1865:45450783\"><icon name=\"District\" type=\"\"><color=#BEB769FF>Town and State Offices Revision 10</color></icon></link>\r\n<link=\"view:1865:573521\"><icon name=\"District\" type=\"\"><color=#B27601FF>Unica Government Office</color></icon></link></foldout>",
+                                "internalDescription": "<foldout><linktext><u>6 Districts</u></linktext><title>6 Districts</title><link=\"view:1865:573511\"><icon name=\"District\" type=\"\"><color=#BCBC00FF>Federal Bank</color></icon></link>\r\n<link=\"view:1865:573514\"><icon name=\"District\" type=\"\"><color=#3A1F00FF>Houses of Parliament</color></icon></link>\r\n<link=\"view:1865:573524\"><icon name=\"District\" type=\"\"><color=#AB0300FF>Prime Ministers Office</color></icon></link>\r\n<link=\"view:1865:573522\"><icon name=\"District\" type=\"\"><color=#252A2AFF>Royal Palace</color></icon></link>\r\n<link=\"view:1865:45450783\"><icon name=\"District\" type=\"\"><color=#BEB769FF>Town and State Offices</color></icon></link>\r\n<link=\"view:1865:573521\"><icon name=\"District\" type=\"\"><color=#B27601FF>Unica Government Office</color></icon></link></foldout>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
@@ -560748,7 +560748,7 @@
                                   },
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "Town and State Offices Revision 10",
+                                    "name": "Town and State Offices",
                                     "reference": true
                                   },
                                   {
@@ -562911,11 +562911,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link></foldout>",
+                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link></foldout>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   },
                                   {
@@ -563053,11 +563053,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link>",
+                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   }
                                 ]
@@ -563730,11 +563730,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link></foldout>",
+                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link></foldout>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   },
                                   {
@@ -563872,11 +563872,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link>",
+                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   }
                                 ]
@@ -564563,11 +564563,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link></foldout>",
+                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link></foldout>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   },
                                   {
@@ -564637,11 +564637,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link>",
+                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   }
                                 ]
@@ -565328,11 +565328,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link></foldout>",
+                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link></foldout>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   },
                                   {
@@ -565402,11 +565402,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link>",
+                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   }
                                 ]
@@ -566093,11 +566093,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link></foldout>",
+                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link></foldout>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   },
                                   {
@@ -566167,11 +566167,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link>",
+                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   }
                                 ]
@@ -566858,11 +566858,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link></foldout>",
+                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link></foldout>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   },
                                   {
@@ -566932,11 +566932,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link>",
+                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   }
                                 ]
@@ -567623,11 +567623,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link></foldout>",
+                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link></foldout>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   },
                                   {
@@ -567697,11 +567697,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link>",
+                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   }
                                 ]
@@ -568388,11 +568388,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link></foldout>",
+                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link></foldout>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   },
                                   {
@@ -568462,11 +568462,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link>",
+                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   }
                                 ]
@@ -569153,11 +569153,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link></foldout>",
+                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link></foldout>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   },
                                   {
@@ -569227,11 +569227,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link>",
+                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   }
                                 ]
@@ -569918,11 +569918,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link></foldout>",
+                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link></foldout>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   },
                                   {
@@ -569992,11 +569992,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link>",
+                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   }
                                 ]
@@ -570683,11 +570683,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link></foldout>",
+                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link></foldout>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   },
                                   {
@@ -570757,11 +570757,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link>",
+                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   }
                                 ]
@@ -571448,11 +571448,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link></foldout>",
+                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link></foldout>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   },
                                   {
@@ -571522,11 +571522,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link>",
+                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   }
                                 ]
@@ -572213,11 +572213,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link></foldout>",
+                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link></foldout>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   },
                                   {
@@ -572287,11 +572287,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link>",
+                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   }
                                 ]
@@ -572978,7 +572978,7 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College Revision</color></icon></link></foldout>",
+                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College</color></icon></link></foldout>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
@@ -572987,7 +572987,7 @@
                                   },
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "State College Revision",
+                                    "name": "State College",
                                     "reference": true
                                   }
                                 ]
@@ -573052,11 +573052,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College Revision</color></icon></link>",
+                                "internalDescription": "<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College</color></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "State College Revision",
+                                    "name": "State College",
                                     "reference": true
                                   }
                                 ]
@@ -573743,7 +573743,7 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College Revision</color></icon></link></foldout>",
+                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College</color></icon></link></foldout>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
@@ -573752,7 +573752,7 @@
                                   },
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "State College Revision",
+                                    "name": "State College",
                                     "reference": true
                                   }
                                 ]
@@ -573817,11 +573817,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College Revision</color></icon></link>",
+                                "internalDescription": "<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College</color></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "State College Revision",
+                                    "name": "State College",
                                     "reference": true
                                   }
                                 ]
@@ -574508,11 +574508,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link></foldout>",
+                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link></foldout>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   },
                                   {
@@ -574582,11 +574582,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House Revision</color></icon></link>",
+                                "internalDescription": "<link=\"view:1865:4161065\"><icon name=\"District\" type=\"\"><color=#8ED49BFF>School House</color></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "School House Revision",
+                                    "name": "School House",
                                     "reference": true
                                   }
                                 ]
@@ -575273,7 +575273,7 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College Revision</color></icon></link></foldout>",
+                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College</color></icon></link></foldout>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
@@ -575282,7 +575282,7 @@
                                   },
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "State College Revision",
+                                    "name": "State College",
                                     "reference": true
                                   }
                                 ]
@@ -575347,11 +575347,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College Revision</color></icon></link>",
+                                "internalDescription": "<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College</color></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "State College Revision",
+                                    "name": "State College",
                                     "reference": true
                                   }
                                 ]
@@ -576038,7 +576038,7 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College Revision</color></icon></link></foldout>",
+                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College</color></icon></link></foldout>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
@@ -576047,7 +576047,7 @@
                                   },
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "State College Revision",
+                                    "name": "State College",
                                     "reference": true
                                   }
                                 ]
@@ -576112,11 +576112,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College Revision</color></icon></link>",
+                                "internalDescription": "<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College</color></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "State College Revision",
+                                    "name": "State College",
                                     "reference": true
                                   }
                                 ]
@@ -576803,7 +576803,7 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College Revision</color></icon></link></foldout>",
+                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College</color></icon></link></foldout>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
@@ -576812,7 +576812,7 @@
                                   },
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "State College Revision",
+                                    "name": "State College",
                                     "reference": true
                                   }
                                 ]
@@ -576877,11 +576877,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College Revision</color></icon></link>",
+                                "internalDescription": "<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College</color></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "State College Revision",
+                                    "name": "State College",
                                     "reference": true
                                   }
                                 ]
@@ -577568,7 +577568,7 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College Revision</color></icon></link></foldout>",
+                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College</color></icon></link></foldout>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
@@ -577577,7 +577577,7 @@
                                   },
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "State College Revision",
+                                    "name": "State College",
                                     "reference": true
                                   }
                                 ]
@@ -577642,11 +577642,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College Revision</color></icon></link>",
+                                "internalDescription": "<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College</color></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "State College Revision",
+                                    "name": "State College",
                                     "reference": true
                                   }
                                 ]
@@ -578333,7 +578333,7 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College Revision</color></icon></link></foldout>",
+                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College</color></icon></link></foldout>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
@@ -578342,7 +578342,7 @@
                                   },
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "State College Revision",
+                                    "name": "State College",
                                     "reference": true
                                   }
                                 ]
@@ -578407,11 +578407,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College Revision</color></icon></link>",
+                                "internalDescription": "<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College</color></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "State College Revision",
+                                    "name": "State College",
                                     "reference": true
                                   }
                                 ]
@@ -582353,7 +582353,7 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College Revision</color></icon></link></foldout>",
+                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:1865:573525\"><icon name=\"District\" type=\"\"><color=#4B51D5FF>National University</color></icon></link>\r\n<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College</color></icon></link></foldout>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
@@ -582362,7 +582362,7 @@
                                   },
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "State College Revision",
+                                    "name": "State College",
                                     "reference": true
                                   }
                                 ]
@@ -582509,11 +582509,11 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College Revision</color></icon></link>",
+                                "internalDescription": "<link=\"view:1865:4161066\"><icon name=\"District\" type=\"\"><color=#76DDE8FF>State College</color></icon></link>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "State College Revision",
+                                    "name": "State College",
                                     "reference": true
                                   }
                                 ]
