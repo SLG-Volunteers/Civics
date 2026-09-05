@@ -1,0 +1,1049 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "gameVersion": "0.14.1.0",
+  "gameVersionFull": "0.14.1.0 beta release-1077",
+  "type": "Eco.Gameplay.Civics.Laws.Law",
+  "name": "Rock & Stone",
+  "reference": false,
+  "description": "These law allow the land owner to opt into selling mining rights on their land with prices set by this law.\n\nAuthor: Kyokes",
+  "properties": {
+    "Sections": [
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Mining Rights - Stones",
+          "UserDescription": "Selling rights to mine ore on your own land. The land owner is given .01 pound per time an ore is mined and picked up on their land from the citizen who mined/picked it up.",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.DigOrMine"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DigOrMine",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Excavatable",
+                        "internalDescription": "<foldout><linktext><u>6 Rocks</u></linktext><title>6 Rocks</title><link=\"Item:BasaltItem\"><style=\"Item\"><icon name=\"BasaltItem\" type=\"\">Basalt</icon></style></link>\r\n<link=\"Item:GneissItem\"><style=\"Item\"><icon name=\"GneissItem\" type=\"\">Gneiss</icon></style></link>\r\n<link=\"Item:GraniteItem\"><style=\"Item\"><icon name=\"GraniteItem\" type=\"\">Granite</icon></style></link>\r\n<link=\"Item:LimestoneItem\"><style=\"Item\"><icon name=\"LimestoneItem\" type=\"\">Limestone</icon></style></link>\r\n<link=\"Item:SandstoneItem\"><style=\"Item\"><icon name=\"SandstoneItem\" type=\"\">Sandstone</icon></style></link>\r\n<link=\"Item:ShaleItem\"><style=\"Item\"><icon name=\"ShaleItem\" type=\"\">Shale</icon></style></link></foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.GraniteItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SandstoneItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BasaltItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.ShaleItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.GneissItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LimestoneItem"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DigOrMine",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Excavation",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.DropOrPickupBlock"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DropOrPickupBlock",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Block Placed or Picked Up",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.BlockItem"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<foldout><linktext><u>6 Rocks</u></linktext><title>6 Rocks</title><link=\"Item:BasaltItem\"><style=\"Item\"><icon name=\"BasaltItem\" type=\"\">Basalt</icon></style></link>\r\n<link=\"Item:GneissItem\"><style=\"Item\"><icon name=\"GneissItem\" type=\"\">Gneiss</icon></style></link>\r\n<link=\"Item:GraniteItem\"><style=\"Item\"><icon name=\"GraniteItem\" type=\"\">Granite</icon></style></link>\r\n<link=\"Item:LimestoneItem\"><style=\"Item\"><icon name=\"LimestoneItem\" type=\"\">Limestone</icon></style></link>\r\n<link=\"Item:SandstoneItem\"><style=\"Item\"><icon name=\"SandstoneItem\" type=\"\">Sandstone</icon></style></link>\r\n<link=\"Item:ShaleItem\"><style=\"Item\"><icon name=\"ShaleItem\" type=\"\">Shale</icon></style></link></foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.GraniteItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SandstoneItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BasaltItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.ShaleItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.GneissItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LimestoneItem"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.Values.LocationY",
+                            "properties": {
+                              "Location": {
+                                "type": "GameValueContext",
+                                "_name": "Action Location",
+                                "markedUpName": "<icon name=\"DigOrMine\" type=\"\">Action Location</icon>",
+                                "contextDescription": "<i>The position where the interaction took place.</i>"
+                              }
+                            }
+                          },
+                          "Comparison": "LessThanOrEqualTo",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 60.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.PropertyRequirements",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                            "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                          },
+                          "AuthorizedOrNot": "UnauthorizedOnProperty"
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<link=\"view:4000:48909408\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Federal Mining Rights</style></icon></link>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Federal Mining Rights",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "Eco.Gameplay.Civics.GameValues.PropertyValues.DeedOwner",
+                            "properties": {
+                              "Deed": {
+                                "type": "Eco.Gameplay.Civics.GameValues.PropertyValues.DeedAtLocation",
+                                "properties": {
+                                  "Location": {
+                                    "type": "GameValueContext",
+                                    "_name": "Action Location",
+                                    "markedUpName": "<icon name=\"DigOrMine\" type=\"\">Action Location</icon>",
+                                    "contextDescription": "<i>The position where the interaction took place.</i>"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Requirements": "HasAll"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Mods.SmartTax.SmartTransfer_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "Recipient": {
+                        "type": "Eco.Gameplay.Civics.GameValues.PropertyValues.DeedOwner",
+                        "properties": {
+                          "Deed": {
+                            "type": "Eco.Gameplay.Civics.GameValues.PropertyValues.DeedAtLocation",
+                            "properties": {
+                              "Location": {
+                                "type": "GameValueContext",
+                                "_name": "Action Location",
+                                "markedUpName": "<icon name=\"DigOrMine\" type=\"\">Action Location</icon>",
+                                "contextDescription": "<i>The position where the interaction took place.</i>"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "Currency": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.Currency",
+                          "name": "Pound",
+                          "reference": true
+                        }
+                      },
+                      "Amount": {
+                        "type": "GameValueWrapper",
+                        "value": 0.01
+                      },
+                      "Target": {
+                        "type": "Eco.Mods.Companies.CitizenOrCompanyAlias",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                            "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                          }
+                        }
+                      },
+                      "TransferCode": "MiningRightsPayment",
+                      "Silent": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.IgnoreAuth_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "PromptCitizensOnInteractions": false,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Mining Rights - Ores",
+          "UserDescription": "Selling rights to mine ore on your own land. The land owner is given .05 pound per time an ore is mined and picked up on their land from the citizen who mined/picked it up.",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.DigOrMine"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DigOrMine",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Excavatable",
+                        "internalDescription": "<foldout><linktext><u>4 Ores</u></linktext><title>4 Ores</title><link=\"Item:CoalItem\"><style=\"Item\"><icon name=\"CoalItem\" type=\"\">Coal</icon></style></link>\r\n<link=\"Item:CopperOreItem\"><style=\"Item\"><icon name=\"CopperOreItem\" type=\"\">Copper Ore</icon></style></link>\r\n<link=\"Item:GoldOreItem\"><style=\"Item\"><icon name=\"GoldOreItem\" type=\"\">Gold Ore</icon></style></link>\r\n<link=\"Item:IronOreItem\"><style=\"Item\"><icon name=\"IronOreItem\" type=\"\">Iron Ore</icon></style></link></foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.GoldOreItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.IronOreItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CopperOreItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CoalItem"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DigOrMine",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Excavation",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.DropOrPickupBlock"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DropOrPickupBlock",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Block Placed or Picked Up",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.BlockItem"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<foldout><linktext><u>4 Ores</u></linktext><title>4 Ores</title><link=\"Item:CoalItem\"><style=\"Item\"><icon name=\"CoalItem\" type=\"\">Coal</icon></style></link>\r\n<link=\"Item:CopperOreItem\"><style=\"Item\"><icon name=\"CopperOreItem\" type=\"\">Copper Ore</icon></style></link>\r\n<link=\"Item:GoldOreItem\"><style=\"Item\"><icon name=\"GoldOreItem\" type=\"\">Gold Ore</icon></style></link>\r\n<link=\"Item:IronOreItem\"><style=\"Item\"><icon name=\"IronOreItem\" type=\"\">Iron Ore</icon></style></link></foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.GoldOreItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.IronOreItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CopperOreItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CoalItem"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.Values.LocationY",
+                            "properties": {
+                              "Location": {
+                                "type": "GameValueContext",
+                                "_name": "Action Location",
+                                "markedUpName": "<icon name=\"DigOrMine\" type=\"\">Action Location</icon>",
+                                "contextDescription": "<i>The position where the interaction took place.</i>"
+                              }
+                            }
+                          },
+                          "Comparison": "LessThanOrEqualTo",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 60.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.PropertyRequirements",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                            "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                          },
+                          "AuthorizedOrNot": "UnauthorizedOnProperty"
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<link=\"view:4000:48909408\"><icon name=\"AppointedTitle\" type=\"\"><style=\"Government\">Federal Mining Rights</style></icon></link>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Federal Mining Rights",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "Eco.Gameplay.Civics.GameValues.PropertyValues.DeedOwner",
+                            "properties": {
+                              "Deed": {
+                                "type": "Eco.Gameplay.Civics.GameValues.PropertyValues.DeedAtLocation",
+                                "properties": {
+                                  "Location": {
+                                    "type": "GameValueContext",
+                                    "_name": "Action Location",
+                                    "markedUpName": "<icon name=\"DigOrMine\" type=\"\">Action Location</icon>",
+                                    "contextDescription": "<i>The position where the interaction took place.</i>"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Requirements": "HasAll"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Mods.SmartTax.SmartTransfer_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "Recipient": {
+                        "type": "Eco.Gameplay.Civics.GameValues.PropertyValues.DeedOwner",
+                        "properties": {
+                          "Deed": {
+                            "type": "Eco.Gameplay.Civics.GameValues.PropertyValues.DeedAtLocation",
+                            "properties": {
+                              "Location": {
+                                "type": "GameValueContext",
+                                "_name": "Action Location",
+                                "markedUpName": "<icon name=\"DigOrMine\" type=\"\">Action Location</icon>",
+                                "contextDescription": "<i>The position where the interaction took place.</i>"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "Currency": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.Currency",
+                          "name": "Pound",
+                          "reference": true
+                        }
+                      },
+                      "Amount": {
+                        "type": "GameValueWrapper",
+                        "value": 0.05
+                      },
+                      "Target": {
+                        "type": "Eco.Mods.Companies.CitizenOrCompanyAlias",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                            "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                          }
+                        }
+                      },
+                      "TransferCode": "MiningRightsPayment",
+                      "Silent": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.IgnoreAuth_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "PromptCitizensOnInteractions": false,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Cooking Jobs",
+          "UserDescription": "For the miners that toil in the Mines of White Tiger!",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ItemCraftedAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Crafting Table",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Crafting Table",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item crafted",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "<foldout><linktext><u>81 Foods</u></linktext><title>81 Foods</title><link=\"Item:AgoutiEnchiladasItem\"><style=\"Item\"><icon name=\"AgoutiEnchiladasItem\" type=\"\">Agouti Enchiladas</icon></style></link>\r\n<link=\"Item:AutumnStewItem\"><style=\"Item\"><icon name=\"AutumnStewItem\" type=\"\">Autumn Stew</icon></style></link>\r\n<link=\"Item:BakedAgaveItem\"><style=\"Item\"><icon name=\"BakedAgaveItem\" type=\"\">Baked Agave</icon></style></link>\r\n<link=\"Item:BakedBeetItem\"><style=\"Item\"><icon name=\"BakedBeetItem\" type=\"\">Baked Beet</icon></style></link>\r\n<link=\"Item:BakedCornItem\"><style=\"Item\"><icon name=\"BakedCornItem\" type=\"\">Baked Corn</icon></style></link>\r\n<link=\"Item:BakedHeartOfPalmItem\"><style=\"Item\"><icon name=\"BakedHeartOfPalmItem\" type=\"\">Baked Heart Of Palm</icon></style></link>\r\n<link=\"Item:BakedMeatItem\"><style=\"Item\"><icon name=\"BakedMeatItem\" type=\"\">Baked Meat</icon></style></link>\r\n<link=\"Item:BakedRoastItem\"><style=\"Item\"><icon name=\"BakedRoastItem\" type=\"\">Baked Roast</icon></style></link>\r\n<link=\"Item:BakedTaroItem\"><style=\"Item\"><icon name=\"BakedTaroItem\" type=\"\">Baked Taro</icon></style></link>\r\n<link=\"Item:BakedTomatoItem\"><style=\"Item\"><icon name=\"BakedTomatoItem\" type=\"\">Baked Tomato</icon></style></link>\r\n<link=\"Item:BanhXeoItem\"><style=\"Item\"><icon name=\"BanhXeoItem\" type=\"\">Banh Xeo</icon></style></link>\r\n<link=\"Item:BannockItem\"><style=\"Item\"><icon name=\"BannockItem\" type=\"\">Bannock</icon></style></link>\r\n<link=\"Item:BasicSaladItem\"><style=\"Item\"><icon name=\"BasicSaladItem\" type=\"\">Basic Salad</icon></style></link>\r\n<link=\"Item:BearSUPREMEItem\"><style=\"Item\"><icon name=\"BearSUPREMEItem\" type=\"\">Bear S U P R E M E</icon></style></link>\r\n<link=\"Item:BearclawItem\"><style=\"Item\"><icon name=\"BearclawItem\" type=\"\">Bearclaw</icon></style></link>\r\n<link=\"Item:BeetCampfireSaladItem\"><style=\"Item\"><icon name=\"BeetCampfireSaladItem\" type=\"\">Beet Campfire Salad</icon></style></link>\r\n<link=\"Item:BisonChowFunItem\"><style=\"Item\"><icon name=\"BisonChowFunItem\" type=\"\">Bison Chow Fun</icon></style></link>\r\n<link=\"Item:BreadItem\"><style=\"Item\"><icon name=\"BreadItem\" type=\"\">Bread</icon></style></link>\r\n<link=\"Item:CamasBreadItem\"><style=\"Item\"><icon name=\"CamasBreadItem\" type=\"\">Camas Bread</icon></style></link>\r\n<link=\"Item:CamasBulbBakeItem\"><style=\"Item\"><icon name=\"CamasBulbBakeItem\" type=\"\">Camas Bulb Bake</icon></style></link>\r\n<link=\"Item:CampfireRoastItem\"><style=\"Item\"><icon name=\"CampfireRoastItem\" type=\"\">Campfire Roast</icon></style></link>\r\n<link=\"Item:ClamChowderItem\"><style=\"Item\"><icon name=\"ClamChowderItem\" type=\"\">Clam Chowder</icon></style></link>\r\n<link=\"Item:CornFrittersItem\"><style=\"Item\"><icon name=\"CornFrittersItem\" type=\"\">Corn Fritters</icon></style></link>\r\n<link=\"Item:CrimsonSaladItem\"><style=\"Item\"><icon name=\"CrimsonSaladItem\" type=\"\">Crimson Salad</icon></style></link>\r\n<link=\"Item:CrispyBaconItem\"><style=\"Item\"><icon name=\"CrispyBaconItem\" type=\"\">Crispy Bacon</icon></style></link>\r\n<link=\"Item:DriedFishItem\"><style=\"Item\"><icon name=\"DriedFishItem\" type=\"\">Dried Fish</icon></style></link>\r\n<link=\"Item:DriedMeatItem\"><style=\"Item\"><icon name=\"DriedMeatItem\" type=\"\">Dried Meat</icon></style></link>\r\n<link=\"Item:ElkTacoItem\"><style=\"Item\"><icon name=\"ElkTacoItem\" type=\"\">Elk Taco</icon></style></link>\r\n<link=\"Item:ElkWellingtonItem\"><style=\"Item\"><icon name=\"ElkWellingtonItem\" type=\"\">Elk Wellington</icon></style></link>\r\n<link=\"Item:FantasticForestPizzaItem\"><style=\"Item\"><icon name=\"FantasticForestPizzaItem\" type=\"\">Fantastic Forest Pizza</icon></style></link>\r\n<link=\"Item:FernCampfireSaladItem\"><style=\"Item\"><icon name=\"FernCampfireSaladItem\" type=\"\">Fern Campfire Salad</icon></style></link>\r\n<link=\"Item:FieldCampfireStewItem\"><style=\"Item\"><icon name=\"FieldCampfireStewItem\" type=\"\">Field Campfire Stew</icon></style></link>\r\n<link=\"Item:FishNChipsItem\"><style=\"Item\"><icon name=\"FishNChipsItem\" type=\"\">Fish N Chips</icon></style></link>\r\n<link=\"Item:FlatbreadItem\"><style=\"Item\"><icon name=\"FlatbreadItem\" type=\"\">Flatbread</icon></style></link>\r\n<link=\"Item:FriedCamasItem\"><style=\"Item\"><icon name=\"FriedCamasItem\" type=\"\">Fried Camas</icon></style></link>\r\n<link=\"Item:FriedFiddleheadsItem\"><style=\"Item\"><icon name=\"FriedFiddleheadsItem\" type=\"\">Fried Fiddleheads</icon></style></link>\r\n<link=\"Item:FriedHareHaunchesItem\"><style=\"Item\"><icon name=\"FriedHareHaunchesItem\" type=\"\">Fried Hare Haunches</icon></style></link>\r\n<link=\"Item:FriedHeartsOfPalmItem\"><style=\"Item\"><icon name=\"FriedHeartsOfPalmItem\" type=\"\">Fried Hearts Of Palm</icon></style></link>\r\n<link=\"Item:FriedTaroItem\"><style=\"Item\"><icon name=\"FriedTaroItem\" type=\"\">Fried Taro</icon></style></link>\r\n<link=\"Item:FriedTomatoesItem\"><style=\"Item\"><icon name=\"FriedTomatoesItem\" type=\"\">Fried Tomatoes</icon></style></link>\r\n<link=\"Item:FruitMuffinItem\"><style=\"Item\"><icon name=\"FruitMuffinItem\" type=\"\">Fruit Muffin</icon></style></link>\r\n<link=\"Item:FruitSaladItem\"><style=\"Item\"><icon name=\"FruitSaladItem\" type=\"\">Fruit Salad</icon></style></link>\r\n<link=\"Item:FruitTartItem\"><style=\"Item\"><icon name=\"FruitTartItem\" type=\"\">Fruit Tart</icon></style></link>\r\n<link=\"Item:HeartyHometownPizzaItem\"><style=\"Item\"><icon name=\"HeartyHometownPizzaItem\" type=\"\">Hearty Hometown Pizza</icon></style></link>\r\n<link=\"Item:HosomakiItem\"><style=\"Item\"><icon name=\"HosomakiItem\" type=\"\">Hosomaki</icon></style></link>\r\n<link=\"Item:HuckleberryFritterItem\"><style=\"Item\"><icon name=\"HuckleberryFritterItem\" type=\"\">Huckleberry Fritter</icon></style></link>\r\n<link=\"Item:HuckleberryPieItem\"><style=\"Item\"><icon name=\"HuckleberryPieItem\" type=\"\">Huckleberry Pie</icon></style></link>\r\n<link=\"Item:JungleCampfireSaladItem\"><style=\"Item\"><icon name=\"JungleCampfireSaladItem\" type=\"\">Jungle Campfire Salad</icon></style></link>\r\n<link=\"Item:JungleCampfireStewItem\"><style=\"Item\"><icon name=\"JungleCampfireStewItem\" type=\"\">Jungle Campfire Stew</icon></style></link>\r\n<link=\"Item:KelpyCrabRollItem\"><style=\"Item\"><icon name=\"KelpyCrabRollItem\" type=\"\">Kelpy Crab Roll</icon></style></link>\r\n<link=\"Item:LoadedTaroFriesItem\"><style=\"Item\"><icon name=\"LoadedTaroFriesItem\" type=\"\">Loaded Taro Fries</icon></style></link>\r\n<link=\"Item:MacaronsItem\"><style=\"Item\"><icon name=\"MacaronsItem\" type=\"\">Macarons</icon></style></link>\r\n<link=\"Item:MeatPieItem\"><style=\"Item\"><icon name=\"MeatPieItem\" type=\"\">Meat Pie</icon></style></link>\r\n<link=\"Item:MeatyStewItem\"><style=\"Item\"><icon name=\"MeatyStewItem\" type=\"\">Meaty Stew</icon></style></link>\r\n<link=\"Item:MillionairesSaladItem\"><style=\"Item\"><icon name=\"MillionairesSaladItem\" type=\"\">Millionaires Salad</icon></style></link>\r\n<link=\"Item:MochiItem\"><style=\"Item\"><icon name=\"MochiItem\" type=\"\">Mochi</icon></style></link>\r\n<link=\"Item:PhadThaiItem\"><style=\"Item\"><icon name=\"PhadThaiItem\" type=\"\">Phad Thai</icon></style></link>\r\n<link=\"Item:PineappleFriendRiceItem\"><style=\"Item\"><icon name=\"PineappleFriendRiceItem\" type=\"\">Pineapple Friend Rice</icon></style></link>\r\n<link=\"Item:PirozhokItem\"><style=\"Item\"><icon name=\"PirozhokItem\" type=\"\">Pirozhok</icon></style></link>\r\n<link=\"Item:PokeBowlItem\"><style=\"Item\"><icon name=\"PokeBowlItem\" type=\"\">Poke Bowl</icon></style></link>\r\n<link=\"Item:PupusasItem\"><style=\"Item\"><icon name=\"PupusasItem\" type=\"\">Pupusas</icon></style></link>\r\n<link=\"Item:RoastPumpkinItem\"><style=\"Item\"><icon name=\"RoastPumpkinItem\" type=\"\">Roast Pumpkin</icon></style></link>\r\n<link=\"Item:RootCampfireSaladItem\"><style=\"Item\"><icon name=\"RootCampfireSaladItem\" type=\"\">Root Campfire Salad</icon></style></link>\r\n<link=\"Item:RootCampfireStewItem\"><style=\"Item\"><icon name=\"RootCampfireStewItem\" type=\"\">Root Campfire Stew</icon></style></link>\r\n<link=\"Item:SearedMeatItem\"><style=\"Item\"><icon name=\"SearedMeatItem\" type=\"\">Seared Meat</icon></style></link>\r\n<link=\"Item:SeededCamasRollItem\"><style=\"Item\"><icon name=\"SeededCamasRollItem\" type=\"\">Seeded Camas Roll</icon></style></link>\r\n<link=\"Item:SensuousSeaPizzaItem\"><style=\"Item\"><icon name=\"SensuousSeaPizzaItem\" type=\"\">Sensuous Sea Pizza</icon></style></link>\r\n<link=\"Item:SharkFilletSoupItem\"><style=\"Item\"><icon name=\"SharkFilletSoupItem\" type=\"\">Shark Fillet Soup</icon></style></link>\r\n<link=\"Item:SimmeredMeatItem\"><style=\"Item\"><icon name=\"SimmeredMeatItem\" type=\"\">Simmered Meat</icon></style></link>\r\n<link=\"Item:SmoothGutNoodleRollItem\"><style=\"Item\"><icon name=\"SmoothGutNoodleRollItem\" type=\"\">Smooth Gut Noodle Roll</icon></style></link>\r\n<link=\"Item:SpikyRollItem\"><style=\"Item\"><icon name=\"SpikyRollItem\" type=\"\">Spiky Roll</icon></style></link>\r\n<link=\"Item:StuffedTurkeyItem\"><style=\"Item\"><icon name=\"StuffedTurkeyItem\" type=\"\">Stuffed Turkey</icon></style></link>\r\n<link=\"Item:SweetDeerJerkyItem\"><style=\"Item\"><icon name=\"SweetDeerJerkyItem\" type=\"\">Sweet Deer Jerky</icon></style></link>\r\n<link=\"Item:SweetSaladItem\"><style=\"Item\"><icon name=\"SweetSaladItem\" type=\"\">Sweet Salad</icon></style></link>\r\n<link=\"Item:TaroFriesItem\"><style=\"Item\"><icon name=\"TaroFriesItem\" type=\"\">Taro Fries</icon></style></link>\r\n<link=\"Item:TastyTropicalPizzaItem\"><style=\"Item\"><icon name=\"TastyTropicalPizzaItem\" type=\"\">Tasty Tropical Pizza</icon></style></link>\r\n<link=\"Item:ToppedPorridgeItem\"><style=\"Item\"><icon name=\"ToppedPorridgeItem\" type=\"\">Topped Porridge</icon></style></link>\r\n<link=\"Item:VegetableSoupItem\"><style=\"Item\"><icon name=\"VegetableSoupItem\" type=\"\">Vegetable Soup</icon></style></link>\r\n<link=\"Item:WildMixItem\"><style=\"Item\"><icon name=\"WildMixItem\" type=\"\">Wild Mix</icon></style></link>\r\n<link=\"Item:WildStewItem\"><style=\"Item\"><icon name=\"WildStewItem\" type=\"\">Wild Stew</icon></style></link>\r\n<link=\"Item:WorldlyDonutItem\"><style=\"Item\"><icon name=\"WorldlyDonutItem\" type=\"\">Worldly Donut</icon></style></link></foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BakedAgaveItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.RoastPumpkinItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BearclawItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.PupusasItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.TastyTropicalPizzaItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.TaroFriesItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.RootCampfireSaladItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.HosomakiItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.FlatbreadItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BeetCampfireSaladItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.MacaronsItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.PirozhokItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BreadItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SimmeredMeatItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.WildMixItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BakedTaroItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.MochiItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.FriedFiddleheadsItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BakedTomatoItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.MeatPieItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.FriedHeartsOfPalmItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.ClamChowderItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.HuckleberryFritterItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.ElkTacoItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.JungleCampfireSaladItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.RootCampfireStewItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.KelpyCrabRollItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.FernCampfireSaladItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmoothGutNoodleRollItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CamasBulbBakeItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.PhadThaiItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.ToppedPorridgeItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.FantasticForestPizzaItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SweetSaladItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.DriedMeatItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SeededCamasRollItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.DriedFishItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CrimsonSaladItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.AutumnStewItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BakedMeatItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BisonChowFunItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LoadedTaroFriesItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.MillionairesSaladItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.AgoutiEnchiladasItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.HuckleberryPieItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BakedHeartOfPalmItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SpikyRollItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BearSUPREMEItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.HeartyHometownPizzaItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.VegetableSoupItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.ElkWellingtonItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.WorldlyDonutItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.FriedTomatoesItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BannockItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.FieldCampfireStewItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BakedRoastItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.JungleCampfireStewItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.FishNChipsItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.FruitMuffinItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BakedBeetItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.FriedTaroItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CrispyBaconItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.StuffedTurkeyItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.FriedCamasItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.PokeBowlItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.MeatyStewItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.FriedHareHaunchesItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.FruitTartItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SearedMeatItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BanhXeoItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.FruitSaladItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CampfireRoastItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SensuousSeaPizzaItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CornFrittersItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.WildStewItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SharkFilletSoupItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BakedCornItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.PineappleFriendRiceItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BasicSaladItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CamasBreadItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SweetDeerJerkyItem"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ItemCraftedAction",
+                    "propNameBacker": "Byproduct",
+                    "propDisplayName": "Byproduct",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Mods.SmartTax.SmartPay_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "SourceBankAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.GovernmentBankAccount",
+                          "name": "Federal Preservation Fund",
+                          "reference": true
+                        }
+                      },
+                      "Currency": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.Currency",
+                          "name": "Pound",
+                          "reference": true
+                        }
+                      },
+                      "Amount": {
+                        "type": "GameValueWrapper",
+                        "value": 0.5
+                      },
+                      "Target": {
+                        "type": "Eco.Mods.Companies.CitizenOrCompanyAlias",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                            "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                          }
+                        }
+                      },
+                      "PaymentCode": "CookingJobs",
+                      "Silent": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "State": "Active"
+  }
+}
