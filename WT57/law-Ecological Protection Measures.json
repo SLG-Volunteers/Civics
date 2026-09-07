@@ -6053,11 +6053,11 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<link=\"view:1865:58028480\"><icon name=\"District\" type=\"\"><color=#D11214FF>No Hunting Zone Revision 3</color></icon></link>",
+                            "internalDescription": "<link=\"view:1865:58028480\"><icon name=\"District\" type=\"\"><color=#D11214FF>No Hunting Zone</color></icon></link>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "No Hunting Zone Revision 3",
+                                "name": "No Hunting Zone",
                                 "reference": true
                               }
                             ]
